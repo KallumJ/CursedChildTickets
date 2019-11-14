@@ -1,0 +1,14 @@
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\bin\Debug\CursedChild.exe.config
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\bin\Debug\CursedChild.exe
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\bin\Debug\CursedChild.pdb
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\bin\Debug\CursedChild.xml
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.vbprojAssemblyReference.cache
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.DetailsConfirmation.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.MainMenu.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.Resources.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.vbproj.GenerateResource.cache
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.vbproj.CoreCompileInputs.cache
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.exe
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.xml
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.pdb
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.StaffLogin.resources
