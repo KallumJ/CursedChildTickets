@@ -8,7 +8,7 @@
         <VBFixedString(20)> Dim Surname As String
         <VBFixedString(11)> Dim phoneNumber As String
         <VBFixedString(50)> Dim email As String
-        <VBFixedString(50)> Dim address As String
+        <VBFixedString(75)> Dim address As String
         <VBFixedString(8)> Dim Postcode As String
     End Structure
 
@@ -18,9 +18,8 @@
     'Define Show Time structure
     Public Structure ShowTimeType
         Dim showtimeID As Integer
-        <VBFixedString(5)> Dim showtimeTime As Date
         <VBFixedString(10)> Dim showtimeDate As Date
-        <VBFixedString(1)> Dim part As Integer
+        Dim part As Integer
         Dim avaliable As Boolean
     End Structure
 

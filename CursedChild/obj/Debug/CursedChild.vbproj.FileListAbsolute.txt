@@ -12,3 +12,7 @@ D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\Cu
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.xml
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.pdb
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.StaffLogin.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.StaffArea.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.ViewCustomers.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.SelectShowTime.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChild\CursedChild\obj\Debug\CursedChild.TicketType.resources
