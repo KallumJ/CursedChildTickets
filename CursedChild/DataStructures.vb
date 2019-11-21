@@ -19,6 +19,8 @@
     Public Structure ShowTimeType
         Dim showtimeID As Integer
         <VBFixedString(10)> Dim showtimeDate As Date
+        Dim showTimeTimeHH As Integer
+        Dim showTimeTimeMM As Integer
         Dim part As Integer
         Dim avaliable As Boolean
     End Structure
