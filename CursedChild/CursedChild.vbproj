@@ -248,6 +248,12 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SeatPlan.resx">
+      <DependentUpon>SeatPlan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectSeat.resx">
+      <DependentUpon>SelectSeat.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SelectShowTime.resx">
       <DependentUpon>SelectShowTime.vb</DependentUpon>
     </EmbeddedResource>
@@ -278,6 +284,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MainMenuImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Balcony.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DressCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stalls.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpperCircle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

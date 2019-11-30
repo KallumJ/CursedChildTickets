@@ -22,7 +22,32 @@ CursedChild
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:CursedChild.My.Resources.Resources.Balcony">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.DressCircle">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.Key">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:CursedChild.My.Resources.Resources.MainMenuImage">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.Stalls">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.UpperCircle">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

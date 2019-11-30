@@ -58,10 +58,8 @@
                 'Add details to the list box
                 listString = time
                     listString = listString & "     Part: " & part
-                    lstAvaliable.Items.Add(listString)
-
-
-                End If
+                lstAvaliable.Items.Add(listString)
+            End If
 
             'Check next record in the file
         Next recordPos
@@ -70,4 +68,9 @@
         FileClose(1)
     End Sub
 
+    Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
+        'Open the seat selection form
+        SelectSeat.Show()
+        Me.Hide()
+    End Sub
 End Class
