@@ -54,3 +54,6 @@ H:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTic
 H:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.pdb
 H:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SeatPlan.resources
 H:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SelectSeat.resources
+H:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.BasketOverview.resources
+H:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.CustomerDetails.resources
+H:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.OrderConfirmed.resources

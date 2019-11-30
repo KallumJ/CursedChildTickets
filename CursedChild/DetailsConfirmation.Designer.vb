@@ -22,16 +22,88 @@ Partial Class DetailsConfirmation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtCustomerDetails = New System.Windows.Forms.TextBox()
+        Me.txtTicketDetails = New System.Windows.Forms.TextBox()
+        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.btnReserve = New System.Windows.Forms.Button()
         Me.SuspendLayout()
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(86, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Customer Details"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(353, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Ticket Details"
+        '
+        'txtCustomerDetails
+        '
+        Me.txtCustomerDetails.Location = New System.Drawing.Point(12, 25)
+        Me.txtCustomerDetails.Multiline = True
+        Me.txtCustomerDetails.Name = "txtCustomerDetails"
+        Me.txtCustomerDetails.Size = New System.Drawing.Size(304, 175)
+        Me.txtCustomerDetails.TabIndex = 2
+        '
+        'txtTicketDetails
+        '
+        Me.txtTicketDetails.Location = New System.Drawing.Point(356, 25)
+        Me.txtTicketDetails.Multiline = True
+        Me.txtTicketDetails.Name = "txtTicketDetails"
+        Me.txtTicketDetails.Size = New System.Drawing.Size(304, 175)
+        Me.txtTicketDetails.TabIndex = 3
+        '
+        'lblTotal
+        '
+        Me.lblTotal.AutoSize = True
+        Me.lblTotal.Location = New System.Drawing.Point(12, 212)
+        Me.lblTotal.Name = "lblTotal"
+        Me.lblTotal.Size = New System.Drawing.Size(34, 13)
+        Me.lblTotal.TabIndex = 4
+        Me.lblTotal.Text = "Total:"
+        '
+        'btnReserve
+        '
+        Me.btnReserve.Location = New System.Drawing.Point(299, 231)
+        Me.btnReserve.Name = "btnReserve"
+        Me.btnReserve.Size = New System.Drawing.Size(75, 23)
+        Me.btnReserve.TabIndex = 5
+        Me.btnReserve.Text = "Reserve"
+        Me.btnReserve.UseVisualStyleBackColor = True
         '
         'DetailsConfirmation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(673, 450)
+        Me.Controls.Add(Me.btnReserve)
+        Me.Controls.Add(Me.lblTotal)
+        Me.Controls.Add(Me.txtTicketDetails)
+        Me.Controls.Add(Me.txtCustomerDetails)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Name = "DetailsConfirmation"
         Me.Text = "DetailsConfirmation"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
+
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents txtCustomerDetails As TextBox
+    Friend WithEvents txtTicketDetails As TextBox
+    Friend WithEvents lblTotal As Label
+    Friend WithEvents btnReserve As Button
 End Class
