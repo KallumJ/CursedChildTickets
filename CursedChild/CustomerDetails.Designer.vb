@@ -37,6 +37,7 @@ Partial Class CustomerDetails
         Me.txtPhone = New System.Windows.Forms.TextBox()
         Me.txtSurname = New System.Windows.Forms.TextBox()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnContinue
@@ -114,6 +115,7 @@ Partial Class CustomerDetails
         'cmbTitle
         '
         Me.cmbTitle.FormattingEnabled = True
+        Me.cmbTitle.Items.AddRange(New Object() {"Mr.", "Master.", "Miss.", "Mrs.", "Dr."})
         Me.cmbTitle.Location = New System.Drawing.Point(72, 12)
         Me.cmbTitle.Name = "cmbTitle"
         Me.cmbTitle.Size = New System.Drawing.Size(121, 21)
@@ -161,11 +163,21 @@ Partial Class CustomerDetails
         Me.txtFirstName.Size = New System.Drawing.Size(121, 20)
         Me.txtFirstName.TabIndex = 26
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 204)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 42
+        Me.Label1.Text = "Label1"
+        '
         'CustomerDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(218, 234)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -202,4 +214,5 @@ Partial Class CustomerDetails
     Friend WithEvents txtPhone As TextBox
     Friend WithEvents txtSurname As TextBox
     Friend WithEvents txtFirstName As TextBox
+    Friend WithEvents Label1 As Label
 End Class
