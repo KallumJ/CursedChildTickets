@@ -236,6 +236,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddCustomer.resx">
+      <DependentUpon>AddCustomer.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BasketOverview.resx">
       <DependentUpon>BasketOverview.vb</DependentUpon>
     </EmbeddedResource>
