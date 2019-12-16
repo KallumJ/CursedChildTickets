@@ -1,3 +1,0 @@
-- Revamped user customer entry for easier editing
-- Added staff customer add function
-- Started ViewCustomers form

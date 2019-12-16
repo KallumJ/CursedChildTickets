@@ -63,4 +63,10 @@
         Me.Close()
     End Sub
 
+    'Login on enter key
+    Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnLogin_Click(Me, e)
+        End If
+    End Sub
 End Class

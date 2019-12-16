@@ -80,3 +80,4 @@ D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTic
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.exe
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.xml
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.pdb
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddCustomer.resources

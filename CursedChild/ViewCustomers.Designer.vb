@@ -60,12 +60,13 @@ Partial Class ViewCustomers
         '
         Me.txtCustSearch.Location = New System.Drawing.Point(12, 386)
         Me.txtCustSearch.Name = "txtCustSearch"
-        Me.txtCustSearch.Size = New System.Drawing.Size(133, 20)
+        Me.txtCustSearch.Size = New System.Drawing.Size(169, 20)
         Me.txtCustSearch.TabIndex = 1
+        Me.txtCustSearch.Text = "Please enter a surname to search"
         '
         'btnCustSearch
         '
-        Me.btnCustSearch.Location = New System.Drawing.Point(151, 384)
+        Me.btnCustSearch.Location = New System.Drawing.Point(187, 386)
         Me.btnCustSearch.Name = "btnCustSearch"
         Me.btnCustSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnCustSearch.TabIndex = 2
@@ -103,6 +104,7 @@ Partial Class ViewCustomers
         '
         Me.txtCustID.Location = New System.Drawing.Point(419, 61)
         Me.txtCustID.Name = "txtCustID"
+        Me.txtCustID.ReadOnly = True
         Me.txtCustID.Size = New System.Drawing.Size(121, 20)
         Me.txtCustID.TabIndex = 7
         '
