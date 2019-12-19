@@ -4,19 +4,22 @@
         Try
             'Declare variables
             Dim customerFile As String = Application.StartupPath & "/customers.dat"
-            Dim recordPos As Integer
-            Dim numOfRecords As Integer
+            Dim custRecordPos As Integer
+            Dim custNumOfRecords As Integer
+            Dim reservationsFile As String = Application.StartupPath & "/reservations.dat"
+            Dim resRecordPos As Integer
+            Dim resNumOfRecords As Integer
 
             'Open the file
             FileOpen(1, customerFile, OpenMode.Random,,, Len(customerRecord))
 
             'Determine record position
-            numOfRecords = LOF(1) / Len(customerRecord)
-            recordPos = numOfRecords + 1
+            custNumOfRecords = LOF(1) / Len(customerRecord)
+            custRecordPos = custNumOfRecords + 1
 
             'Read in the entered data
             With customerRecord
-                .customerID = recordPos
+                .customerID = custRecordPos
                 .title = CustomerDetails.title
                 .firstName = CustomerDetails.firstName
                 .Surname = CustomerDetails.surname
@@ -27,7 +30,19 @@
             End With
 
             'Write the record to file
-            FilePut(1, customerRecord, recordPos)
+            FilePut(1, customerRecord, custRecordPos)
+
+            'Close the file
+            FileClose(1)
+
+            'Save the reservation details
+            FileOpen(1, reservationsFile, OpenMode.Random,,, Len(reservationRecord))
+
+            'Determine record position
+            resNumOfRecords = LOF(1) / Len(reservationRecord)
+            resRecordPos = resNumOfRecords + 1
+
+            'Read in reservation data
 
             'Close the file
             FileClose(1)
@@ -49,22 +64,35 @@
 
     Private Sub DetailsConfirmation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Declare variables
-        Dim txtString As String
+        Dim custTxtString As String
+        Dim ticketTxtString As String
 
-        'Clear the text box
+        'Clear the customer text box
         txtCustomerDetails.Text = ""
 
-        'Create text string to display details
-        txtString = "Title: " & CustomerDetails.title & vbNewLine
-        txtString = txtString & "First Name: " & CustomerDetails.firstName & vbNewLine
-        txtString = txtString & "Surname: " & CustomerDetails.surname & vbNewLine
-        txtString = txtString & "Phone Number: " & CustomerDetails.phone & vbNewLine
-        txtString = txtString & "Email: " & CustomerDetails.email & vbNewLine
-        txtString = txtString & "Address: " & CustomerDetails.address & vbNewLine
-        txtString = txtString & "Postcode: " & CustomerDetails.postcode & vbNewLine
+        'Create customer text string to display details
+        custTxtString = "Title: " & CustomerDetails.title & vbNewLine
+        custTxtString = custTxtString & "First Name: " & CustomerDetails.firstName & vbNewLine
+        custTxtString = custTxtString & "Surname: " & CustomerDetails.surname & vbNewLine
+        custTxtString = custTxtString & "Phone Number: " & CustomerDetails.phone & vbNewLine
+        custTxtString = custTxtString & "Email: " & CustomerDetails.email & vbNewLine
+        custTxtString = custTxtString & "Address: " & CustomerDetails.address & vbNewLine
+        custTxtString = custTxtString & "Postcode: " & CustomerDetails.postcode & vbNewLine
 
         'Add the file to text box
-        txtCustomerDetails.Text = txtString
+        txtCustomerDetails.Text = custTxtString
+
+        'Clear the tickets text box
+        ticketTxtString = "Date: " & SelectShowTime.showtimeDateString & vbNewLine
+        ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
+        ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
+        ticketTxtString = ticketTxtString & "Seat: " & SelectSeat.seat & vbNewLine
+
+        lblTotal.Text = "Total: £" & SelectSeat.price & ".00"
+
+        'Add the details to the text box
+        txtTicketDetails.Text = ticketTxtString
+
 
     End Sub
 End Class

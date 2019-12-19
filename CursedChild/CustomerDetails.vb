@@ -19,6 +19,10 @@
         address = txtAddress.Text
         postcode = txtPostcode.Text
 
+        'Proceed to next form
+        DetailsConfirmation.Show()
+        Me.Hide()
+
     End Sub
 
 End Class

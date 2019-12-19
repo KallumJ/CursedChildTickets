@@ -54,6 +54,7 @@ Partial Class SelectSeat
         'cmbRow
         '
         Me.cmbRow.FormattingEnabled = True
+        Me.cmbRow.Items.AddRange(New Object() {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"})
         Me.cmbRow.Location = New System.Drawing.Point(277, 127)
         Me.cmbRow.Name = "cmbRow"
         Me.cmbRow.Size = New System.Drawing.Size(121, 21)
@@ -62,6 +63,7 @@ Partial Class SelectSeat
         'cmbSeat
         '
         Me.cmbSeat.FormattingEnabled = True
+        Me.cmbSeat.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"})
         Me.cmbSeat.Location = New System.Drawing.Point(552, 127)
         Me.cmbSeat.Name = "cmbSeat"
         Me.cmbSeat.Size = New System.Drawing.Size(121, 21)

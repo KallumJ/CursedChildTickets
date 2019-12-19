@@ -1,4 +1,8 @@
 ﻿Public Class SelectShowTime
+
+    Public showtimeDateString As String
+    Public showtimePart As String
+
     Private Sub SelectShowTime_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Sets the minimum date to the current date
         calCalendar.MinDate = System.DateTime.Today()
@@ -57,7 +61,7 @@
 
                 'Add details to the list box
                 listString = time
-                    listString = listString & "     Part: " & part
+                listString = listString & "     Part: " & part
                 lstAvaliable.Items.Add(listString)
             End If
 
@@ -66,6 +70,9 @@
 
         'Close the file
         FileClose(1)
+
+        showtimePart = part
+        showtimeDateString = selectedDate & " " & time
     End Sub
 
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
