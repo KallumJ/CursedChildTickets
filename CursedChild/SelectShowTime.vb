@@ -2,6 +2,7 @@
 
     Public showtimeDateString As String
     Public showtimePart As String
+    Public showtimeID As Integer
 
     Private Sub SelectShowTime_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Sets the minimum date to the current date
@@ -23,11 +24,11 @@
         Dim selectedDate As String
         Dim showtimeDate As String
         Dim timeHH As Integer
-        Dim timeMM As Integer
+        Dim timeMM As String
         Dim time As String
         Dim part As Integer
         Dim listString As String
-        Dim id As Integer
+
 
         'Clear the list box
         lstAvaliable.Items.Clear()
@@ -53,17 +54,21 @@
                     timeHH = .showTimeTimeHH
                     timeMM = .showTimeTimeMM
                     part = .part
-                    id = .showtimeID
+                    showtimeID = .showtimeID
                 End With
+
+                If timeMM = "0" Then
+                    timeMM = "00"
+                End If
 
                 'Construct time string
                 time = timeHH & ":" & timeMM
 
-                'Add details to the list box
-                listString = time
-                listString = listString & "     Part: " & part
-                lstAvaliable.Items.Add(listString)
-            End If
+                    'Add details to the list box
+                    listString = time
+                    listString = listString & "     Part: " & part
+                    lstAvaliable.Items.Add(listString)
+                End If
 
             'Check next record in the file
         Next recordPos

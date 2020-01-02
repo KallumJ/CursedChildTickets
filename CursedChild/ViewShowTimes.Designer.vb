@@ -22,9 +22,41 @@ Partial Class ViewShowTimes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.btnShowAdd = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+        'btnShowAdd
+        '
+        Me.btnShowAdd.Location = New System.Drawing.Point(12, 415)
+        Me.btnShowAdd.Name = "btnShowAdd"
+        Me.btnShowAdd.Size = New System.Drawing.Size(133, 23)
+        Me.btnShowAdd.TabIndex = 4
+        Me.btnShowAdd.Text = "Add Showtime"
+        Me.btnShowAdd.UseVisualStyleBackColor = True
+        '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(713, 12)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 5
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
+        'ViewShowTimes
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.btnShowAdd)
+        Me.Name = "ViewShowTimes"
         Me.Text = "ViewShowTimes"
+        Me.ResumeLayout(False)
+
     End Sub
+
+    Friend WithEvents btnShowAdd As Button
+    Friend WithEvents btnBack As Button
 End Class

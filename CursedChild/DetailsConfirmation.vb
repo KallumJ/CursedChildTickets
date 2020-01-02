@@ -1,14 +1,15 @@
 ﻿Public Class DetailsConfirmation
     Private Sub btnReserve_Click(sender As Object, e As EventArgs) Handles btnReserve.Click
+        'Declare variables
+        Dim customerFile As String = Application.StartupPath & "/customers.dat"
+        Dim custRecordPos As Integer
+        Dim custNumOfRecords As Integer
+        Dim reservationsFile As String = Application.StartupPath & "/reservations.dat"
+        Dim resRecordPos As Integer
+        Dim resNumOfRecords As Integer
+
         'Save entered customer details to file
         Try
-            'Declare variables
-            Dim customerFile As String = Application.StartupPath & "/customers.dat"
-            Dim custRecordPos As Integer
-            Dim custNumOfRecords As Integer
-            Dim reservationsFile As String = Application.StartupPath & "/reservations.dat"
-            Dim resRecordPos As Integer
-            Dim resNumOfRecords As Integer
 
             'Open the file
             FileOpen(1, customerFile, OpenMode.Random,,, Len(customerRecord))
@@ -35,22 +36,6 @@
             'Close the file
             FileClose(1)
 
-            'Save the reservation details
-            FileOpen(1, reservationsFile, OpenMode.Random,,, Len(reservationRecord))
-
-            'Determine record position
-            resNumOfRecords = LOF(1) / Len(reservationRecord)
-            resRecordPos = resNumOfRecords + 1
-
-            'Read in reservation data
-
-            'Close the file
-            FileClose(1)
-
-            'Show order confirmed form
-            OrderConfirmed.Show()
-            Me.Hide()
-
         Catch ex As Exception
             'Make the exce
             Dim x As String
@@ -60,6 +45,41 @@
             MsgBox("An error occured: " & x & ". Please contact a system administrator.")
         End Try
 
+        'Write reservation to file
+        Try
+            'Open the file
+            FileOpen(1, reservationsFile, OpenMode.Random,,, Len(reservationRecord))
+
+            'Determine record position
+            resNumOfRecords = LOF(1) / Len(reservationRecord)
+            resRecordPos = resNumOfRecords + 1
+
+            'Read in reservation data
+            With reservationRecord
+                .reservationID = resRecordPos
+                .customerID = custRecordPos
+                .showtimeID = SelectShowTime.showtimeID
+                .reservationDate = SelectShowTime.showtimeDateString
+                .totalPrice = SelectSeat.price
+            End With
+
+            'Write the record to file
+            FilePut(1, reservationRecord, resRecordPos)
+
+            'Close the file
+            FileClose(1)
+
+            'Open order confirmation
+            OrderConfirmed.Show()
+            Me.Close()
+
+        Catch ex As Exception
+            Dim x As String
+
+            x = ex.ToString
+
+            MsgBox("An error occured: " & x & ". Please contact a system administrator.")
+        End Try
     End Sub
 
     Private Sub DetailsConfirmation_Load(sender As Object, e As EventArgs) Handles MyBase.Load

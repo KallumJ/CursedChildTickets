@@ -239,6 +239,9 @@
     <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddShowTimes.resx">
+      <DependentUpon>AddShowTimes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BasketOverview.resx">
       <DependentUpon>BasketOverview.vb</DependentUpon>
     </EmbeddedResource>
@@ -280,6 +283,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCustomers.resx">
       <DependentUpon>ViewCustomers.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewReservations.resx">
+      <DependentUpon>ViewReservations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewShowTimes.resx">
+      <DependentUpon>ViewShowTimes.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -81,3 +81,6 @@ D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTic
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.xml
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.pdb
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddCustomer.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewReservations.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddShowTimes.resources
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewShowTimes.resources
