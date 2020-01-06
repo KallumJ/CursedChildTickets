@@ -84,3 +84,57 @@ D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTic
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewReservations.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddShowTimes.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewShowTimes.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\bin\Debug\CursedChild.exe.config
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\bin\Debug\CursedChild.exe
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\bin\Debug\CursedChild.pdb
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\bin\Debug\CursedChild.xml
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbprojAssemblyReference.cache
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddCustomer.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddShowTimes.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.BasketOverview.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.CustomerDetails.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.DetailsConfirmation.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.MainMenu.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.Resources.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.OrderConfirmed.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SeatPlan.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SelectSeat.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SelectShowTime.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.StaffArea.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.StaffLogin.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.TicketType.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewCustomers.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewReservations.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewShowTimes.resources
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.GenerateResource.cache
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.CoreCompileInputs.cache
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.exe
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.xml
+E:\CollegeMirror\Subjects\Computer Science\A2 Computer Science\Unit 5\Prototype\CursedChildTickets\CursedChild\obj\Debug\CursedChild.pdb
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\bin\Debug\CursedChild.exe.config
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\bin\Debug\CursedChild.exe
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\bin\Debug\CursedChild.pdb
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\bin\Debug\CursedChild.xml
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbprojAssemblyReference.cache
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddCustomer.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddShowTimes.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.BasketOverview.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.CustomerDetails.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.DetailsConfirmation.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.MainMenu.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.Resources.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.OrderConfirmed.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SeatPlan.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SelectSeat.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SelectShowTime.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.StaffArea.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.StaffLogin.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.TicketType.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewCustomers.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewReservations.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewShowTimes.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.GenerateResource.cache
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.CoreCompileInputs.cache
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.exe
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.xml
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.pdb

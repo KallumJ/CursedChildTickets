@@ -3,6 +3,7 @@
     Public showtimeDateString As String
     Public showtimePart As String
     Public showtimeID As Integer
+    Public showtimeDate As String
 
     Private Sub SelectShowTime_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Sets the minimum date to the current date
@@ -22,7 +23,6 @@
         Dim numOfRecords As Integer
         Dim recordPos As Integer
         Dim selectedDate As String
-        Dim showtimeDate As String
         Dim timeHH As Integer
         Dim timeMM As String
         Dim time As String

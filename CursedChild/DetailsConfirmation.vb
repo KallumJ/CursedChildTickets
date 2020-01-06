@@ -59,7 +59,7 @@
                 .reservationID = resRecordPos
                 .customerID = custRecordPos
                 .showtimeID = SelectShowTime.showtimeID
-                .reservationDate = SelectShowTime.showtimeDateString
+                .reservationDate = SelectShowTime.showtimeDate
                 .totalPrice = SelectSeat.price
             End With
 

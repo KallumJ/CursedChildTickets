@@ -33,7 +33,7 @@
         Dim reservationID As Integer
         Dim customerID As Integer
         Dim showtimeID As Integer
-        <VBFixedString(10)> Dim reservationDate As Date
+        Dim reservationDate As Date
         Dim quantity As Integer
         <VBFixedString(10)> Dim totalPrice As Decimal
     End Structure
