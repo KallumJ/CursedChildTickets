@@ -54,6 +54,8 @@
     Public Structure SeatsType
         <VBFixedString(4)> Dim seat As String
         <VBFixedString(1)> Dim priceBand As Char
+        <VBFixedString(15)> Dim block As String
+        Dim rank As Integer
     End Structure
 
     'Declare Seats Record

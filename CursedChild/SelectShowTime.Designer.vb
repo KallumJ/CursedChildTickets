@@ -25,11 +25,12 @@ Partial Class SelectShowTime
         Me.calCalendar = New System.Windows.Forms.MonthCalendar()
         Me.lstAvaliable = New System.Windows.Forms.ListBox()
         Me.btnContinue = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'calCalendar
         '
-        Me.calCalendar.Location = New System.Drawing.Point(18, 18)
+        Me.calCalendar.Location = New System.Drawing.Point(16, 25)
         Me.calCalendar.MaxSelectionCount = 1
         Me.calCalendar.Name = "calCalendar"
         Me.calCalendar.TabIndex = 0
@@ -37,35 +38,47 @@ Partial Class SelectShowTime
         'lstAvaliable
         '
         Me.lstAvaliable.FormattingEnabled = True
-        Me.lstAvaliable.Location = New System.Drawing.Point(257, 18)
+        Me.lstAvaliable.Location = New System.Drawing.Point(255, 27)
         Me.lstAvaliable.Name = "lstAvaliable"
         Me.lstAvaliable.Size = New System.Drawing.Size(259, 160)
         Me.lstAvaliable.TabIndex = 1
         '
         'btnContinue
         '
-        Me.btnContinue.Location = New System.Drawing.Point(441, 184)
+        Me.btnContinue.Location = New System.Drawing.Point(440, 189)
         Me.btnContinue.Name = "btnContinue"
         Me.btnContinue.Size = New System.Drawing.Size(75, 23)
         Me.btnContinue.TabIndex = 2
         Me.btnContinue.Text = "Continue"
         Me.btnContinue.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(188, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Select a date and choose a showtime:"
+        '
         'SelectShowTime
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(527, 224)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.lstAvaliable)
         Me.Controls.Add(Me.calCalendar)
         Me.Name = "SelectShowTime"
         Me.Text = "SelectShowTime"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents calCalendar As MonthCalendar
     Friend WithEvents lstAvaliable As ListBox
     Friend WithEvents btnContinue As Button
+    Friend WithEvents Label1 As Label
 End Class
