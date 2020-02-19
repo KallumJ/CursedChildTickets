@@ -125,26 +125,33 @@ Partial Class AddShowTimes
         '
         'btnAdd
         '
+        Me.btnAdd.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnAdd.ForeColor = System.Drawing.Color.Khaki
         Me.btnAdd.Location = New System.Drawing.Point(15, 142)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(270, 23)
         Me.btnAdd.TabIndex = 10
         Me.btnAdd.Text = "Add Showtime"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnBack
         '
+        Me.btnBack.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBack.ForeColor = System.Drawing.Color.Khaki
         Me.btnBack.Location = New System.Drawing.Point(15, 171)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(270, 23)
         Me.btnBack.TabIndex = 11
         Me.btnBack.Text = "Back"
-        Me.btnBack.UseVisualStyleBackColor = True
+        Me.btnBack.UseVisualStyleBackColor = False
         '
         'AddShowTimes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(303, 202)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnAdd)

@@ -29,4 +29,13 @@
         TicketType.Show()
         Me.Hide()
     End Sub
+
+    Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Autoplay video on form load
+        AxWindowsMediaPlayer1.uiMode = "none"
+        AxWindowsMediaPlayer1.URL = "D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\Resources\Trailer.mp4"
+        AxWindowsMediaPlayer1.settings.setMode("loop", True)
+        AxWindowsMediaPlayer1.settings.mute = True
+    End Sub
+
 End Class

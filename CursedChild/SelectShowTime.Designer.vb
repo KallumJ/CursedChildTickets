@@ -45,12 +45,15 @@ Partial Class SelectShowTime
         '
         'btnContinue
         '
+        Me.btnContinue.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnContinue.ForeColor = System.Drawing.Color.Khaki
         Me.btnContinue.Location = New System.Drawing.Point(440, 189)
         Me.btnContinue.Name = "btnContinue"
         Me.btnContinue.Size = New System.Drawing.Size(75, 23)
         Me.btnContinue.TabIndex = 2
         Me.btnContinue.Text = "Continue"
-        Me.btnContinue.UseVisualStyleBackColor = True
+        Me.btnContinue.UseVisualStyleBackColor = False
         '
         'Label1
         '
@@ -65,6 +68,7 @@ Partial Class SelectShowTime
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(527, 224)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnContinue)

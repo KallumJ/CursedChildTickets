@@ -1,9 +1,36 @@
-﻿Public Class AddCustomer
+﻿Imports System.Text.RegularExpressions
+
+Public Class AddCustomer
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'Declare variables
         Dim customerFile As String = Application.StartupPath & "/customers.dat"
         Dim recordPos As Integer
         Dim numOfRecords As Integer
+
+        'Validation
+
+        'Length check on phone number  
+        If Len(txtPhone.Text) <> 11 Then
+            MsgBox("Please enter a phone number that has 11 numbers")
+            Exit Sub
+        End If
+
+        'Lookup check on title
+        If cmbTitle.Text <> "Mr." And cmbTitle.Text <> "Mrs." And cmbTitle.Text <> "Miss." And cmbTitle.Text <> "Dr." Then
+            MsgBox("Please enter a valid title from the dropdown")
+            Exit Sub
+        End If
+
+        'Regular expressions check on postcode
+        Dim regex As Regex = New Regex("([A-Z]{2})([0-9]{1,2})([0-9]{1})([A-Z]{2})")
+        Dim post As String = txtPostcode.Text.ToUpper
+        Dim match As Match = regex.Match(post)
+
+        If match.Success Then
+        Else
+            MsgBox("Please enter a valid postcode")
+            Exit Sub
+        End If
 
         Try
             'Open file

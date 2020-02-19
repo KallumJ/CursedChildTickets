@@ -47,26 +47,33 @@ Partial Class BasketOverview
         '
         'btnEditBasket
         '
+        Me.btnEditBasket.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnEditBasket.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEditBasket.ForeColor = System.Drawing.Color.Khaki
         Me.btnEditBasket.Location = New System.Drawing.Point(12, 193)
         Me.btnEditBasket.Name = "btnEditBasket"
         Me.btnEditBasket.Size = New System.Drawing.Size(75, 23)
         Me.btnEditBasket.TabIndex = 2
         Me.btnEditBasket.Text = "Edit"
-        Me.btnEditBasket.UseVisualStyleBackColor = True
+        Me.btnEditBasket.UseVisualStyleBackColor = False
         '
         'btnContinue
         '
+        Me.btnContinue.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnContinue.ForeColor = System.Drawing.Color.Khaki
         Me.btnContinue.Location = New System.Drawing.Point(298, 193)
         Me.btnContinue.Name = "btnContinue"
         Me.btnContinue.Size = New System.Drawing.Size(75, 23)
         Me.btnContinue.TabIndex = 3
         Me.btnContinue.Text = "Continue"
-        Me.btnContinue.UseVisualStyleBackColor = True
+        Me.btnContinue.UseVisualStyleBackColor = False
         '
         'BasketOverview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(390, 236)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.btnEditBasket)

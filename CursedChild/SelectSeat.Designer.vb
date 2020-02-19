@@ -118,6 +118,7 @@ Partial Class SelectSeat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(689, 450)
         Me.Controls.Add(Me.btnAuto)
         Me.Controls.Add(Me.btnContinue)

@@ -41,12 +41,15 @@ Partial Class CustomerDetails
         '
         'btnContinue
         '
+        Me.btnContinue.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnContinue.ForeColor = System.Drawing.Color.Khaki
         Me.btnContinue.Location = New System.Drawing.Point(72, 195)
         Me.btnContinue.Name = "btnContinue"
         Me.btnContinue.Size = New System.Drawing.Size(121, 23)
         Me.btnContinue.TabIndex = 41
         Me.btnContinue.Text = "Continue"
-        Me.btnContinue.UseVisualStyleBackColor = True
+        Me.btnContinue.UseVisualStyleBackColor = False
         '
         'Label9
         '
@@ -166,6 +169,7 @@ Partial Class CustomerDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(218, 234)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.Label9)

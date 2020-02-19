@@ -264,4 +264,6 @@
             txtCustSearch.Text = "Please enter a surname to search"
         End If
     End Sub
+
+
 End Class

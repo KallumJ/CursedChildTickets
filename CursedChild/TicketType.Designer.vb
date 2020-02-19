@@ -29,35 +29,45 @@ Partial Class TicketType
         '
         'btnConsecutive
         '
+        Me.btnConsecutive.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnConsecutive.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnConsecutive.ForeColor = System.Drawing.Color.Khaki
         Me.btnConsecutive.Location = New System.Drawing.Point(12, 12)
         Me.btnConsecutive.Name = "btnConsecutive"
         Me.btnConsecutive.Size = New System.Drawing.Size(194, 56)
         Me.btnConsecutive.TabIndex = 0
         Me.btnConsecutive.Text = "Consecutive"
-        Me.btnConsecutive.UseVisualStyleBackColor = True
+        Me.btnConsecutive.UseVisualStyleBackColor = False
         '
         'btnNonConsecutive
         '
+        Me.btnNonConsecutive.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnNonConsecutive.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnNonConsecutive.ForeColor = System.Drawing.Color.Khaki
         Me.btnNonConsecutive.Location = New System.Drawing.Point(12, 74)
         Me.btnNonConsecutive.Name = "btnNonConsecutive"
         Me.btnNonConsecutive.Size = New System.Drawing.Size(194, 56)
         Me.btnNonConsecutive.TabIndex = 1
         Me.btnNonConsecutive.Text = "Non-consecutive"
-        Me.btnNonConsecutive.UseVisualStyleBackColor = True
+        Me.btnNonConsecutive.UseVisualStyleBackColor = False
         '
         'btnSinglePart
         '
+        Me.btnSinglePart.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnSinglePart.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSinglePart.ForeColor = System.Drawing.Color.Khaki
         Me.btnSinglePart.Location = New System.Drawing.Point(12, 136)
         Me.btnSinglePart.Name = "btnSinglePart"
         Me.btnSinglePart.Size = New System.Drawing.Size(194, 56)
         Me.btnSinglePart.TabIndex = 2
         Me.btnSinglePart.Text = "Single Part Only"
-        Me.btnSinglePart.UseVisualStyleBackColor = True
+        Me.btnSinglePart.UseVisualStyleBackColor = False
         '
         'TicketType
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(226, 208)
         Me.Controls.Add(Me.btnSinglePart)
         Me.Controls.Add(Me.btnNonConsecutive)

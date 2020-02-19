@@ -40,10 +40,8 @@
     End Sub
 
     Private Sub btnViewSeatPlan_Click(sender As Object, e As EventArgs) Handles btnViewSeatPlan.Click
-        MsgBox("PROTOTYPE NOT YET IMPLEMENTED")
-
         'Open the view seat plan form
-        'ViewStaffSeatPlan.Show()
-        'Me.Close()
+        ViewStaffSeatPlan.Show()
+        Me.Close()
     End Sub
 End Class

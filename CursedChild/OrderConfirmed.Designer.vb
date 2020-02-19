@@ -55,6 +55,7 @@ Partial Class OrderConfirmed
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(231, 98)
         Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.Label1)

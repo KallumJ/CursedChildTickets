@@ -50,12 +50,15 @@ Partial Class ViewReservations
         '
         'btnDelete
         '
+        Me.btnDelete.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDelete.ForeColor = System.Drawing.Color.Khaki
         Me.btnDelete.Location = New System.Drawing.Point(422, 371)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(121, 23)
         Me.btnDelete.TabIndex = 48
         Me.btnDelete.Text = "Delete Record"
-        Me.btnDelete.UseVisualStyleBackColor = True
+        Me.btnDelete.UseVisualStyleBackColor = False
         '
         'Label9
         '
@@ -184,21 +187,27 @@ Partial Class ViewReservations
         '
         'btnBack
         '
+        Me.btnBack.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBack.ForeColor = System.Drawing.Color.Khaki
         Me.btnBack.Location = New System.Drawing.Point(553, 12)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 29
         Me.btnBack.Text = "Back"
-        Me.btnBack.UseVisualStyleBackColor = True
+        Me.btnBack.UseVisualStyleBackColor = False
         '
         'btnResSearch
         '
+        Me.btnResSearch.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnResSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnResSearch.ForeColor = System.Drawing.Color.Khaki
         Me.btnResSearch.Location = New System.Drawing.Point(187, 386)
         Me.btnResSearch.Name = "btnResSearch"
         Me.btnResSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnResSearch.TabIndex = 27
         Me.btnResSearch.Text = "Search"
-        Me.btnResSearch.UseVisualStyleBackColor = True
+        Me.btnResSearch.UseVisualStyleBackColor = False
         '
         'txtResSearch
         '
@@ -253,6 +262,7 @@ Partial Class ViewReservations
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(659, 428)
         Me.Controls.Add(Me.txtCustID)
         Me.Controls.Add(Me.Label10)

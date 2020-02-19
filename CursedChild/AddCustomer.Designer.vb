@@ -117,6 +117,7 @@ Partial Class AddCustomer
         'cmbTitle
         '
         Me.cmbTitle.FormattingEnabled = True
+        Me.cmbTitle.Items.AddRange(New Object() {"Mr.", "Mrs.", "Miss", "Dr."})
         Me.cmbTitle.Location = New System.Drawing.Point(75, 38)
         Me.cmbTitle.Name = "cmbTitle"
         Me.cmbTitle.Size = New System.Drawing.Size(121, 21)
@@ -174,26 +175,33 @@ Partial Class AddCustomer
         '
         'btnAdd
         '
+        Me.btnAdd.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnAdd.ForeColor = System.Drawing.Color.Khaki
         Me.btnAdd.Location = New System.Drawing.Point(75, 221)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(121, 23)
         Me.btnAdd.TabIndex = 39
         Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
+        Me.btnAdd.UseVisualStyleBackColor = False
         '
         'btnBack
         '
+        Me.btnBack.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBack.ForeColor = System.Drawing.Color.Khaki
         Me.btnBack.Location = New System.Drawing.Point(75, 250)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(121, 23)
         Me.btnBack.TabIndex = 40
         Me.btnBack.Text = "Back"
-        Me.btnBack.UseVisualStyleBackColor = True
+        Me.btnBack.UseVisualStyleBackColor = False
         '
         'AddCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(218, 286)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnAdd)

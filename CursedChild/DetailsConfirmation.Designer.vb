@@ -28,6 +28,7 @@ Partial Class DetailsConfirmation
         Me.txtTicketDetails = New System.Windows.Forms.TextBox()
         Me.lblTotal = New System.Windows.Forms.Label()
         Me.btnReserve = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -67,7 +68,7 @@ Partial Class DetailsConfirmation
         'lblTotal
         '
         Me.lblTotal.AutoSize = True
-        Me.lblTotal.Location = New System.Drawing.Point(12, 212)
+        Me.lblTotal.Location = New System.Drawing.Point(545, 211)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(34, 13)
         Me.lblTotal.TabIndex = 4
@@ -75,18 +76,35 @@ Partial Class DetailsConfirmation
         '
         'btnReserve
         '
-        Me.btnReserve.Location = New System.Drawing.Point(299, 231)
+        Me.btnReserve.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnReserve.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnReserve.ForeColor = System.Drawing.Color.Khaki
+        Me.btnReserve.Location = New System.Drawing.Point(12, 206)
         Me.btnReserve.Name = "btnReserve"
         Me.btnReserve.Size = New System.Drawing.Size(75, 23)
         Me.btnReserve.TabIndex = 5
         Me.btnReserve.Text = "Reserve"
-        Me.btnReserve.UseVisualStyleBackColor = True
+        Me.btnReserve.UseVisualStyleBackColor = False
+        '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBack.ForeColor = System.Drawing.Color.Khaki
+        Me.btnBack.Location = New System.Drawing.Point(94, 207)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 6
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = False
         '
         'DetailsConfirmation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(673, 450)
+        Me.BackColor = System.Drawing.Color.Khaki
+        Me.ClientSize = New System.Drawing.Size(673, 238)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnReserve)
         Me.Controls.Add(Me.lblTotal)
         Me.Controls.Add(Me.txtTicketDetails)
@@ -106,4 +124,5 @@ Partial Class DetailsConfirmation
     Friend WithEvents txtTicketDetails As TextBox
     Friend WithEvents lblTotal As Label
     Friend WithEvents btnReserve As Button
+    Friend WithEvents btnBack As Button
 End Class

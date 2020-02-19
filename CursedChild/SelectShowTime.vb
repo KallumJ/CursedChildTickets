@@ -81,6 +81,12 @@
     End Sub
 
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
+        'Validation
+        If lstAvaliable.SelectedItem = "" Then
+            MsgBox("Please select a showtime")
+            Exit Sub
+        End If
+
         'Open the seat selection form
         SelectSeat.Show()
         Me.Hide()

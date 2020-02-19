@@ -6,6 +6,26 @@
         Dim recordPos As Integer
         Dim numOfRecords As Integer
 
+        'Validation
+
+        'Lookup check on HH value
+        If cmbTimeHH.Text <> "19" And cmbTimeHH.Text <> "14" Then
+            MsgBox("Please enter a valid HH time")
+            Exit Sub
+        End If
+
+        'Lookup check on MM value
+        If cmbTimeMM.Text <> "00" And cmbTimeMM.Text <> "30" Then
+            MsgBox("Please enter a valid MM time")
+            Exit Sub
+        End If
+
+        'Lookup check on part
+        If cmbPart.Text <> "1" And cmbPart.Text <> "2" Then
+            MsgBox("Please enter a valid part number")
+            Exit Sub
+        End If
+
         'Open the file
         FileOpen(1, showtimesFile, OpenMode.Random,,, Len(showtimeRecord))
 
@@ -63,6 +83,9 @@
     Private Sub AddShowTimes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Update ID
         updateShowID()
+
+        'Sets the minimum date to the current date
+        datDate.MinDate = System.DateTime.Today
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
