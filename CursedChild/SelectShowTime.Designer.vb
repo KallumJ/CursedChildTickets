@@ -26,6 +26,7 @@ Partial Class SelectShowTime
         Me.lstAvaliable = New System.Windows.Forms.ListBox()
         Me.btnContinue = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnNext = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'calCalendar
@@ -64,12 +65,25 @@ Partial Class SelectShowTime
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Select a date and choose a showtime:"
         '
+        'btnNext
+        '
+        Me.btnNext.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnNext.ForeColor = System.Drawing.Color.Khaki
+        Me.btnNext.Location = New System.Drawing.Point(16, 189)
+        Me.btnNext.Name = "btnNext"
+        Me.btnNext.Size = New System.Drawing.Size(123, 23)
+        Me.btnNext.TabIndex = 4
+        Me.btnNext.Text = "Next Available Time"
+        Me.btnNext.UseVisualStyleBackColor = False
+        '
         'SelectShowTime
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(527, 224)
+        Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.lstAvaliable)
@@ -85,4 +99,5 @@ Partial Class SelectShowTime
     Friend WithEvents lstAvaliable As ListBox
     Friend WithEvents btnContinue As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnNext As Button
 End Class
