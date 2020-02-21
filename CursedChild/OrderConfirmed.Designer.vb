@@ -23,6 +23,7 @@ Partial Class OrderConfirmed
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OrderConfirmed))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblTimer = New System.Windows.Forms.Label()
         Me.timTimer = New System.Windows.Forms.Timer(Me.components)
@@ -59,6 +60,7 @@ Partial Class OrderConfirmed
         Me.ClientSize = New System.Drawing.Size(231, 98)
         Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "OrderConfirmed"
         Me.Text = "OrderConfirmed"
         Me.ResumeLayout(False)

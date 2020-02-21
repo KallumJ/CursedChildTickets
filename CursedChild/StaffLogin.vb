@@ -3,47 +3,33 @@
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
         'Declare variables
-        Dim numOfRecords As Integer
-        Dim usersFile As String = Application.StartupPath & "/users.dat"
+        Dim usersFile As String = Application.StartupPath & "/users.txt"
         Dim userFound As Boolean = False
-        Dim recordPos As Integer
-        Dim username As String
-        Dim password As String
+        Dim record As String
+        Dim fields() as String
 
-        'Open the users file00
-        FileOpen(1, usersFile, OpenMode.Random,,, Len(userRecord))
+        'Open the users file
+        If Dir(usersFile) <> "" Then
 
-        'Calculate number of records
-        numOfRecords = LOF(1) / Len(userRecord)
+            FileOpen(1, usersFile, OpenMode.Input)
 
+            Do While Not EOF(1)
+                'Read the record
+                record = LineInput(1)
 
-        For recordPos = 1 To numOfRecords
-            'Read the record
-            FileGet(1, userRecord, recordPos)
+                'Split the record
+                fields = Split(record, "*")
 
-            'Read the username
-            username = userRecord.username
-            Do While Microsoft.VisualBasic.Right(username, 1) = " "
-                username = Mid(username, 1, Len(username) - 1)
+                'Check entered username and password match the record
+                If txtUsername.Text = fields(1) And txtPassword.Text = fields(2) Then
+                    'If they do, login
+                    userFound = True
+                    StaffArea.Show()
+                    Me.Close()
+                End If
+
             Loop
-
-            'Read the password
-            password = userRecord.password
-            Do While Microsoft.VisualBasic.Right(password, 1) = " "
-                password = Mid(password, 1, Len(password) - 1)
-            Loop
-
-            'Check entered username and password match the record
-            If txtUsername.Text = username And txtPassword.Text = password Then
-                'If they do, login
-                FileClose(1)
-                userFound = True
-                StaffArea.Show()
-                Me.Close()
-            End If
-
-
-        Next recordPos
+        End If
 
         'If no match is found then
         If userFound = False Then
@@ -68,5 +54,9 @@
         If e.KeyCode = Keys.Enter Then
             btnLogin_Click(Me, e)
         End If
+    End Sub
+
+    Private Sub StaffLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

@@ -22,6 +22,7 @@ Partial Class ViewStaffSeatPlan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewStaffSeatPlan))
         Me.panSeats = New System.Windows.Forms.Panel()
         Me.cmbArea = New System.Windows.Forms.ComboBox()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -64,6 +65,7 @@ Partial Class ViewStaffSeatPlan
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.cmbArea)
         Me.Controls.Add(Me.panSeats)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewStaffSeatPlan"
         Me.Text = "ViewStaffSeatPlan"
         Me.ResumeLayout(False)

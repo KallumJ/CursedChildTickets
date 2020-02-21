@@ -103,6 +103,86 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property slideshow0() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("slideshow0", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property slideshow1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("slideshow1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property slideshow2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("slideshow2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property slideshow3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("slideshow3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property slideshow4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("slideshow4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property slideshow5() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("slideshow5", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property slideshow6() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("slideshow6", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property slideshow7() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("slideshow7", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Stalls() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Stalls", resourceCulture)

@@ -22,6 +22,7 @@ Partial Class DetailsConfirmation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DetailsConfirmation))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtCustomerDetails = New System.Windows.Forms.TextBox()
@@ -95,7 +96,7 @@ Partial Class DetailsConfirmation
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
         Me.btnBack.TabIndex = 6
-        Me.btnBack.Text = "Back"
+        Me.btnBack.Text = "Edit"
         Me.btnBack.UseVisualStyleBackColor = False
         '
         'DetailsConfirmation
@@ -111,6 +112,7 @@ Partial Class DetailsConfirmation
         Me.Controls.Add(Me.txtCustomerDetails)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DetailsConfirmation"
         Me.Text = "DetailsConfirmation"
         Me.ResumeLayout(False)

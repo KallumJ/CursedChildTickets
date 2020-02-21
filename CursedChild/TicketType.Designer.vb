@@ -22,9 +22,11 @@ Partial Class TicketType
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TicketType))
         Me.btnConsecutive = New System.Windows.Forms.Button()
         Me.btnNonConsecutive = New System.Windows.Forms.Button()
         Me.btnSinglePart = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnConsecutive
@@ -63,15 +65,29 @@ Partial Class TicketType
         Me.btnSinglePart.Text = "Single Part Only"
         Me.btnSinglePart.UseVisualStyleBackColor = False
         '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCancel.ForeColor = System.Drawing.Color.Khaki
+        Me.btnCancel.Location = New System.Drawing.Point(12, 228)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(194, 56)
+        Me.btnCancel.TabIndex = 3
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        '
         'TicketType
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(226, 208)
+        Me.ClientSize = New System.Drawing.Size(226, 297)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSinglePart)
         Me.Controls.Add(Me.btnNonConsecutive)
         Me.Controls.Add(Me.btnConsecutive)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TicketType"
         Me.Text = "TicketType"
         Me.ResumeLayout(False)
@@ -81,4 +97,5 @@ Partial Class TicketType
     Friend WithEvents btnConsecutive As Button
     Friend WithEvents btnNonConsecutive As Button
     Friend WithEvents btnSinglePart As Button
+    Friend WithEvents btnCancel As Button
 End Class

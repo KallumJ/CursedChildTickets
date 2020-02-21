@@ -7,20 +7,18 @@
     End Sub
 
     Private Sub btnFAQ_Click(sender As Object, e As EventArgs) Handles btnFAQ.Click
-        MsgBox("PROTOTYPE, NOT YET IMPLEMENTED")
 
         'Open FAQ Form
-        'FAQ.Show()
-        'Me.Hide()
+        FAQ.Show()
+        Me.Hide()
 
     End Sub
 
     Private Sub btnShowInfo_Click(sender As Object, e As EventArgs) Handles btnShowInfo.Click
-        MsgBox("PROTOTYPE, NOT YET IMPLEMENTED")
 
         'Open Show Info Form
-        'ShowInfo.Show()
-        'Me.Hide()
+        ShowInfo.Show()
+        Me.Hide()
 
     End Sub
 

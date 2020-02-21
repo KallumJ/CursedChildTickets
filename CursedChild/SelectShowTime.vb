@@ -173,4 +173,10 @@
         End If
 
     End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        'Return to main menu
+        MainMenu.Show()
+        Me.Close()
+    End Sub
 End Class

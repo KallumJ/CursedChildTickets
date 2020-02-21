@@ -47,6 +47,12 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -239,8 +245,17 @@
     <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddReservations.resx">
+      <DependentUpon>AddReservations.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddReservedSeats.resx">
+      <DependentUpon>AddReservedSeats.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddShowTimes.resx">
       <DependentUpon>AddShowTimes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStaff.resx">
+      <DependentUpon>AddStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BasketOverview.resx">
       <DependentUpon>BasketOverview.vb</DependentUpon>
@@ -250,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetailsConfirmation.resx">
       <DependentUpon>DetailsConfirmation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAQ.resx">
+      <DependentUpon>FAQ.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
@@ -272,6 +290,9 @@
     <EmbeddedResource Include="SelectShowTime.resx">
       <DependentUpon>SelectShowTime.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ShowInfo.resx">
+      <DependentUpon>ShowInfo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StaffArea.resx">
       <DependentUpon>StaffArea.vb</DependentUpon>
     </EmbeddedResource>
@@ -287,14 +308,21 @@
     <EmbeddedResource Include="ViewReservations.resx">
       <DependentUpon>ViewReservations.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewReservedSeats.resx">
+      <DependentUpon>ViewReservedSeats.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ViewShowTimes.resx">
       <DependentUpon>ViewShowTimes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewStaff.resx">
+      <DependentUpon>ViewStaff.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewStaffSeatPlan.resx">
       <DependentUpon>ViewStaffSeatPlan.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -342,6 +370,21 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+    <None Include="Resources\slideshow7.jpg" />
+    <None Include="Resources\slideshow6.jpg" />
+    <None Include="Resources\slideshow5.jpg" />
+    <None Include="Resources\slideshow4.jpg" />
+    <None Include="Resources\slideshow3.jpg" />
+    <None Include="Resources\slideshow2.jpg" />
+    <None Include="Resources\slideshow1.jpg" />
+    <None Include="Resources\slideshow0.jpg" />
+    <None Include="Resources\Image0.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

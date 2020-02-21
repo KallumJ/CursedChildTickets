@@ -22,6 +22,7 @@ Partial Class BasketOverview
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BasketOverview))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBasket = New System.Windows.Forms.TextBox()
         Me.btnEditBasket = New System.Windows.Forms.Button()
@@ -79,6 +80,7 @@ Partial Class BasketOverview
         Me.Controls.Add(Me.btnEditBasket)
         Me.Controls.Add(Me.txtBasket)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BasketOverview"
         Me.Text = "BasketOverview"
         Me.ResumeLayout(False)

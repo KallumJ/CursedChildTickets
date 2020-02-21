@@ -22,6 +22,7 @@ Partial Class SeatPlan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SeatPlan))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbArea = New System.Windows.Forms.ComboBox()
         Me.picArea = New System.Windows.Forms.PictureBox()
@@ -89,6 +90,7 @@ Partial Class SeatPlan
         Me.Controls.Add(Me.picArea)
         Me.Controls.Add(Me.cmbArea)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SeatPlan"
         Me.Text = "SeatPlan"
         CType(Me.picArea, System.ComponentModel.ISupportInitialize).EndInit()

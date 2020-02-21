@@ -100,6 +100,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.btnFAQ)
         Me.Controls.Add(Me.btnStaffLogin)
         Me.Cursor = System.Windows.Forms.Cursors.Default
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainMenu"
         Me.Text = "Main Menu"
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()

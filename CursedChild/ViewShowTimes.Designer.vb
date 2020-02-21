@@ -22,6 +22,7 @@ Partial Class ViewShowTimes
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewShowTimes))
         Me.btnShowAdd = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
@@ -257,6 +258,7 @@ Partial Class ViewShowTimes
         Me.Controls.Add(Me.txtShowSearch)
         Me.Controls.Add(Me.lstShowtimes)
         Me.Controls.Add(Me.btnShowAdd)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewShowTimes"
         Me.Text = "ViewShowTimes"
         Me.ResumeLayout(False)

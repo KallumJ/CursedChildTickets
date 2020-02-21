@@ -18,4 +18,10 @@
         'Add string to basket textbox
         txtBasket.Text = ticketTxtString
     End Sub
+
+    Private Sub btnEditBasket_Click(sender As Object, e As EventArgs) Handles btnEditBasket.Click
+        'Return to beginning of booking process
+        SelectShowTime.Show()
+        Me.Close()
+    End Sub
 End Class

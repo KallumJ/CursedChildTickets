@@ -22,6 +22,7 @@ Partial Class CustomerDetails
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CustomerDetails))
         Me.btnContinue = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -37,6 +38,7 @@ Partial Class CustomerDetails
         Me.txtPhone = New System.Windows.Forms.TextBox()
         Me.txtSurname = New System.Windows.Forms.TextBox()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnContinue
@@ -165,12 +167,25 @@ Partial Class CustomerDetails
         Me.txtFirstName.Size = New System.Drawing.Size(121, 20)
         Me.txtFirstName.TabIndex = 26
         '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCancel.ForeColor = System.Drawing.Color.Khaki
+        Me.btnCancel.Location = New System.Drawing.Point(72, 225)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(121, 23)
+        Me.btnCancel.TabIndex = 42
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        '
         'CustomerDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(218, 234)
+        Me.ClientSize = New System.Drawing.Size(218, 278)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
@@ -186,6 +201,7 @@ Partial Class CustomerDetails
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.txtSurname)
         Me.Controls.Add(Me.txtFirstName)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CustomerDetails"
         Me.Text = "CustomerDetails"
         Me.ResumeLayout(False)
@@ -207,4 +223,5 @@ Partial Class CustomerDetails
     Friend WithEvents txtPhone As TextBox
     Friend WithEvents txtSurname As TextBox
     Friend WithEvents txtFirstName As TextBox
+    Friend WithEvents btnCancel As Button
 End Class

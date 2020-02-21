@@ -22,9 +22,85 @@ Partial Class FAQ
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FAQ))
+        Me.btnBack = New System.Windows.Forms.Button()
+        Me.Question = New System.Windows.Forms.Label()
+        Me.cmbQuestion = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtAnswer = New System.Windows.Forms.RichTextBox()
+        Me.SuspendLayout()
+        '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBack.ForeColor = System.Drawing.Color.Khaki
+        Me.btnBack.Location = New System.Drawing.Point(713, 12)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 0
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = False
+        '
+        'Question
+        '
+        Me.Question.AutoSize = True
+        Me.Question.Location = New System.Drawing.Point(12, 22)
+        Me.Question.Name = "Question"
+        Me.Question.Size = New System.Drawing.Size(52, 13)
+        Me.Question.TabIndex = 1
+        Me.Question.Text = "Question:"
+        '
+        'cmbQuestion
+        '
+        Me.cmbQuestion.FormattingEnabled = True
+        Me.cmbQuestion.Items.AddRange(New Object() {"How much do tickets cost?", "What happens if I need to return or cancel my tickets?", "Are there discounts available for groups and schools?", "Why is it in two parts?", "What is the running time for the play?", "Will the cast always be the same?"})
+        Me.cmbQuestion.Location = New System.Drawing.Point(13, 41)
+        Me.cmbQuestion.Name = "cmbQuestion"
+        Me.cmbQuestion.Size = New System.Drawing.Size(775, 21)
+        Me.cmbQuestion.TabIndex = 2
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 76)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(45, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Answer:"
+        '
+        'txtAnswer
+        '
+        Me.txtAnswer.BackColor = System.Drawing.Color.Khaki
+        Me.txtAnswer.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAnswer.Location = New System.Drawing.Point(15, 93)
+        Me.txtAnswer.Name = "txtAnswer"
+        Me.txtAnswer.Size = New System.Drawing.Size(773, 345)
+        Me.txtAnswer.TabIndex = 4
+        Me.txtAnswer.Text = ""
+        '
+        'FAQ
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.txtAnswer)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cmbQuestion)
+        Me.Controls.Add(Me.Question)
+        Me.Controls.Add(Me.btnBack)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "FAQ"
         Me.Text = "FAQ"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
+
+    Friend WithEvents btnBack As Button
+    Friend WithEvents Question As Label
+    Friend WithEvents cmbQuestion As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtAnswer As RichTextBox
 End Class

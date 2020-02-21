@@ -42,6 +42,46 @@ CursedChild
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:CursedChild.My.Resources.Resources.slideshow0">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.slideshow1">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.slideshow2">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.slideshow3">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.slideshow4">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.slideshow5">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.slideshow6">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:CursedChild.My.Resources.Resources.slideshow7">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:CursedChild.My.Resources.Resources.Stalls">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

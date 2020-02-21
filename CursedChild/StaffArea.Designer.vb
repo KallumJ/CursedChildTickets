@@ -22,6 +22,7 @@ Partial Class StaffArea
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StaffArea))
         Me.btnViewCustomers = New System.Windows.Forms.Button()
         Me.btnViewReservations = New System.Windows.Forms.Button()
         Me.btnViewShowtimes = New System.Windows.Forms.Button()
@@ -128,6 +129,7 @@ Partial Class StaffArea
         Me.Controls.Add(Me.btnViewShowtimes)
         Me.Controls.Add(Me.btnViewReservations)
         Me.Controls.Add(Me.btnViewCustomers)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "StaffArea"
         Me.Text = "StaffArea"
         Me.ResumeLayout(False)

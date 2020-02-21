@@ -22,11 +22,13 @@ Partial Class SelectShowTime
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SelectShowTime))
         Me.calCalendar = New System.Windows.Forms.MonthCalendar()
         Me.lstAvaliable = New System.Windows.Forms.ListBox()
         Me.btnContinue = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnNext = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'calCalendar
@@ -77,17 +79,31 @@ Partial Class SelectShowTime
         Me.btnNext.Text = "Next Available Time"
         Me.btnNext.UseVisualStyleBackColor = False
         '
+        'btnCancel
+        '
+        Me.btnCancel.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCancel.ForeColor = System.Drawing.Color.Khaki
+        Me.btnCancel.Location = New System.Drawing.Point(145, 189)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(98, 23)
+        Me.btnCancel.TabIndex = 5
+        Me.btnCancel.Text = "Cancel"
+        Me.btnCancel.UseVisualStyleBackColor = False
+        '
         'SelectShowTime
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(527, 224)
+        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.lstAvaliable)
         Me.Controls.Add(Me.calCalendar)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SelectShowTime"
         Me.Text = "SelectShowTime"
         Me.ResumeLayout(False)
@@ -100,4 +116,5 @@ Partial Class SelectShowTime
     Friend WithEvents btnContinue As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents btnNext As Button
+    Friend WithEvents btnCancel As Button
 End Class

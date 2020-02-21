@@ -22,6 +22,7 @@ Partial Class SelectSeat
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SelectSeat))
         Me.btnViewSeatPlan = New System.Windows.Forms.Button()
         Me.cmbArea = New System.Windows.Forms.ComboBox()
         Me.cmbRow = New System.Windows.Forms.ComboBox()
@@ -31,6 +32,7 @@ Partial Class SelectSeat
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnContinue = New System.Windows.Forms.Button()
         Me.btnAuto = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnViewSeatPlan
@@ -114,12 +116,25 @@ Partial Class SelectSeat
         Me.btnAuto.Text = "Let the system choose the best avaliable seat"
         Me.btnAuto.UseVisualStyleBackColor = True
         '
+        'btnBack
+        '
+        Me.btnBack.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnBack.ForeColor = System.Drawing.Color.Khaki
+        Me.btnBack.Location = New System.Drawing.Point(586, 12)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(91, 23)
+        Me.btnBack.TabIndex = 9
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = False
+        '
         'SelectSeat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(689, 450)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnAuto)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.Label3)
@@ -129,6 +144,7 @@ Partial Class SelectSeat
         Me.Controls.Add(Me.cmbRow)
         Me.Controls.Add(Me.cmbArea)
         Me.Controls.Add(Me.btnViewSeatPlan)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SelectSeat"
         Me.Text = "SelectSeat"
         Me.ResumeLayout(False)
@@ -145,4 +161,5 @@ Partial Class SelectSeat
     Friend WithEvents Label3 As Label
     Friend WithEvents btnContinue As Button
     Friend WithEvents btnAuto As Button
+    Friend WithEvents btnBack As Button
 End Class

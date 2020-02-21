@@ -24,11 +24,11 @@
     End Sub
 
     Private Sub btnViewStaff_Click(sender As Object, e As EventArgs) Handles btnViewStaff.Click
-        MsgBox("PROTOTYPE NOT YET IMPLEMENTED")
 
         'Open the view staff form
-        'ViewStaff.Show()
-        'Me.Close()
+        ViewStaff.Show()
+        Me.Close()
+
     End Sub
 
     Private Sub btnViewReseervedSeats_Click(sender As Object, e As EventArgs) Handles btnViewReseervedSeats.Click
