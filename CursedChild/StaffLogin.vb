@@ -3,33 +3,42 @@
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
         'Declare variables
-        Dim usersFile As String = Application.StartupPath & "/users.txt"
+        Dim usersFile As String = Application.StartupPath & "/users.dat"
         Dim userFound As Boolean = False
-        Dim record As String
-        Dim fields() as String
+        Dim numberOfRecords As Integer
+        Dim recordPos As Integer
+        Dim username As String
+        Dim password As String
 
-        'Open the users file
-        If Dir(usersFile) <> "" Then
+        'Open the file
+        FileOpen(1, usersFile, OpenMode.Random,,, Len(userRecord))
 
-            FileOpen(1, usersFile, OpenMode.Input)
+        'Determine number of records
+        numberOfRecords = LOF(1) / Len(userRecord)
 
-            Do While Not EOF(1)
-                'Read the record
-                record = LineInput(1)
+        'Read in the records
+        For recordPos = 1 To numberOfRecords
+            FileGet(1, userRecord, recordPos)
 
-                'Split the record
-                fields = Split(record, "*")
-
-                'Check entered username and password match the record
-                If txtUsername.Text = fields(1) And txtPassword.Text = fields(2) Then
-                    'If they do, login
-                    userFound = True
-                    StaffArea.Show()
-                    Me.Close()
-                End If
-
+            'Shorten the fields
+            username = userRecord.username
+            Do While Microsoft.VisualBasic.Right(username, 1) = " "
+                username = Mid(username, 1, Len(username) - 1)
             Loop
-        End If
+
+            password = userRecord.password
+            Do While Microsoft.VisualBasic.Right(password, 1) = " "
+                password = Mid(password, 1, Len(password) - 1)
+            Loop
+
+            'Check entered username and password match the record
+            If txtUsername.Text = username And txtPassword.Text = password And userRecord.staffID > 0 Then
+                'If they do, login
+                userFound = True
+                StaffArea.Show()
+                Me.Close()
+            End If
+        Next
 
         'If no match is found then
         If userFound = False Then

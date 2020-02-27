@@ -30,10 +30,11 @@ Partial Class ViewStaff
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
         Me.btnCustSearch = New System.Windows.Forms.Button()
-        Me.txtShowSearch = New System.Windows.Forms.TextBox()
+        Me.txtStaffSearch = New System.Windows.Forms.TextBox()
         Me.lstStaff = New System.Windows.Forms.ListBox()
         Me.btnShowAdd = New System.Windows.Forms.Button()
         Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label15
@@ -110,13 +111,13 @@ Partial Class ViewStaff
         Me.btnCustSearch.Text = "Search"
         Me.btnCustSearch.UseVisualStyleBackColor = False
         '
-        'txtShowSearch
+        'txtStaffSearch
         '
-        Me.txtShowSearch.Location = New System.Drawing.Point(12, 386)
-        Me.txtShowSearch.Name = "txtShowSearch"
-        Me.txtShowSearch.Size = New System.Drawing.Size(181, 20)
-        Me.txtShowSearch.TabIndex = 62
-        Me.txtShowSearch.Text = "Please enter a Username to search"
+        Me.txtStaffSearch.Location = New System.Drawing.Point(12, 386)
+        Me.txtStaffSearch.Name = "txtStaffSearch"
+        Me.txtStaffSearch.Size = New System.Drawing.Size(181, 20)
+        Me.txtStaffSearch.TabIndex = 62
+        Me.txtStaffSearch.Text = "Please enter a Username to search"
         '
         'lstStaff
         '
@@ -145,12 +146,22 @@ Partial Class ViewStaff
         Me.txtUsername.Size = New System.Drawing.Size(200, 20)
         Me.txtUsername.TabIndex = 70
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(344, 82)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(55, 13)
+        Me.Label1.TabIndex = 71
+        Me.Label1.Text = "Username"
+        '
         'ViewStaff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(645, 450)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtUsername)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtStaffID)
@@ -159,7 +170,7 @@ Partial Class ViewStaff
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnCustSearch)
-        Me.Controls.Add(Me.txtShowSearch)
+        Me.Controls.Add(Me.txtStaffSearch)
         Me.Controls.Add(Me.lstStaff)
         Me.Controls.Add(Me.btnShowAdd)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -177,8 +188,9 @@ Partial Class ViewStaff
     Friend WithEvents Label2 As Label
     Friend WithEvents btnBack As Button
     Friend WithEvents btnCustSearch As Button
-    Friend WithEvents txtShowSearch As TextBox
+    Friend WithEvents txtStaffSearch As TextBox
     Friend WithEvents lstStaff As ListBox
     Friend WithEvents btnShowAdd As Button
     Friend WithEvents txtUsername As TextBox
+    Friend WithEvents Label1 As Label
 End Class

@@ -32,7 +32,7 @@ Partial Class ViewStaffSeatPlan
         '
         Me.panSeats.Location = New System.Drawing.Point(12, 38)
         Me.panSeats.Name = "panSeats"
-        Me.panSeats.Size = New System.Drawing.Size(1415, 684)
+        Me.panSeats.Size = New System.Drawing.Size(1771, 684)
         Me.panSeats.TabIndex = 0
         '
         'cmbArea
@@ -61,7 +61,7 @@ Partial Class ViewStaffSeatPlan
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(1439, 734)
+        Me.ClientSize = New System.Drawing.Size(1795, 734)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.cmbArea)
         Me.Controls.Add(Me.panSeats)

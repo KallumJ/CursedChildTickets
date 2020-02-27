@@ -56,7 +56,7 @@
             For i = 1 To 10
                 seat = Convert.ToChar(i + 64)
 
-                For j = 1 To 30
+                For j = 1 To 36
 
                     'Assign a seat number
                     seatNum = j
@@ -90,7 +90,7 @@
             For i = 1 To 8
                 seat = Convert.ToChar(i + 64)
 
-                For j = 1 To 30
+                For j = 1 To 43
 
                     'Assign a seat number
                     seatNum = j
@@ -126,7 +126,7 @@
 
                 'No I
                 If seat <> "I" Then
-                    For j = 1 To 30
+                    For j = 1 To 28
 
                         'Assign a seat number
                         seatNum = j

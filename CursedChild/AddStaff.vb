@@ -1,8 +1,10 @@
 ﻿Public Class AddStaff
-
+    Dim userFile As String = Application.StartupPath & "/users.dat"
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        'Declare variables
-        Dim userFile As String = Application.StartupPath & "/users.txt"
+        'Declare variable
+        Dim numOfRecords As Integer
+        Dim recordPos As Integer
+
 
         'Validation
 
@@ -13,10 +15,21 @@
         End If
 
         'Open the file
-        FileOpen(1, userFile, OpenMode.Append)
+        FileOpen(1, userFile, OpenMode.Random,,, Len(userRecord))
 
-        'Write the record to the file as a variable length record
-        PrintLine(1, txtStaffID.Text & "*" & txtUsername.Text & "*" & txtPassword.Text & "*")
+        'Determine poisition of the next record
+        numOfRecords = LOF(1) / Len(userRecord)
+        recordPos = numOfRecords + 1
+
+        'Read in the entered data
+        With userRecord
+            .staffID = txtStaffID.Text
+            .username = txtUsername.Text
+            .password = txtPassword.Text
+        End With
+
+        'Write the record to file
+        FilePut(1, userRecord, recordPos)
 
         'Close the file
         FileClose(1)
@@ -35,38 +48,21 @@
 
     Private Sub updateStaffID()
         'Declare variables
-        Dim userFile As String = Application.StartupPath & "/users.txt"
-        Dim record As String
-        Dim fields() As String
-        Dim id As String
-        Dim staffID As Integer
+        Dim numOfrecords As Integer
+        Dim recordPos As Integer
 
-        'Check the file exists
-        If Dir(userFile) <> "" Then
-            'Open the file
-            FileOpen(1, userFile, OpenMode.Input)
+        'Open the file
+        FileOpen(1, userFile, OpenMode.Random,,, Len(userRecord))
 
-            'Loop through all the records
-            Do While Not EOF(1)
-                'Read in a record
-                record = LineInput(1)
+        'Determine record position
+        numOfrecords = LOF(1) / Len(userRecord)
+        recordPos = numOfrecords + 1
 
-                fields = Split(record, "*")
+        'Display staff ID
+        txtStaffID.Text = recordPos
 
-                id = fields(0)
-
-            Loop
-
-            'Close the file
-            FileClose(1)
-
-        End If
-
-        'Evaluate ID
-        staffID = Val(id) + 1
-
-        'Display staffID
-        txtStaffID.Text = staffID
+        'Close the file
+        FileClose(1)
 
     End Sub
 
