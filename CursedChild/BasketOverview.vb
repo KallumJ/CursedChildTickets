@@ -12,7 +12,7 @@
         ticketTxtString = "Date: " & SelectShowTime.showtimeDateString & vbNewLine
         ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
         ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
-        ticketTxtString = ticketTxtString & "Seat: " & SelectSeat.seat & vbNewLine
+        'ticketTxtString = ticketTxtString & "Seat: " & SelectSeat.seat & vbNewLine
         ticketTxtString = ticketTxtString & "Price: £" & SelectSeat.price & ".00" & vbNewLine
 
         'Add string to basket textbox

@@ -106,7 +106,7 @@
         ticketTxtString = "Date: " & SelectShowTime.showtimeDateString & vbNewLine
         ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
         ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
-        ticketTxtString = ticketTxtString & "Seat: " & SelectSeat.seat & vbNewLine
+        'ticketTxtString = ticketTxtString & "Seat: " & SelectSeat.seat & vbNewLine
 
         lblTotal.Text = "Total: £" & SelectSeat.price & ".00"
 

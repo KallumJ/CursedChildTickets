@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class SelectSeat
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,14 @@ Partial Class SelectSeat
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SelectSeat))
         Me.btnBack = New System.Windows.Forms.Button()
         Me.cmbArea = New System.Windows.Forms.ComboBox()
         Me.panSeats = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnBack
@@ -33,7 +35,7 @@ Partial Class SelectSeat
         Me.btnBack.BackColor = System.Drawing.Color.SaddleBrown
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBack.ForeColor = System.Drawing.Color.Khaki
-        Me.btnBack.Location = New System.Drawing.Point(586, 12)
+        Me.btnBack.Location = New System.Drawing.Point(1692, 10)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(91, 23)
         Me.btnBack.TabIndex = 9
@@ -44,7 +46,7 @@ Partial Class SelectSeat
         '
         Me.cmbArea.FormattingEnabled = True
         Me.cmbArea.Items.AddRange(New Object() {"Stalls", "Upper Circle", "Dress Circle", "Balcony"})
-        Me.cmbArea.Location = New System.Drawing.Point(12, 12)
+        Me.cmbArea.Location = New System.Drawing.Point(211, 12)
         Me.cmbArea.Name = "cmbArea"
         Me.cmbArea.Size = New System.Drawing.Size(121, 21)
         Me.cmbArea.TabIndex = 10
@@ -56,12 +58,32 @@ Partial Class SelectSeat
         Me.panSeats.Size = New System.Drawing.Size(1771, 684)
         Me.panSeats.TabIndex = 11
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(12, 15)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(193, 13)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Please select an area of the auditorium:"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(381, 10)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 14
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'SelectSeat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(1795, 734)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.panSeats)
         Me.Controls.Add(Me.cmbArea)
         Me.Controls.Add(Me.btnBack)
@@ -69,9 +91,12 @@ Partial Class SelectSeat
         Me.Name = "SelectSeat"
         Me.Text = "SelectSeat"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnBack As Button
     Friend WithEvents cmbArea As ComboBox
     Friend WithEvents panSeats As Panel
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button1 As Button
 End Class
