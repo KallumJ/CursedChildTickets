@@ -237,6 +237,8 @@
 
                 'Read in the seat block
                 seatsRecord.block = cmbArea.Text
+                seatsRecord.xCoOrd = c.Location.X.ToString()
+                seatsRecord.yCoOrd = c.Location.Y.ToString()
 
                 'Write the record to the file
                 FilePut(1, seatsRecord, recPos)
@@ -245,7 +247,14 @@
             End If
         Next
 
+        MsgBox(seatsRecord.xCoOrd)
+        MsgBox(seatsRecord.yCoOrd)
+
         'Close the file
         FileClose(1)
+    End Sub
+
+    Private Sub ViewStaffSeatPlan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

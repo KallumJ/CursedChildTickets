@@ -28,6 +28,8 @@ Partial Class FAQ
         Me.cmbQuestion = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtAnswer = New System.Windows.Forms.RichTextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnBack
@@ -63,7 +65,7 @@ Partial Class FAQ
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 76)
+        Me.Label1.Location = New System.Drawing.Point(8, 4)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 13)
         Me.Label1.TabIndex = 3
@@ -72,12 +74,22 @@ Partial Class FAQ
         'txtAnswer
         '
         Me.txtAnswer.BackColor = System.Drawing.Color.Khaki
+        Me.txtAnswer.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtAnswer.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAnswer.Location = New System.Drawing.Point(15, 93)
+        Me.txtAnswer.Location = New System.Drawing.Point(0, 0)
         Me.txtAnswer.Name = "txtAnswer"
-        Me.txtAnswer.Size = New System.Drawing.Size(773, 345)
+        Me.txtAnswer.Size = New System.Drawing.Size(792, 365)
         Me.txtAnswer.TabIndex = 4
         Me.txtAnswer.Text = ""
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.txtAnswer)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Location = New System.Drawing.Point(4, 72)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(792, 365)
+        Me.Panel1.TabIndex = 5
         '
         'FAQ
         '
@@ -85,14 +97,15 @@ Partial Class FAQ
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.txtAnswer)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmbQuestion)
         Me.Controls.Add(Me.Question)
         Me.Controls.Add(Me.btnBack)
+        Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FAQ"
         Me.Text = "FAQ"
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -103,4 +116,5 @@ Partial Class FAQ
     Friend WithEvents cmbQuestion As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents txtAnswer As RichTextBox
+    Friend WithEvents Panel1 As Panel
 End Class
