@@ -22,6 +22,20 @@
             custNumOfRecords = LOF(1) / Len(customerRecord)
             custRecordPos = custNumOfRecords + 1
 
+            'Prevent duplication of data
+            For checkPos = 1 To custNumOfRecords
+                FileGet(1, customerRecord, checkPos)
+
+                'If customer is already recorded, exit try
+                If Trim(customerRecord.firstName) = Trim(CustomerDetails.firstName) And Trim(customerRecord.Surname) = Trim(CustomerDetails.surname) Then
+                    custRecordPos = customerRecord.customerID
+                    'Close the file
+                    FileClose(1)
+                    Exit Try
+                End If
+            Next
+
+
             'Read in the entered data
             With customerRecord
                 .customerID = custRecordPos
@@ -33,6 +47,8 @@
                 .address = CustomerDetails.address
                 .Postcode = CustomerDetails.postcode
             End With
+
+
 
             'Write the record to file
             FilePut(1, customerRecord, custRecordPos)
