@@ -255,7 +255,14 @@
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        'Delete the previous seating plan
         Kill(seatsFile)
         MsgBox("Previous seating plan successfully deleted")
+    End Sub
+
+    Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        'Open the staff area
+        StaffArea.Show()
+        Me.Close()
     End Sub
 End Class
