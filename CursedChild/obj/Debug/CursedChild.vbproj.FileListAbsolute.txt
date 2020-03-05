@@ -178,3 +178,46 @@ D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChi
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewReservedSeats.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewStaff.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.CoreCompileInputs.cache
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\bin\Debug\CursedChild.exe.config
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\bin\Debug\CursedChild.exe
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\bin\Debug\CursedChild.pdb
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\bin\Debug\CursedChild.xml
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\bin\Debug\Interop.WMPLib.dll
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbprojAssemblyReference.cache
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\Interop.WMPLib.dll
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.ResolveComReference.cache
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddCustomer.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddReservations.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddReservedSeats.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddShowTimes.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddStaff.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.BasketOverview.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.CustomerDetails.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.DetailsConfirmation.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.FAQ.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.MainMenu.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.Resources.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.OrderConfirmed.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SeatPlan.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SelectSeat.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SelectShowTime.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ShowInfo.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.StaffArea.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.StaffLogin.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.TicketType.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewCustomers.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewReservations.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewReservedSeats.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewShowTimes.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewStaff.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewStaffSeatPlan.resources
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.GenerateResource.cache
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.CoreCompileInputs.cache
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.exe
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.xml
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.pdb
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\bin\Debug\QRCoder.dll
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\bin\Debug\System.Drawing.Common.dll
+C:\Users\Jones\Downloads\Git clone\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.CopyComplete
