@@ -28,6 +28,7 @@ Partial Class SelectSeat
         Me.panSeats = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnContinue = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnBack
@@ -76,12 +77,25 @@ Partial Class SelectSeat
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'btnContinue
+        '
+        Me.btnContinue.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnContinue.ForeColor = System.Drawing.Color.Khaki
+        Me.btnContinue.Location = New System.Drawing.Point(1611, 10)
+        Me.btnContinue.Name = "btnContinue"
+        Me.btnContinue.Size = New System.Drawing.Size(75, 23)
+        Me.btnContinue.TabIndex = 16
+        Me.btnContinue.Text = "Continue"
+        Me.btnContinue.UseVisualStyleBackColor = False
+        '
         'SelectSeat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(1795, 734)
+        Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.panSeats)
@@ -99,4 +113,5 @@ Partial Class SelectSeat
     Friend WithEvents panSeats As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnContinue As Button
 End Class

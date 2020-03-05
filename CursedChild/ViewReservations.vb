@@ -3,6 +3,7 @@
     Dim reservationsFile As String = Application.StartupPath & "/reservations.dat"
     Dim customerFile As String = Application.StartupPath & "/customers.dat"
     Dim showtimeFile As String = Application.StartupPath & "/showtimes.dat"
+    Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
     Dim recordPos As Integer
     Dim customerID As Integer
     Dim firstName As String
@@ -86,6 +87,11 @@
         Dim custNumOfRecords As Integer
         Dim showtimeRecordPos As Integer
         Dim showtimeNumOfRecords As Integer
+        Dim reservedSeatsNumOfRecords As Integer
+        Dim reservedSeatsRecordPos As Integer
+
+        'Clear the seats listbox
+        lstSeats.Items.Clear()
 
         'Find the selected reservation ID
         reservationString = lstReservations.Text
@@ -153,6 +159,39 @@
 
                 'Close the file
                 FileClose(3)
+
+                'Read in the seats
+                FileOpen(4, reservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
+
+                'Determine number of records
+                reservedSeatsNumOfRecords = LOF(4) / Len(reservedSeatsRecord)
+
+                For reservedSeatsRecordPos = 1 To reservedSeatsNumOfRecords
+                    FileGet(4, reservedSeatsRecord, reservedSeatsRecordPos)
+
+                    If reservedSeatsRecord.reservationID = searchID Then
+                        'Add area to the listbox
+                        lstSeats.Items.Add(Trim(reservedSeatsRecord.block) & ":")
+
+                        'Add the seats to the listbox
+                        Dim record As String
+                        Dim seats() As String
+
+                        record = reservedSeatsRecord.seats
+                        seats = Split(record, "*")
+
+
+                        For i = 0 To seats.Length - 1
+                            lstSeats.Items.Add(seats(i))
+                        Next
+
+                        'Exit for as seat was found
+                        Exit For
+                    End If
+                Next
+
+                'Close the file
+                FileClose(4)
 
                 'Exit the loop
                 Exit Do

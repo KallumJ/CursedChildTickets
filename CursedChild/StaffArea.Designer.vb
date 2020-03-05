@@ -113,7 +113,7 @@ Partial Class StaffArea
         Me.btnViewSeatPlan.Name = "btnViewSeatPlan"
         Me.btnViewSeatPlan.Size = New System.Drawing.Size(122, 46)
         Me.btnViewSeatPlan.TabIndex = 6
-        Me.btnViewSeatPlan.Text = "View Seating Plan"
+        Me.btnViewSeatPlan.Text = "Create Seating Plan"
         Me.btnViewSeatPlan.UseVisualStyleBackColor = False
         '
         'StaffArea

@@ -1,6 +1,7 @@
 ﻿Imports System.Text.RegularExpressions
 
 Public Class AddCustomer
+
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'Declare variables
         Dim customerFile As String = Application.StartupPath & "/customers.dat"
@@ -9,7 +10,7 @@ Public Class AddCustomer
 
         'Validation
 
-        'Length check on phone number  
+        'Length check on phone number
         If Len(txtPhone.Text) <> 11 Then
             MsgBox("Please enter a phone number that has 11 numbers")
             Exit Sub
@@ -72,7 +73,6 @@ Public Class AddCustomer
             txtEmail.Text = ""
             txtAddress.Text = ""
             txtPostcode.Text = ""
-
         Catch ex As Exception
             Dim x As String = ex.ToString
             MsgBox("An error occurred: " & x)
@@ -115,4 +115,5 @@ Public Class AddCustomer
         End Try
 
     End Sub
+
 End Class

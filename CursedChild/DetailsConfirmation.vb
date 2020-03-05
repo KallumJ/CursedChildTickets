@@ -7,6 +7,10 @@
         Dim reservationsFile As String = Application.StartupPath & "/reservations.dat"
         Dim resRecordPos As Integer
         Dim resNumOfRecords As Integer
+        Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
+        Dim resSeatsRecordPos As Integer
+        Dim resSeatsNumOfRecords As Integer
+        Dim reservationID As Integer
 
         'Save entered customer details to file
         Try
@@ -56,6 +60,7 @@
 
             'Read in reservation data
             With reservationRecord
+                reservationID = resRecordPos
                 .reservationID = resRecordPos
                 .customerID = custRecordPos
                 .showtimeID = SelectShowTime.showtimeID
@@ -69,9 +74,48 @@
             'Close the file
             FileClose(1)
 
-            'Open order confirmation
-            OrderConfirmed.Show()
-            Me.Close()
+        Catch ex As Exception
+            Dim x As String
+
+            x = ex.ToString
+
+            MsgBox("An error occured: " & x & ". Please contact a system administrator.")
+
+        End Try
+
+        'Write reserved seats to file
+        Try
+            'Open the file
+            FileOpen(1, reservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
+
+            'Determine number of records
+            resSeatsNumOfRecords = LOF(1) / Len(reservedSeatsRecord)
+            resSeatsRecordPos = resSeatsNumOfRecords + 1
+
+            'Create seats string
+            Dim seats As String
+            Dim str As String
+            For Each str In SelectSeat.seat
+                If seats = "" Then
+                    seats = Trim(str)
+                Else
+                    seats = seats & "*" & Trim(str)
+                End If
+            Next
+            seats = seats & "*"
+
+            With reservedSeatsRecord
+                .reservationID = reservationID
+                .showtimeID = SelectShowTime.showtimeID
+                .seats = seats
+                .block = SelectSeat.area
+            End With
+
+            'Write the record to file
+            FilePut(1, reservedSeatsRecord, resSeatsRecordPos)
+
+            'Close the file
+            FileClose(1)
 
         Catch ex As Exception
             Dim x As String
@@ -79,13 +123,25 @@
             x = ex.ToString
 
             MsgBox("An error occured: " & x & ". Please contact a system administrator.")
+
         End Try
+
+        'Open order confirmation
+        OrderConfirmed.Show()
+        Me.Close()
     End Sub
 
     Private Sub DetailsConfirmation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Declare variables
         Dim custTxtString As String
         Dim ticketTxtString As String
+        Dim str As String
+        Dim seats As String
+
+        'Create seats string
+        For Each str In SelectSeat.seat
+            seats = seats & ", " & str
+        Next
 
         'Clear the customer text box
         txtCustomerDetails.Text = ""
@@ -102,13 +158,18 @@
         'Add the file to text box
         txtCustomerDetails.Text = custTxtString
 
-        'Clear the tickets text box
+        'Create the tickets text box
         ticketTxtString = "Date: " & SelectShowTime.showtimeDateString & vbNewLine
         ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
         ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
-        'ticketTxtString = ticketTxtString & "Seat: " & SelectSeat.seat & vbNewLine
+        ticketTxtString = ticketTxtString & "Seat(s): " & seats & vbNewLine
 
-        lblTotal.Text = "Total: £" & SelectSeat.price & ".00"
+        'Create total label
+        If Microsoft.VisualBasic.Right(SelectSeat.price, 1) = 5 Then
+            lblTotal.Text = "Total: £" & SelectSeat.price & "0" & vbNewLine
+        Else
+            lblTotal.Text = "Total: £" & SelectSeat.price & ".00" & vbNewLine
+        End If
 
         'Add the details to the text box
         txtTicketDetails.Text = ticketTxtString

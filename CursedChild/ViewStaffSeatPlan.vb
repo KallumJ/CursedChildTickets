@@ -1,10 +1,10 @@
 ﻿Public Class ViewStaffSeatPlan
+    Dim seatsFile As String = Application.StartupPath & "/seats.dat"
     Private Sub cmbArea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbArea.SelectedIndexChanged
         'Clear the panel
         panSeats.Controls.Clear()
         Dim seat As String
         Dim seatNum As Integer
-        Dim seatsFile As String = Application.StartupPath & "/seats.dat"
 
         If cmbArea.Text = "Stalls" Then
 
@@ -254,7 +254,8 @@
         FileClose(1)
     End Sub
 
-    Private Sub ViewStaffSeatPlan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        Kill(seatsFile)
+        MsgBox("Previous seating plan successfully deleted")
     End Sub
 End Class

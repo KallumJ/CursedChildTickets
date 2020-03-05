@@ -236,7 +236,6 @@ Partial Class ViewReservations
         'lstSeats
         '
         Me.lstSeats.FormattingEnabled = True
-        Me.lstSeats.Items.AddRange(New Object() {"PROTOTYPE", "COMING IN", "THE FUTURE"})
         Me.lstSeats.Location = New System.Drawing.Point(422, 270)
         Me.lstSeats.Name = "lstSeats"
         Me.lstSeats.Size = New System.Drawing.Size(120, 95)

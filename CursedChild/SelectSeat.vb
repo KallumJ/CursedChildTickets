@@ -1,28 +1,17 @@
 ﻿Public Class SelectSeat
     Dim seatsFile As String = Application.StartupPath & "/seats.dat"
+    Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
     Public area As String
     Public seat As New ArrayList
     Public price As String
+    Dim priceTotal As Decimal
+    Dim reserved As New ArrayList
 
-    Private Sub btnViewSeatPlan_Click(sender As Object, e As EventArgs)
-        'Open seating plan
-        SeatPlan.Show()
-        Me.Hide()
-    End Sub
-
-    Private Sub btnContinue_Click(sender As Object, e As EventArgs)
+    Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
 
         'Read in the entered seat details
         area = cmbArea.Text
-
-        'Determine seat price
-        If area = "Stalls" Or area = "Dress Circle" Then
-            price = 65
-        ElseIf area = "Grand Circle" Then
-            price = 50
-        Else
-            price = 30
-        End If
+        price = Str(priceTotal)
 
         'Open the basket overview form
         BasketOverview.Show()
@@ -38,9 +27,14 @@
     Private Sub cmbArea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbArea.SelectedIndexChanged
         'Declare variables
         Dim numOfRecords As Integer
+        Dim reservedSeatsNumOfRecords As Integer
 
         'Clear the panel
         panSeats.Controls.Clear()
+
+        'Clear saved variables
+        seat.Clear()
+        priceTotal = 0
 
         'Display the key
         Dim key As New PictureBox
@@ -106,6 +100,35 @@
                     seatLabel.Visible = False
                 End If
 
+                'Open the reserved seats file
+                FileOpen(2, reservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
+
+                'Determine number of records
+                reservedSeatsNumOfRecords = LOF(2) / Len(reservedSeatsRecord)
+
+                'Read in a rerved seats file record
+                For reservedSeatsRecordPos = 1 To reservedSeatsNumOfRecords
+                    FileGet(2, reservedSeatsRecord, reservedSeatsRecordPos)
+
+                    Dim record As String
+                    Dim splitrecord() As String
+
+                    record = reservedSeatsRecord.seats
+                    splitrecord = Split(record, "*")
+
+                    'Convert array to array list
+                    For i = 0 To splitrecord.Length - 1
+                        reserved.Add(splitrecord(i))
+                    Next
+
+                    'If seat is the one being drawn, and is reserved during this showtime, in this area then
+                    If reserved.Contains(Trim(seatLabel.Name)) = True And reservedSeatsRecord.showtimeID = SelectShowTime.showtimeID And Trim(reservedSeatsRecord.block) = Trim(cmbArea.Text) Then
+                        seatLabel.BackColor = Color.Red
+                    End If
+                Next
+
+                'Close the file
+                FileClose(2)
             End If
         Next
 
@@ -117,6 +140,13 @@
         Dim ctl As Control = sender
         Dim numOfRecords As Integer
 
+        numOfRecords = 0
+
+        'Exit if seat is unavailable
+        If ctl.BackColor = Color.Red Then
+            Exit Sub
+        End If
+
         'If left click, select seat
         If e.Button = Windows.Forms.MouseButtons.Left Then
             ctl.BackColor = Color.LimeGreen
@@ -124,6 +154,43 @@
             If seat.Contains(ctl.Name) <> True Then
                 seat.Add(ctl.Name)
             End If
+
+            'Open the file
+            FileOpen(1, seatsFile, OpenMode.Random,,, Len(seatsRecord))
+
+            'Determine number of records
+            numOfRecords = LOF(1) / Len(seatsRecord)
+
+            'read in the seats records
+            For recordPos = 1 To numOfRecords
+                FileGet(1, seatsRecord, recordPos)
+
+                With seatsRecord
+                    'If seat record matches selected seat
+                    If Trim(.block) = Trim(cmbArea.Text) And Trim(.seat) = Trim(ctl.Name) Then
+                        'Determine price
+                        If .priceBand = "A" Then
+                            priceTotal = priceTotal + 80
+                        ElseIf .priceBand = "B" Then
+                            priceTotal = priceTotal + 67.5
+                        ElseIf .priceBand = "C" Then
+                            priceTotal = priceTotal + 57.5
+                        ElseIf .priceBand = "D" Then
+                            priceTotal = priceTotal + 42.5
+                        ElseIf .priceBand = "E" Then
+                            priceTotal = priceTotal + 20
+                        ElseIf .priceBand = "F" Then
+                            priceTotal = priceTotal + 15
+                        End If
+                        'Exit for, as seat was found
+                        Exit For
+                    End If
+                End With
+
+            Next
+
+            'Close the file
+            FileClose(1)
         ElseIf e.Button = Windows.Forms.MouseButtons.Right Then
             'Open the file
             FileOpen(1, seatsFile, OpenMode.Random,,, Len(seatsRecord))
@@ -136,19 +203,25 @@
                 With seatsRecord
                     'If seat record matches selected seat
                     If Trim(.block) = Trim(cmbArea.Text) And Trim(.seat) = Trim(ctl.Name) Then
-                        'Revert back to previous colour
+                        'Revert back to previous colour and remove price
                         If .priceBand = "A" Then
                             ctl.BackColor = Color.LightPink
+                            priceTotal = priceTotal - 80
                         ElseIf .priceBand = "B" Then
                             ctl.BackColor = Color.Yellow
+                            priceTotal = priceTotal - 67.5
                         ElseIf .priceBand = "C" Then
                             ctl.BackColor = Color.Turquoise
+                            priceTotal = priceTotal - 57.5
                         ElseIf .priceBand = "D" Then
                             ctl.BackColor = Color.Orange
+                            priceTotal = priceTotal - 42.5
                         ElseIf .priceBand = "E" Then
                             ctl.BackColor = Color.DarkBlue
+                            priceTotal = priceTotal - 20
                         ElseIf .priceBand = "F" Then
                             ctl.BackColor = Color.MediumPurple
+                            priceTotal = priceTotal - 15
                         End If
                         'Exit for, as seat was found
                         Exit For
@@ -163,17 +236,6 @@
             seat.Remove(ctl.Name)
         End If
 
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim str As String
-        Dim msg As String
-
-        For Each str In seat
-            msg = msg & " " & str
-        Next
-
-        MsgBox(msg)
     End Sub
 
 End Class

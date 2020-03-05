@@ -26,6 +26,7 @@ Partial Class ViewStaffSeatPlan
         Me.panSeats = New System.Windows.Forms.Panel()
         Me.cmbArea = New System.Windows.Forms.ComboBox()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'panSeats
@@ -56,12 +57,25 @@ Partial Class ViewStaffSeatPlan
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = False
         '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnDelete.ForeColor = System.Drawing.Color.Khaki
+        Me.btnDelete.Location = New System.Drawing.Point(383, 9)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(75, 23)
+        Me.btnDelete.TabIndex = 2
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
         'ViewStaffSeatPlan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(1795, 734)
+        Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.cmbArea)
         Me.Controls.Add(Me.panSeats)
@@ -75,4 +89,5 @@ Partial Class ViewStaffSeatPlan
     Friend WithEvents panSeats As Panel
     Friend WithEvents cmbArea As ComboBox
     Friend WithEvents btnSave As Button
+    Friend WithEvents btnDelete As Button
 End Class

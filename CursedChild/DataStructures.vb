@@ -44,7 +44,9 @@
     'Define Reserved Seats structure
     Public Structure ReservedSeatsType
         Dim reservationID As Integer
-        <VBFixedString(4)> Dim seat As String
+        <VBFixedString(25)> Dim seats As String
+        Dim showtimeID As Integer
+        <VBFixedString(15)> Dim block As String
     End Structure
 
     'Declare Reserved Seats Record
