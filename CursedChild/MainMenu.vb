@@ -1,4 +1,6 @@
-﻿Public Class MainMenu
+﻿Imports EASendMail
+
+Public Class MainMenu
     Private Sub btnStaffLogin_Click(sender As Object, e As EventArgs) Handles btnStaffLogin.Click
         'Open staff login form
         StaffLogin.Show()
@@ -36,4 +38,13 @@
         AxWindowsMediaPlayer1.settings.mute = True
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+
+
+            MsgBox("Success")
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
 End Class

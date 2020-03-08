@@ -1,4 +1,5 @@
 ﻿Imports QRCoder
+Imports EASendMail
 
 Public Class DetailsConfirmation
 
@@ -145,6 +146,45 @@ Public Class DetailsConfirmation
 
             MsgBox("An error occured: " & x & ". Please contact a system administrator.")
 
+        End Try
+
+        'Send email
+
+        Try
+
+            Dim oMail As New SmtpMail("TryIt")
+
+            'Set sender email address
+            oMail.From = "cursedchildtickets@gmail.com"
+
+            'Set recipient email address
+            oMail.To = CustomerDetails.txtEmail.Text
+
+            'Set email subject
+            oMail.Subject = "Cursed Child Tickets Confirmation. Reservation Number: " & resRecordPos
+
+            'Create seats string
+            Dim str2 As String
+            Dim seats2 As String
+            For Each str2 In SelectSeat.seat
+                seats2 = seats2 & " " & str2
+            Next
+
+            'Set email body
+            oMail.TextBody = "Thank you for your reservation to see Harry Potter and the Cursed Child at the Palace Theatre. Your reservation details are as follows:" & vbNewLine & "Reservation Number: " & resRecordPos & vbNewLine & "First Name: " & CustomerDetails.txtFirstName.Text & vbNewLine & "Surname: " & CustomerDetails.txtSurname.Text & vbNewLine & "Address: " & CustomerDetails.txtAddress.Text & vbNewLine & "Area: " & SelectSeat.cmbArea.Text & vbNewLine & "Seats: " & seats2 & vbNewLine & lblTotal.Text & vbNewLine & "Please check the above details and call us if there is anything wrong at 020 7434 0088."
+
+            'Setup smtp server
+            Dim oServer As New SmtpServer("smtp.gmail.com")
+            oServer.User = "cursedchildtickets@gmail.com"
+            oServer.Password = "cursedchild111"
+            oServer.Port = 587
+            oServer.ConnectType = SmtpConnectType.ConnectTryTLS
+
+            Dim oSmtp As New SmtpClient()
+            oSmtp.SendMail(oServer, oMail)
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
         End Try
 
         'Set the document to preview

@@ -28,6 +28,7 @@ Partial Class MainMenu
         Me.btnShowInfo = New System.Windows.Forms.Button()
         Me.btnBook = New System.Windows.Forms.Button()
         Me.AxWindowsMediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -88,12 +89,22 @@ Partial Class MainMenu
         Me.AxWindowsMediaPlayer1.Size = New System.Drawing.Size(691, 397)
         Me.AxWindowsMediaPlayer1.TabIndex = 4
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(713, 111)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.AxWindowsMediaPlayer1)
         Me.Controls.Add(Me.btnBook)
         Me.Controls.Add(Me.btnShowInfo)
@@ -113,4 +124,5 @@ Partial Class MainMenu
     Friend WithEvents btnShowInfo As Button
     Friend WithEvents btnBook As Button
     Friend WithEvents AxWindowsMediaPlayer1 As AxWMPLib.AxWindowsMediaPlayer
+    Friend WithEvents Button1 As Button
 End Class

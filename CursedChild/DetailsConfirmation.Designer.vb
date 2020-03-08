@@ -82,7 +82,7 @@ Partial Class DetailsConfirmation
         Me.btnReserve.BackColor = System.Drawing.Color.SaddleBrown
         Me.btnReserve.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReserve.ForeColor = System.Drawing.Color.Khaki
-        Me.btnReserve.Location = New System.Drawing.Point(12, 206)
+        Me.btnReserve.Location = New System.Drawing.Point(7, 206)
         Me.btnReserve.Name = "btnReserve"
         Me.btnReserve.Size = New System.Drawing.Size(75, 23)
         Me.btnReserve.TabIndex = 5

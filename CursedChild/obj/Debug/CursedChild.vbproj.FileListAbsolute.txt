@@ -41,3 +41,7 @@ D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChi
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.exe
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.xml
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.pdb
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\bin\Debug\BouncyCastle.Crypto.dll
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\bin\Debug\MimeKit.dll
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\bin\Debug\MimeKit.xml
+D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\bin\Debug\EASendMail.dll
