@@ -122,9 +122,12 @@
                     Next
 
                     'If seat is the one being drawn, and is reserved during this showtime, in this area then
-                    If reserved.Contains(Trim(seatLabel.Name)) = True And reservedSeatsRecord.showtimeID = SelectShowTime.showtimeID And Trim(reservedSeatsRecord.block) = Trim(cmbArea.Text) Then
+                    If reserved.Contains(Trim(seatLabel.Name)) = True And Trim(reservedSeatsRecord.showtimeID) = Trim(SelectShowTime.showtimeID) And Trim(reservedSeatsRecord.block) = Trim(cmbArea.Text) And reservedSeatsRecord.reservationID > 0 Then
                         seatLabel.BackColor = Color.Red
                     End If
+
+                    'Clear the arraylist
+                    reserved.Clear()
                 Next
 
                 'Close the file

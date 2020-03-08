@@ -120,6 +120,7 @@
             Next
             seats = seats & "*"
 
+            'Read in the details
             With reservedSeatsRecord
                 .reservationID = reservationID
                 .showtimeID = SelectShowTime.showtimeID

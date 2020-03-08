@@ -212,6 +212,9 @@
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        'Declare variables
+        Dim numOfRecords As Integer
+
         'Read in fields in record
         With reservationRecord
             .reservationID = -Val(txtResID.Text)
@@ -226,6 +229,34 @@
 
         'Write the record to file
         FilePut(1, reservationRecord, recordPos)
+
+        'Close the file
+        FileClose(1)
+
+        'Open the file
+        FileOpen(1, reservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
+
+        'Determine number of records
+        numOfRecords = LOF(1) / Len(reservedSeatsRecord)
+
+        'Read in the records
+        For recordPos = 1 To numOfRecords
+            FileGet(1, reservedSeatsRecord, recordPos)
+
+            'If seats are for reservation being deleted then
+            If Trim(reservedSeatsRecord.reservationID) = Trim(txtResID.Text) Then
+                'Ammend record
+                With reservedSeatsRecord
+                    .reservationID = -Val(.reservationID)
+                    .showtimeID = .showtimeID
+                    .seats = .seats
+                    .block = .block
+                End With
+
+                'Write the ammended record to file
+                FilePut(1, reservedSeatsRecord, recordPos)
+            End If
+        Next
 
         'Close the file
         FileClose(1)

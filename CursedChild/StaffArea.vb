@@ -32,11 +32,11 @@
     End Sub
 
     Private Sub btnViewReseervedSeats_Click(sender As Object, e As EventArgs) Handles btnViewReseervedSeats.Click
-        MsgBox("PROTOTYPE NOT YET IMPLEMENTED")
 
         'Open the view reserved seats form
-        'ViewReservedSeats.Show()
-        'Me.Close()
+        ViewReservedSeats.Show()
+        Me.Close()
+
     End Sub
 
     Private Sub btnViewSeatPlan_Click(sender As Object, e As EventArgs) Handles btnViewSeatPlan.Click

@@ -178,3 +178,16 @@ D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChi
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewReservedSeats.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewStaff.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.CoreCompileInputs.cache
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\bin\Debug\Interop.WMPLib.dll
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\Interop.WMPLib.dll
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.vbproj.ResolveComReference.cache
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddReservations.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddReservedSeats.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.AddStaff.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.FAQ.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ShowInfo.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewReservedSeats.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewStaff.resources
+C:\Users\Jones\Desktop\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ViewStaffSeatPlan.resources
