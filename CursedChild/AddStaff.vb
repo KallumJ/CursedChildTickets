@@ -1,10 +1,11 @@
 ﻿Public Class AddStaff
+    'Declare variables
     Dim userFile As String = Application.StartupPath & "/users.dat"
+    Dim score As Integer
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'Declare variable
         Dim numOfRecords As Integer
         Dim recordPos As Integer
-
 
         'Validation
 
@@ -75,4 +76,56 @@
         ViewStaff.Show()
         Me.Close()
     End Sub
+
+    'Check password strength
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+
+        'Declare variables
+        Dim password As String = txtPassword.Text
+        Dim upper As Integer = 0
+        Dim lower As Integer = 0
+        Dim numbers As Integer = 0
+        Dim other As Integer = 0
+
+        'Gather information about the password
+        For i = 0 To password.Length - 1
+            If Char.IsLetter(password(i)) Then
+                If Char.IsUpper(password(i)) Then
+                    upper = upper + 1
+                Else
+                    lower = lower + 1
+                End If
+            ElseIf Char.IsNumber(password(i)) Then
+                numbers = numbers + 1
+            Else
+                other = numbers + 1
+            End If
+        Next
+
+        'Evaluate score
+        score = ((upper * 3) + (lower * 1) + (numbers + 3) + (other * 5)) - 4
+        If txtPassword.Text = "" Or txtPassword.Text = "password" Or txtPassword.Text = txtUsername.Text Then score = 0
+
+        'Display strength
+        If txtPassword.Text = "" Then
+            txtStrength.BackColor = Color.White
+            txtStrength.Text = "None"
+        ElseIf score <= 5 Then
+            txtStrength.BackColor = Color.DarkRed
+            txtStrength.Text = "Very Weak"
+        ElseIf score <= 10 Then
+            txtStrength.BackColor = Color.PaleVioletRed
+            txtStrength.Text = "Weak"
+        ElseIf score <= 15 Then
+            txtStrength.BackColor = Color.Yellow
+            txtStrength.Text = "Ok"
+        ElseIf score <= 20 Then
+            txtStrength.BackColor = Color.LightGreen
+            txtStrength.Text = "Strong"
+        ElseIf score > 20 Then
+            txtStrength.BackColor = Color.LimeGreen
+            txtStrength.Text = "Very Strong"
+        End If
+    End Sub
+
 End Class

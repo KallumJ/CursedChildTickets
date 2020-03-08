@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddStaff
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AddStaff
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddStaff))
         Me.btnBack = New System.Windows.Forms.Button()
@@ -33,6 +33,8 @@ Partial Class AddStaff
         Me.txtStaffID = New System.Windows.Forms.TextBox()
         Me.txtConfirmPassword = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtStrength = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnBack
@@ -126,12 +128,33 @@ Partial Class AddStaff
         Me.Label2.TabIndex = 60
         Me.Label2.Text = "Confirm Password"
         '
+        'txtStrength
+        '
+        Me.txtStrength.Location = New System.Drawing.Point(233, 64)
+        Me.txtStrength.Name = "txtStrength"
+        Me.txtStrength.ReadOnly = True
+        Me.txtStrength.Size = New System.Drawing.Size(100, 20)
+        Me.txtStrength.TabIndex = 61
+        Me.txtStrength.Text = "None"
+        Me.txtStrength.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(233, 48)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(99, 13)
+        Me.Label3.TabIndex = 62
+        Me.Label3.Text = "Password Strength:"
+        '
         'AddStaff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(235, 180)
+        Me.ClientSize = New System.Drawing.Size(338, 180)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.txtStrength)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.txtConfirmPassword)
         Me.Controls.Add(Me.btnBack)
@@ -160,4 +183,6 @@ Partial Class AddStaff
     Friend WithEvents txtStaffID As TextBox
     Friend WithEvents txtConfirmPassword As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents txtStrength As TextBox
+    Friend WithEvents Label3 As Label
 End Class
