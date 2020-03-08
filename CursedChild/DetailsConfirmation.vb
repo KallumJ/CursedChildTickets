@@ -1,11 +1,15 @@
-﻿Public Class DetailsConfirmation
+﻿Imports QRCoder
+
+Public Class DetailsConfirmation
+
+    Dim resRecordPos As Integer
+
     Private Sub btnReserve_Click(sender As Object, e As EventArgs) Handles btnReserve.Click
         'Declare variables
         Dim customerFile As String = Application.StartupPath & "/customers.dat"
         Dim custRecordPos As Integer
         Dim custNumOfRecords As Integer
         Dim reservationsFile As String = Application.StartupPath & "/reservations.dat"
-        Dim resRecordPos As Integer
         Dim resNumOfRecords As Integer
         Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
         Dim resSeatsRecordPos As Integer
@@ -143,6 +147,12 @@
 
         End Try
 
+        'Set the document to preview
+        PrintPreviewDialog1.Document = PrintDocument1
+
+        'Open the print preview dialog
+        PrintPreviewDialog1.ShowDialog()
+
         'Open order confirmation
         OrderConfirmed.Show()
         Me.Close()
@@ -198,5 +208,87 @@
         'Return to selecting showtime
         SelectShowTime.Show()
         Me.Close()
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        'Declare variables
+        Dim x As Integer
+        Dim y As Integer
+        Dim fontHeight As Integer
+
+        'Set up the fonts
+        Dim TitleFont As New Font("Arial", 30, FontStyle.Bold)
+        Dim BodyFont As New Font("Arial", 16, FontStyle.Regular)
+
+        'Set background colour
+        e.Graphics.Clear(Color.Khaki)
+
+        'Find the image from the form
+        Dim logo As Image = My.Resources.Icon
+
+        'Print the image
+        e.Graphics.DrawImage(logo, 700, 20, 100, 100)
+
+        'Setup the location to start printing
+        fontHeight = BodyFont.GetHeight(e.Graphics)
+        x = 50
+        y = 50
+
+        'Print the title on the page
+        e.Graphics.DrawString("Cursed Child E-Ticket(s):", TitleFont, Brushes.Black, x, y)
+
+        'Move down to print the body of the document
+        y = 100
+
+        'Print the reservation number
+        e.Graphics.DrawString("     Reservation Number: " & resRecordPos, BodyFont, Brushes.Black, x, y)
+        'Move to next line
+        y = y + fontHeight
+
+        'Print the customer name
+        e.Graphics.DrawString("     Name:" & CustomerDetails.firstName & " " & CustomerDetails.surname, BodyFont, Brushes.Black, x, y)
+        'Move to next line
+        y = y + fontHeight
+
+        'Print the address
+        e.Graphics.DrawString("     Address: " & CustomerDetails.address & " " & CustomerDetails.postcode, BodyFont, Brushes.Black, x, y)
+        'Move to the next line
+        y = y + fontHeight
+
+        'Print the telephone number
+        e.Graphics.DrawString("     Telephone: " & CustomerDetails.phone, BodyFont, Brushes.Black, x, y)
+        y = y + fontHeight
+
+        'Print the seat area
+        e.Graphics.DrawString("     Area: " & SelectSeat.cmbArea.Text, BodyFont, Brushes.Black, x, y)
+        y = y + fontHeight
+
+        'Print the seats
+        'Create seats string
+        Dim str As String
+        Dim seats As String
+
+        'Create seats string
+        For Each str In SelectSeat.seat
+            seats = seats & " " & str
+        Next
+
+        e.Graphics.DrawString("     Seats: " & seats, BodyFont, Brushes.Black, x, y)
+        y = y + fontHeight
+
+        'Generate QR code
+        Dim qrGenerator As New QRCodeGenerator
+        Dim codeData As QRCodeData = qrGenerator.CreateQrCode(resRecordPos, QRCodeGenerator.ECCLevel.Q)
+        Dim QRCode As New QRCode(codeData)
+        Dim QRImage As Bitmap = QRCode.GetGraphic(20)
+        e.Graphics.DrawImage(QRImage, 200, 300, 400, 400)
+
+        'Move below QR code
+        y = y + fontHeight + 500
+
+        'Print message
+        x = x + 30
+        e.Graphics.DrawString("Please show this to the box office on arrival for payment and entry", BodyFont, Brushes.Black, x, y)
+
     End Sub
 End Class

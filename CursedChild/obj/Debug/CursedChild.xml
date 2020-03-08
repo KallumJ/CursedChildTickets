@@ -32,6 +32,11 @@ CursedChild
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:CursedChild.My.Resources.Resources.Icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:CursedChild.My.Resources.Resources.Key">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

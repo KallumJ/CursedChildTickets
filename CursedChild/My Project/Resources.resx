@@ -121,8 +121,8 @@
   <data name="slideshow0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\slideshow0.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Balcony" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Balcony.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Trailer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trailer.mp4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="slideshow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\slideshow1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,14 +142,17 @@
   <data name="Stalls" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Stalls.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Trailer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Trailer.mp4;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="slideshow7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\slideshow7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Key" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MainMenuImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MainMenuImage.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Balcony" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Balcony.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="slideshow4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\slideshow4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +163,7 @@
   <data name="slideshow5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\slideshow5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="slideshow7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\slideshow7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
