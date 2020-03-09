@@ -71,7 +71,8 @@
 
         'Determine record position
         numOfRecords = LOF(1) / Len(showtimeRecord)
-        recordPos = numOfRecords + 1
+        FileGet(1, showtimeRecord, numOfRecords)
+        recordPos = showtimeRecord.showtimeID + 1
 
         'Display ID
         txtShowID.Text = recordPos

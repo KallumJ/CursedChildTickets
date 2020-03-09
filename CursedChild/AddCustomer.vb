@@ -41,6 +41,8 @@ Public Class AddCustomer
             numOfRecords = LOF(1) / Len(customerRecord)
             recordPos = numOfRecords + 1
 
+
+
             'Read in the entered data
             With customerRecord
                 .customerID = txtCustID.Text
@@ -101,7 +103,8 @@ Public Class AddCustomer
 
             'Determine record position
             numOfRecords = LOF(1) / Len(customerRecord)
-            recordPos = numOfRecords + 1
+            FileGet(1, customerRecord, numOfRecords)
+            recordPos = customerRecord.customerID + 1
 
             'Display customer ID
             txtCustID.Text = recordPos

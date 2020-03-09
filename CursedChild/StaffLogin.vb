@@ -1,4 +1,19 @@
-﻿Public Class StaffLogin
+﻿Imports System.Security.Cryptography
+
+Public NotInheritable Class Simple3Des
+    Private TripleDes As New TripleDESCryptoServiceProvider
+End Class
+
+Public Class StaffLogin
+
+    Private Function TruncateHash(ByVal key As String, ByVal length As Integer) As Byte()
+        Dim sha1 As New SHA1CryptoServiceProvider
+
+        'Hash the key
+        Dim keyBytes() As Byte = System.Text.Encoding.Unicode.GetBytes(key)
+
+        Dim hash() As Byte = sha1.ComputeHash(keyBytes)
+    End Function
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 

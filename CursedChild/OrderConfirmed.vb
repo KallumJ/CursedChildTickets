@@ -8,7 +8,9 @@
         timer = timer - 1
 
         'Display current timer value
-        lblTimer.Text = timer
+        If Not timer < 0 Then
+            lblTimer.Text = timer
+        End If
 
         'If timer reaches 0 then
         If timer < 0 Then
@@ -16,8 +18,7 @@
             timTimer.Enabled = False
 
             'Return to main menu
-            MainMenu.Show()
-            Me.Hide()
+            Application.Restart()
         End If
     End Sub
 

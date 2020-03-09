@@ -1,4 +1,5 @@
 ﻿Public Class MainMenu
+
     Private Sub btnStaffLogin_Click(sender As Object, e As EventArgs) Handles btnStaffLogin.Click
         'Open staff login form
         StaffLogin.Show()
@@ -275,13 +276,4 @@
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Try
-
-
-            MsgBox("Success")
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-    End Sub
 End Class

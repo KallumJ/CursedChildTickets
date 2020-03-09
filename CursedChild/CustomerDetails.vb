@@ -20,7 +20,7 @@ Public Class CustomerDetails
         End If
 
         'Lookup check on title
-        If cmbTitle.Text <> "Mr." And cmbTitle.Text <> "Mrs." And cmbTitle.Text <> "Miss." And cmbTitle.Text <> "Dr." Then
+        If cmbTitle.Text <> "Mr." And cmbTitle.Text <> "Mrs." And cmbTitle.Text <> "Miss." And cmbTitle.Text <> "Dr." And cmbTitle.Text <> "Master." Then
             MsgBox("Please enter a valid title from the dropdown")
             Exit Sub
         End If

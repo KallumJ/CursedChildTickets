@@ -71,4 +71,6 @@ Harry Potter and the Cursed Child is produced by Sonia Friedman Productions, Col
         MainMenu.Show()
         Me.Close()
     End Sub
+
+
 End Class

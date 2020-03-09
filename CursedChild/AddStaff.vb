@@ -57,7 +57,8 @@
 
         'Determine record position
         numOfrecords = LOF(1) / Len(userRecord)
-        recordPos = numOfrecords + 1
+        FileGet(1, userRecord, numOfrecords)
+        recordPos = userRecord.staffID + 1
 
         'Display staff ID
         txtStaffID.Text = recordPos

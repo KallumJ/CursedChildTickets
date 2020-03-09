@@ -15,7 +15,8 @@ Public Class DetailsConfirmation
         Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
         Dim resSeatsRecordPos As Integer
         Dim resSeatsNumOfRecords As Integer
-        Dim reservationID As Integer
+        Dim custid As Integer
+        Dim resid As Integer
 
         'Save entered customer details to file
         Try
@@ -26,6 +27,10 @@ Public Class DetailsConfirmation
             'Determine record position
             custNumOfRecords = LOF(1) / Len(customerRecord)
             custRecordPos = custNumOfRecords + 1
+
+            'Determine ID
+            FileGet(1, customerRecord, custNumOfRecords)
+            custid = customerRecord.customerID + 1
 
             'Prevent duplication of data
             For checkPos = 1 To custNumOfRecords
@@ -42,7 +47,7 @@ Public Class DetailsConfirmation
 
             'Read in the entered data
             With customerRecord
-                .customerID = custRecordPos
+                .customerID = custid
                 .title = CustomerDetails.title
                 .firstName = CustomerDetails.firstName
                 .Surname = CustomerDetails.surname
@@ -75,11 +80,14 @@ Public Class DetailsConfirmation
             resNumOfRecords = LOF(1) / Len(reservationRecord)
             resRecordPos = resNumOfRecords + 1
 
+            'Determine ID
+            FileGet(1, reservationRecord, resNumOfRecords)
+            resid = reservationRecord.reservationID + 1
+
             'Read in reservation data
             With reservationRecord
-                reservationID = resRecordPos
-                .reservationID = resRecordPos
-                .customerID = custRecordPos
+                .reservationID = resid
+                .customerID = custid
                 .showtimeID = SelectShowTime.showtimeID
                 .reservationDate = SelectShowTime.showtimeDate
                 .totalPrice = SelectSeat.price
@@ -122,7 +130,7 @@ Public Class DetailsConfirmation
 
             'Read in the details
             With reservedSeatsRecord
-                .reservationID = reservationID
+                .reservationID = resid
                 .showtimeID = SelectShowTime.showtimeID
                 .seats = seats
                 .block = SelectSeat.area
@@ -142,9 +150,12 @@ Public Class DetailsConfirmation
 
         End Try
 
-        'Send email
+        'Send email TO BE FIXED
 
         Try
+
+            'REMOVE
+            Exit Try
 
             Dim oMail As New SmtpMail("TryIt")
 
