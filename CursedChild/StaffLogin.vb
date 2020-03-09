@@ -27,6 +27,32 @@ Public Class StaffLogin
 
         Return Convert.ToBase64String(results)
     End Function
+
+    Public Shared Function DecryptData(ByVal Message As String) As String
+        Dim passphrase As String = "password"
+        Dim results() As Byte
+        Dim UTF8 As System.Text.UTF8Encoding = New System.Text.UTF8Encoding()
+        Dim hashProvider As MD5CryptoServiceProvider = New MD5CryptoServiceProvider()
+        Dim TDESKey As Byte() = hashProvider.ComputeHash(UTF8.GetBytes(passphrase))
+        Dim TDESAlgorithm As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider()
+
+        TDESAlgorithm.Key = TDESKey
+        TDESAlgorithm.Mode = CipherMode.ECB
+        TDESAlgorithm.Padding = PaddingMode.PKCS7
+
+        Dim DataToDecrypt As Byte() = Convert.FromBase64String(Message)
+
+        Try
+            Dim Decryptor As ICryptoTransform = TDESAlgorithm.CreateDecryptor()
+
+            results = Decryptor.TransformFinalBlock(DataToDecrypt, 0, DataToDecrypt.Length)
+        Finally
+            TDESAlgorithm.Clear()
+            hashProvider.Clear()
+        End Try
+
+        Return UTF8.GetString(results)
+    End Function
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
         'Declare variables
@@ -96,5 +122,9 @@ Public Class StaffLogin
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MsgBox(EncryptData(txtPassword.Text))
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        MsgBox(DecryptData(EncryptData(txtPassword.Text)))
     End Sub
 End Class
