@@ -45,7 +45,7 @@ Partial Class SeatPlan
         '
         Me.cmbArea.FormattingEnabled = True
         Me.cmbArea.Items.AddRange(New Object() {"Balcony", "Upper Circle", "Dress Circle", "Stalls"})
-        Me.cmbArea.Location = New System.Drawing.Point(103, 6)
+        Me.cmbArea.Location = New System.Drawing.Point(103, 1)
         Me.cmbArea.Name = "cmbArea"
         Me.cmbArea.Size = New System.Drawing.Size(121, 21)
         Me.cmbArea.TabIndex = 2

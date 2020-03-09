@@ -1,4 +1,5 @@
 ﻿Public Class SeatPlan
+
     Private Sub cmbArea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbArea.SelectedIndexChanged
         'Change the image
         If cmbArea.Text = "Dress Circle" Then
@@ -22,4 +23,5 @@
     Private Sub SeatPlan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmbArea.Text = "Stalls"
     End Sub
+
 End Class

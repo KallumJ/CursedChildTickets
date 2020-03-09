@@ -1,6 +1,8 @@
 ﻿Public Class ViewShowTimes
+
     'Declare variables
     Dim showtimesFile As String = Application.StartupPath & "/showtimes.dat"
+
     Dim recordPos As Integer
 
     Private Sub btnShowAdd_Click(sender As Object, e As EventArgs) Handles btnShowAdd.Click
@@ -26,7 +28,7 @@
         lstShowtimes.Items.Add("ShowtimeID      Date                  Time")
 
         'Open the file
-        FileOpen(1, showtimesfile, OpenMode.Random,,, Len(showtimeRecord))
+        FileOpen(1, showtimesFile, OpenMode.Random,,, Len(showtimeRecord))
 
         'Find number of records
         numOfRecords = LOF(1) / Len(showtimeRecord)
@@ -104,6 +106,15 @@
 
         'Close the file
         FileClose(1)
+
+        If searchID = 0 Then
+            txtShowtimeID.Text = ""
+            datDate.Value = Today
+            cmbTimeHH.Text = ""
+            cmbTimeMM.Text = ""
+            cmbPart.Text = ""
+            chkAvailable.Checked = True
+        End If
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click

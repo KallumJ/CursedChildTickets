@@ -1,4 +1,5 @@
 ﻿Public Class OrderConfirmed
+
     'Declare variables
     Dim timer As Integer
 
@@ -27,4 +28,5 @@
         'Reenable the timer
         timTimer.Enabled = True
     End Sub
+
 End Class

@@ -103,7 +103,7 @@ Partial Class FAQ
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FAQ"
-        Me.Text = "FAQ"
+        Me.Text = "Cursed Child Booking"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)

@@ -82,7 +82,7 @@ Partial Class BasketOverview
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "BasketOverview"
-        Me.Text = "BasketOverview"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

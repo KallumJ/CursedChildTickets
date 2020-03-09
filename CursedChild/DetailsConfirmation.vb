@@ -1,5 +1,5 @@
-﻿Imports QRCoder
-Imports EASendMail
+﻿Imports EASendMail
+Imports QRCoder
 
 Public Class DetailsConfirmation
 
@@ -40,7 +40,6 @@ Public Class DetailsConfirmation
                 End If
             Next
 
-
             'Read in the entered data
             With customerRecord
                 .customerID = custRecordPos
@@ -53,14 +52,11 @@ Public Class DetailsConfirmation
                 .Postcode = CustomerDetails.postcode
             End With
 
-
-
             'Write the record to file
             FilePut(1, customerRecord, custRecordPos)
 
             'Close the file
             FileClose(1)
-
         Catch ex As Exception
             'Make the exce
             Dim x As String
@@ -94,7 +90,6 @@ Public Class DetailsConfirmation
 
             'Close the file
             FileClose(1)
-
         Catch ex As Exception
             Dim x As String
 
@@ -138,7 +133,6 @@ Public Class DetailsConfirmation
 
             'Close the file
             FileClose(1)
-
         Catch ex As Exception
             Dim x As String
 
@@ -182,7 +176,6 @@ Public Class DetailsConfirmation
 
             Dim oSmtp As New SmtpClient()
             oSmtp.SendMail(oServer, oMail)
-
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -240,7 +233,6 @@ Public Class DetailsConfirmation
 
         'Add the details to the text box
         txtTicketDetails.Text = ticketTxtString
-
 
     End Sub
 
@@ -331,4 +323,5 @@ Public Class DetailsConfirmation
         e.Graphics.DrawString("Please show this to the box office on arrival for payment and entry", BodyFont, Brushes.Black, x, y)
 
     End Sub
+
 End Class

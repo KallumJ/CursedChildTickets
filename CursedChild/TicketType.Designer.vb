@@ -89,7 +89,7 @@ Partial Class TicketType
         Me.Controls.Add(Me.btnConsecutive)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TicketType"
-        Me.Text = "TicketType"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
 
     End Sub

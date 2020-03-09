@@ -131,7 +131,7 @@ Partial Class StaffArea
         Me.Controls.Add(Me.btnViewCustomers)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "StaffArea"
-        Me.Text = "StaffArea"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
 
     End Sub

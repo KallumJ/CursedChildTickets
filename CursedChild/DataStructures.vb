@@ -66,11 +66,12 @@
 
     'Define Users Structure
     Public Structure UserType
-        Dim staffID As integer
+        Dim staffID As Integer
         <VBFixedString(25)> Dim username As String
         <VBFixedString(30)> Dim password As String
     End Structure
 
     'Declare User Record
     Public userRecord As UserType
+
 End Module

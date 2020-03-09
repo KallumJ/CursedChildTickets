@@ -105,7 +105,7 @@ Partial Class SelectShowTime
         Me.Controls.Add(Me.calCalendar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SelectShowTime"
-        Me.Text = "SelectShowTime"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

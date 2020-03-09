@@ -290,7 +290,7 @@ Partial Class ViewReservations
         Me.Controls.Add(Me.lstReservations)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewReservations"
-        Me.Text = "ViewReservations"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -1,5 +1,6 @@
 ﻿Public Class ViewStaffSeatPlan
     Dim seatsFile As String = Application.StartupPath & "/seats.dat"
+
     Private Sub cmbArea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbArea.SelectedIndexChanged
         'Clear the panel
         panSeats.Controls.Clear()
@@ -117,7 +118,6 @@
                     AddHandler seatLabel.MouseDown, AddressOf ctl_MouseDown
                 Next
             Next
-
         Else
 
             'Allocate row letter letter
@@ -265,4 +265,5 @@
         StaffArea.Show()
         Me.Close()
     End Sub
+
 End Class

@@ -1,6 +1,8 @@
 ﻿Public Class ViewCustomers
+
     'Declare variables
     Dim customerFile As String = Application.StartupPath & "/customers.dat"
+
     Dim recordPos As Integer
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
@@ -91,9 +93,20 @@
         Loop
 
         'If no records are found, output an error
-        If numOfRecordsFound = 0 Then
+        If numOfRecordsFound = 0 And searchID <> 0 Then
             MsgBox("Customer with ID " & searchID & " could not be found, please contact your system adminstrator")
             FileClose(1)
+        End If
+
+        If searchID = 0 Then
+            txtCustID.Text = ""
+            cmbTitle.Text = ""
+            txtFirstName.Text = ""
+            txtSurname.Text = ""
+            txtPhone.Text = ""
+            txtEmail.Text = ""
+            txtAddress.Text = ""
+            txtPostcode.Text = ""
         End If
 
         'Close the file
@@ -139,7 +152,6 @@
 
         'Reload the form
         Call ViewCustomers_Load(Me, e)
-
 
     End Sub
 
@@ -264,6 +276,5 @@
             txtCustSearch.Text = "Please enter a surname to search"
         End If
     End Sub
-
 
 End Class

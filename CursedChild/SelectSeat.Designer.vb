@@ -27,8 +27,8 @@ Partial Class SelectSeat
         Me.cmbArea = New System.Windows.Forms.ComboBox()
         Me.panSeats = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnContinue = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnBack
@@ -36,7 +36,7 @@ Partial Class SelectSeat
         Me.btnBack.BackColor = System.Drawing.Color.SaddleBrown
         Me.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnBack.ForeColor = System.Drawing.Color.Khaki
-        Me.btnBack.Location = New System.Drawing.Point(1692, 10)
+        Me.btnBack.Location = New System.Drawing.Point(650, 10)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(91, 23)
         Me.btnBack.TabIndex = 9
@@ -68,26 +68,26 @@ Partial Class SelectSeat
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "Please select an area of the auditorium:"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(381, 10)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'btnContinue
         '
         Me.btnContinue.BackColor = System.Drawing.Color.SaddleBrown
         Me.btnContinue.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnContinue.ForeColor = System.Drawing.Color.Khaki
-        Me.btnContinue.Location = New System.Drawing.Point(1611, 10)
+        Me.btnContinue.Location = New System.Drawing.Point(569, 10)
         Me.btnContinue.Name = "btnContinue"
         Me.btnContinue.Size = New System.Drawing.Size(75, 23)
         Me.btnContinue.TabIndex = 16
         Me.btnContinue.Text = "Continue"
         Me.btnContinue.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(338, 15)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(225, 13)
+        Me.Label2.TabIndex = 17
+        Me.Label2.Text = "Left click to select seat, right click to de-select"
         '
         'SelectSeat
         '
@@ -95,15 +95,15 @@ Partial Class SelectSeat
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(1795, 734)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnContinue)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.panSeats)
         Me.Controls.Add(Me.cmbArea)
         Me.Controls.Add(Me.btnBack)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SelectSeat"
-        Me.Text = "SelectSeat"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -112,6 +112,6 @@ Partial Class SelectSeat
     Friend WithEvents cmbArea As ComboBox
     Friend WithEvents panSeats As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents btnContinue As Button
+    Friend WithEvents Label2 As Label
 End Class

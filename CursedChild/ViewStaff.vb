@@ -1,8 +1,8 @@
-﻿
-Public Class ViewStaff
+﻿Public Class ViewStaff
 
     'Declare variables
     Dim userFile As String = Application.StartupPath & "/users.dat"
+
     Dim recordPos As Integer
     Dim editPass As String
 
@@ -61,7 +61,6 @@ Public Class ViewStaff
         Dim staffString As String
         Dim searchID As Integer
 
-
         'Find the selected staff ID
         staffString = lstStaff.Text
         searchID = Val(Microsoft.VisualBasic.Left(staffString, 10))
@@ -101,6 +100,11 @@ Public Class ViewStaff
 
         'Close the file
         FileClose(1)
+
+        If searchID = 0 Then
+            txtStaffID.Text = ""
+            txtUsername.Text = ""
+        End If
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
@@ -237,4 +241,5 @@ Public Class ViewStaff
         End If
 
     End Sub
+
 End Class

@@ -224,7 +224,7 @@ Partial Class AddCustomer
         Me.Controls.Add(Me.txtCustID)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AddCustomer"
-        Me.Text = "AddCustomer"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

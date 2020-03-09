@@ -33,12 +33,12 @@
 
             'Check entered username and password match the record
             If txtUsername.Text = username And txtPassword.Text = password And userRecord.staffID > 0 Then
-                'If they do, login
                 userFound = True
-                StaffArea.Show()
-                Me.Close()
             End If
         Next
+
+        'Close the file
+        FileClose(1)
 
         'If no match is found then
         If userFound = False Then
@@ -46,10 +46,12 @@
             MsgBox("Login failed, incorrect username or password, please try again!", MsgBoxStyle.Critical)
             'Clear the password entry
             txtPassword.Text = ""
+        Else
+            StaffArea.Show()
+            Me.Close()
         End If
 
-        'Close the file
-        FileClose(1)
+
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click

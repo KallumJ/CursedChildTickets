@@ -6,8 +6,16 @@
     Public price As String
     Dim priceTotal As Decimal
     Dim reserved As New ArrayList
+    Dim count As Integer
 
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
+
+        'Validation
+        'Presence Check
+        If count = 0 Then
+            MsgBox("Please select at least one seat")
+            Exit Sub
+        End If
 
         'Read in the entered seat details
         area = cmbArea.Text
@@ -194,6 +202,9 @@
 
             'Close the file
             FileClose(1)
+
+            'Set count to include new seats
+            count = count + 1
         ElseIf e.Button = Windows.Forms.MouseButtons.Right Then
             'Open the file
             FileOpen(1, seatsFile, OpenMode.Random,,, Len(seatsRecord))
@@ -237,6 +248,9 @@
 
             'Remove seat from array list
             seat.Remove(ctl.Name)
+
+            'Change count of selected seats
+            count = count - 1
         End If
 
     End Sub

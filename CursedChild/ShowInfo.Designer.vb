@@ -107,7 +107,7 @@ Partial Class ShowInfo
         Me.Controls.Add(Me.txtSynopsis)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ShowInfo"
-        Me.Text = "ShowInfo"
+        Me.Text = "Cursed Child Booking"
         CType(Me.AxWindowsMediaPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picSlideshow, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

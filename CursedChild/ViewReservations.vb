@@ -209,6 +209,17 @@
 
         'Close the file
         FileClose(1)
+
+        If searchID = 0 Then
+            txtResID.Text = ""
+            txtShowID.Text = ""
+            txtCustID.Text = ""
+            txtFirstName.Text = ""
+            txtSurname.Text = ""
+            datDate.Value = Today
+            txtPrice.Text = ""
+            lstSeats.Items.Clear()
+        End If
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click

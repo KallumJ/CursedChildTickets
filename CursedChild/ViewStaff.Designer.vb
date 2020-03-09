@@ -175,7 +175,7 @@ Partial Class ViewStaff
         Me.Controls.Add(Me.btnShowAdd)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewStaff"
-        Me.Text = "ViewStaff"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

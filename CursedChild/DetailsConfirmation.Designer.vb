@@ -129,7 +129,7 @@ Partial Class DetailsConfirmation
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DetailsConfirmation"
-        Me.Text = "DetailsConfirmation"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

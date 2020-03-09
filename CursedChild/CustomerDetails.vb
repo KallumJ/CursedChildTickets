@@ -13,7 +13,7 @@ Public Class CustomerDetails
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
         'Validation
 
-        'Length check on phone number  
+        'Length check on phone number
         If Len(txtPhone.Text) <> 11 Then
             MsgBox("Please enter a phone number that has 11 numbers")
             Exit Sub
@@ -56,4 +56,5 @@ Public Class CustomerDetails
         MainMenu.Show()
         Me.Close()
     End Sub
+
 End Class

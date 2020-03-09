@@ -95,7 +95,7 @@ Partial Class ViewStaffSeatPlan
         Me.Controls.Add(Me.panSeats)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewStaffSeatPlan"
-        Me.Text = "ViewStaffSeatPlan"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
 
     End Sub

@@ -102,7 +102,7 @@ Partial Class StaffLogin
         Me.Controls.Add(Me.txtUsername)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "StaffLogin"
-        Me.Text = "StaffLogin"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

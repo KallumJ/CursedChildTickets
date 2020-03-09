@@ -296,7 +296,7 @@ Partial Class ViewCustomers
         Me.Controls.Add(Me.lstCustomers)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewCustomers"
-        Me.Text = "ViewCustomers"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

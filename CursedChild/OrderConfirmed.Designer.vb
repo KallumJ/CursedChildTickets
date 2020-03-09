@@ -62,7 +62,7 @@ Partial Class OrderConfirmed
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "OrderConfirmed"
-        Me.Text = "OrderConfirmed"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

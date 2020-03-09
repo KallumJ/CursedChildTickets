@@ -203,7 +203,7 @@ Partial Class CustomerDetails
         Me.Controls.Add(Me.txtFirstName)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "CustomerDetails"
-        Me.Text = "CustomerDetails"
+        Me.Text = "Cursed Child Booking"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
