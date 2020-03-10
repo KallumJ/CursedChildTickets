@@ -93,7 +93,7 @@ Partial Class StaffLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(195, 129)
+        Me.ClientSize = New System.Drawing.Size(195, 134)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnLogin)
         Me.Controls.Add(Me.lblPassword)

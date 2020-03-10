@@ -21,7 +21,7 @@ Partial Class CustomerDetails
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
-    Private Sub InitializeComponent()
+    Public Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CustomerDetails))
         Me.btnContinue = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -39,6 +39,7 @@ Partial Class CustomerDetails
         Me.txtSurname = New System.Windows.Forms.TextBox()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.lblTimer = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnContinue
@@ -179,12 +180,22 @@ Partial Class CustomerDetails
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
+        'lblTimer
+        '
+        Me.lblTimer.AutoSize = True
+        Me.lblTimer.Location = New System.Drawing.Point(9, 256)
+        Me.lblTimer.Name = "lblTimer"
+        Me.lblTimer.Size = New System.Drawing.Size(36, 13)
+        Me.lblTimer.TabIndex = 43
+        Me.lblTimer.Text = "Timer:"
+        '
         'CustomerDetails
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(218, 278)
+        Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.Label9)
@@ -224,4 +235,5 @@ Partial Class CustomerDetails
     Friend WithEvents txtSurname As TextBox
     Friend WithEvents txtFirstName As TextBox
     Friend WithEvents btnCancel As Button
+    Friend WithEvents lblTimer As Label
 End Class

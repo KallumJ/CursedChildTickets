@@ -2,6 +2,7 @@
 
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
         'Open customer entry form
+        SelectShowTime.reset = 300
         CustomerDetails.Show()
         Me.Hide()
     End Sub
@@ -20,11 +21,7 @@
         ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
         ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
         ticketTxtString = ticketTxtString & "Seat(s): " & seats & vbNewLine
-        If Microsoft.VisualBasic.Right(SelectSeat.price, 1) = 5 Then
-            ticketTxtString = ticketTxtString & "Price: £" & SelectSeat.price & "0" & vbNewLine
-        Else
-            ticketTxtString = ticketTxtString & "Price: £" & SelectSeat.price & ".00" & vbNewLine
-        End If
+        ticketTxtString = ticketTxtString & "Price: " & FormatCurrency(SelectSeat.price) & vbNewLine
 
         'Add string to basket textbox
         txtBasket.Text = ticketTxtString

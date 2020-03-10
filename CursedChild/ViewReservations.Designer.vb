@@ -47,6 +47,7 @@ Partial Class ViewReservations
         Me.lstSeats = New System.Windows.Forms.ListBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtCustID = New System.Windows.Forms.TextBox()
+        Me.btnEdit = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnDelete
@@ -54,7 +55,7 @@ Partial Class ViewReservations
         Me.btnDelete.BackColor = System.Drawing.Color.SaddleBrown
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDelete.ForeColor = System.Drawing.Color.Khaki
-        Me.btnDelete.Location = New System.Drawing.Point(422, 371)
+        Me.btnDelete.Location = New System.Drawing.Point(421, 400)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(121, 23)
         Me.btnDelete.TabIndex = 48
@@ -144,6 +145,7 @@ Partial Class ViewReservations
         '
         Me.txtTime.Location = New System.Drawing.Point(419, 218)
         Me.txtTime.Name = "txtTime"
+        Me.txtTime.ReadOnly = True
         Me.txtTime.Size = New System.Drawing.Size(121, 20)
         Me.txtTime.TabIndex = 36
         '
@@ -151,6 +153,7 @@ Partial Class ViewReservations
         '
         Me.txtSurname.Location = New System.Drawing.Point(419, 166)
         Me.txtSurname.Name = "txtSurname"
+        Me.txtSurname.ReadOnly = True
         Me.txtSurname.Size = New System.Drawing.Size(121, 20)
         Me.txtSurname.TabIndex = 34
         '
@@ -158,6 +161,7 @@ Partial Class ViewReservations
         '
         Me.txtFirstName.Location = New System.Drawing.Point(419, 140)
         Me.txtFirstName.Name = "txtFirstName"
+        Me.txtFirstName.ReadOnly = True
         Me.txtFirstName.Size = New System.Drawing.Size(121, 20)
         Me.txtFirstName.TabIndex = 33
         '
@@ -258,12 +262,25 @@ Partial Class ViewReservations
         Me.txtCustID.Size = New System.Drawing.Size(121, 20)
         Me.txtCustID.TabIndex = 52
         '
+        'btnEdit
+        '
+        Me.btnEdit.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnEdit.ForeColor = System.Drawing.Color.Khaki
+        Me.btnEdit.Location = New System.Drawing.Point(421, 371)
+        Me.btnEdit.Name = "btnEdit"
+        Me.btnEdit.Size = New System.Drawing.Size(121, 23)
+        Me.btnEdit.TabIndex = 53
+        Me.btnEdit.Text = "Edit Record"
+        Me.btnEdit.UseVisualStyleBackColor = False
+        '
         'ViewReservations
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(659, 428)
+        Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.txtCustID)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.lstSeats)
@@ -320,4 +337,5 @@ Partial Class ViewReservations
     Friend WithEvents lstSeats As ListBox
     Friend WithEvents Label10 As Label
     Friend WithEvents txtCustID As TextBox
+    Friend WithEvents btnEdit As Button
 End Class

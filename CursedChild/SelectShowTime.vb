@@ -6,11 +6,48 @@
     Public showtimeDate As String
     Dim showtimeFile As String = Application.StartupPath & "/showtimes.dat"
 
+    Public timer As New Timer
+    Public reset As Double
+    Public active As Boolean = False
+    Public timeLeft As String
+
     Private Sub SelectShowTime_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Sets the minimum date to the current date
         calCalendar.MinDate = System.DateTime.Today()
         'Add avaliability for current day
         UpdateList()
+
+        'Start the reset timer
+        If active = False Then
+            active = True
+            reset = 300
+            timer.Interval = 1000
+            timer.Enabled = True
+            AddHandler timer.Tick, AddressOf timerTick
+        End If
+
+    End Sub
+
+    Public Sub timerTick()
+        'Decrease timer
+        reset = reset - 1
+
+        Dim span As TimeSpan = TimeSpan.FromSeconds(reset)
+
+        'Create strinng
+        timeLeft = "Timer: " & span.Minutes.ToString.PadLeft(2, "0"c) & ":" & span.Seconds.ToString.PadLeft(2, "0"c)
+
+        'Update labels
+        lblTimer.Text = timeLeft
+        SelectSeat.lblTimer.Text = timeLeft
+        BasketOverview.lblTimer.Text = timeLeft
+        CustomerDetails.lblTimer.Text = timeLeft
+        DetailsConfirmation.lblTimer.Text = timeLeft
+
+        'If timer reaches 0, reset form
+        If reset = 0 Then
+            Application.Restart()
+        End If
     End Sub
 
     Private Sub calCalendar_DateChanged(sender As Object, e As DateRangeEventArgs) Handles calCalendar.DateChanged
@@ -88,6 +125,7 @@
         End If
 
         'Open the seat selection form
+        reset = 300
         SelectSeat.Show()
         Me.Hide()
     End Sub
@@ -168,6 +206,7 @@
 
         If answer = vbYes Then
             'Open the seat selection form
+            reset = 300
             SelectSeat.Show()
             Me.Hide()
         End If

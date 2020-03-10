@@ -115,7 +115,7 @@
                     txtCustID.Text = .customerID
                     txtShowID.Text = .showtimeID
                     datDate.Value = .reservationDate
-                    txtPrice.Text = .totalPrice
+                    txtPrice.Text = FormatCurrency(.totalPrice)
                 End With
 
                 'Read customer details
@@ -380,5 +380,34 @@
         If txtResSearch.Text = "" Then
             txtResSearch.Text = "Please enter an ID to search"
         End If
+    End Sub
+
+    Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
+        'Read in fields in record
+        With reservationRecord
+            .reservationID = Val(txtResID.Text)
+            .customerID = Val(txtCustID.Text)
+            .showtimeID = Val(txtShowID.Text)
+            .reservationDate = datDate.Value.ToShortDateString
+            .totalPrice = txtPrice.Text
+        End With
+
+        FileOpen(1, reservationsFile, OpenMode.Random,,, Len(reservationRecord))
+
+        FilePut(1, reservationRecord, recordPos)
+
+        FileClose(1)
+
+        txtResID.Text = ""
+        txtCustID.Text = ""
+        txtShowID.Text = ""
+        txtFirstName.Text = ""
+        txtSurname.Text = ""
+        datDate.Value = Today
+        txtPrice.Text = ""
+        lstSeats.Items.Clear()
+
+        'Reload the form
+        Call ViewReservations_Load(Me, e)
     End Sub
 End Class

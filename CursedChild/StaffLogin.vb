@@ -1,18 +1,31 @@
-﻿Imports System.Security.Cryptography
-
-Public NotInheritable Class Simple3Des
-    Private TripleDes As New TripleDESCryptoServiceProvider
-End Class
+﻿Imports System.Security
+Imports System.Security.Cryptography
 
 Public Class StaffLogin
+    'Function used to encrypt data
+    Public Shared Function EncryptData(ByVal Message As String) As String
+        Dim passphrase As String = "password"
+        Dim results() As Byte
+        Dim UTF8 As System.Text.UTF8Encoding = New System.Text.UTF8Encoding()
+        Dim hashProvider As MD5CryptoServiceProvider = New MD5CryptoServiceProvider()
+        Dim TDESKey As Byte() = hashProvider.ComputeHash(UTF8.GetBytes(passphrase))
+        Dim TDESAlgorithm As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider()
 
-    Private Function TruncateHash(ByVal key As String, ByVal length As Integer) As Byte()
-        Dim sha1 As New SHA1CryptoServiceProvider
+        TDESAlgorithm.Key = TDESKey
+        TDESAlgorithm.Mode = CipherMode.ECB
+        TDESAlgorithm.Padding = PaddingMode.PKCS7
 
-        'Hash the key
-        Dim keyBytes() As Byte = System.Text.Encoding.Unicode.GetBytes(key)
+        Dim DataToEncrypt As Byte() = UTF8.GetBytes(Message)
 
-        Dim hash() As Byte = sha1.ComputeHash(keyBytes)
+        Try
+            Dim Encryptor As ICryptoTransform = TDESAlgorithm.CreateEncryptor
+            results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length)
+        Finally
+            TDESAlgorithm.Clear()
+            hashProvider.Clear()
+        End Try
+
+        Return Convert.ToBase64String(results)
     End Function
 
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -47,7 +60,7 @@ Public Class StaffLogin
             Loop
 
             'Check entered username and password match the record
-            If txtUsername.Text = username And txtPassword.Text = password And userRecord.staffID > 0 Then
+            If txtUsername.Text = username And EncryptData(txtPassword.Text) = password And userRecord.staffID > 0 Then
                 userFound = True
             End If
         Next

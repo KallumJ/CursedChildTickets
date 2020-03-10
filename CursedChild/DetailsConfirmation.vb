@@ -150,17 +150,12 @@ Public Class DetailsConfirmation
 
         End Try
 
-        'Send email TO BE FIXED
-
         Try
-
-            'REMOVE
-            Exit Try
 
             Dim oMail As New SmtpMail("TryIt")
 
             'Set sender email address
-            oMail.From = "cursedchildtickets@gmail.com"
+            oMail.From = "cursedchildpalacetheatre@gmail.com"
 
             'Set recipient email address
             oMail.To = CustomerDetails.txtEmail.Text
@@ -180,7 +175,7 @@ Public Class DetailsConfirmation
 
             'Setup smtp server
             Dim oServer As New SmtpServer("smtp.gmail.com")
-            oServer.User = "cursedchildtickets@gmail.com"
+            oServer.User = "cursedchildpalacetheatre@gmail.com"
             oServer.Password = "cursedchild111"
             oServer.Port = 587
             oServer.ConnectType = SmtpConnectType.ConnectTryTLS
@@ -196,6 +191,11 @@ Public Class DetailsConfirmation
 
         'Open the print preview dialog
         PrintPreviewDialog1.ShowDialog()
+
+        'Turn off timer
+        SelectShowTime.timer.Enabled = False
+        SelectShowTime.active = False
+        SelectShowTime.reset = 300
 
         'Open order confirmation
         OrderConfirmed.Show()
@@ -234,13 +234,8 @@ Public Class DetailsConfirmation
         ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
         ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
         ticketTxtString = ticketTxtString & "Seat(s): " & seats & vbNewLine
+        lblTotal.Text = "Total: " & FormatCurrency(SelectSeat.price) & vbNewLine
 
-        'Create total label
-        If Microsoft.VisualBasic.Right(SelectSeat.price, 1) = 5 Then
-            lblTotal.Text = "Total: £" & SelectSeat.price & "0" & vbNewLine
-        Else
-            lblTotal.Text = "Total: £" & SelectSeat.price & ".00" & vbNewLine
-        End If
 
         'Add the details to the text box
         txtTicketDetails.Text = ticketTxtString
@@ -278,7 +273,7 @@ Public Class DetailsConfirmation
         y = 50
 
         'Print the title on the page
-        e.Graphics.DrawString("Cursed Child E-Ticket(s):", TitleFont, Brushes.Black, x, y)
+        e.Graphics.DrawString("Cursed Child Ticket(s):", TitleFont, Brushes.Black, x, y)
 
         'Move down to print the body of the document
         y = 100

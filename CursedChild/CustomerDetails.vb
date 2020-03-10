@@ -45,6 +45,9 @@ Public Class CustomerDetails
         address = txtAddress.Text
         postcode = txtPostcode.Text
 
+        'Reset timer
+        SelectShowTime.reset = 300
+
         'Proceed to next form
         DetailsConfirmation.Show()
         Me.Hide()

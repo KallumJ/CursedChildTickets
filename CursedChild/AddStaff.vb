@@ -1,7 +1,36 @@
-﻿Public Class AddStaff
+﻿Imports System.Security
+Imports System.Security.Cryptography
+
+Public Class AddStaff
     'Declare variables
     Dim userFile As String = Application.StartupPath & "/users.dat"
     Dim score As Integer
+
+    Public Shared Function EncryptData(ByVal Message As String) As String
+        Dim passphrase As String = "password"
+        Dim results() As Byte
+        Dim UTF8 As System.Text.UTF8Encoding = New System.Text.UTF8Encoding()
+        Dim hashProvider As MD5CryptoServiceProvider = New MD5CryptoServiceProvider()
+        Dim TDESKey As Byte() = hashProvider.ComputeHash(UTF8.GetBytes(passphrase))
+        Dim TDESAlgorithm As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider()
+
+        TDESAlgorithm.Key = TDESKey
+        TDESAlgorithm.Mode = CipherMode.ECB
+        TDESAlgorithm.Padding = PaddingMode.PKCS7
+
+        Dim DataToEncrypt As Byte() = UTF8.GetBytes(Message)
+
+        Try
+            Dim Encryptor As ICryptoTransform = TDESAlgorithm.CreateEncryptor
+            results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length)
+        Finally
+            TDESAlgorithm.Clear()
+            hashProvider.Clear()
+        End Try
+
+        Return Convert.ToBase64String(results)
+    End Function
+
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'Declare variable
         Dim numOfRecords As Integer
@@ -26,7 +55,7 @@
         With userRecord
             .staffID = txtStaffID.Text
             .username = txtUsername.Text
-            .password = txtPassword.Text
+            .password = EncryptData(txtPassword.Text)
         End With
 
         'Write the record to file
