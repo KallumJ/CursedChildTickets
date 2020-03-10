@@ -29,6 +29,7 @@ Partial Class SelectShowTime
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.lblTimer = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'calCalendar
@@ -91,12 +92,22 @@ Partial Class SelectShowTime
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
+        'lblTimer
+        '
+        Me.lblTimer.AutoSize = True
+        Me.lblTimer.Location = New System.Drawing.Point(437, 9)
+        Me.lblTimer.Name = "lblTimer"
+        Me.lblTimer.Size = New System.Drawing.Size(36, 13)
+        Me.lblTimer.TabIndex = 6
+        Me.lblTimer.Text = "Timer:"
+        '
         'SelectShowTime
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(527, 224)
+        Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnNext)
         Me.Controls.Add(Me.Label1)
@@ -117,4 +128,5 @@ Partial Class SelectShowTime
     Friend WithEvents Label1 As Label
     Friend WithEvents btnNext As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents lblTimer As Label
 End Class

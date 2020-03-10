@@ -27,14 +27,9 @@ Partial Class ViewReservedSeats
         Me.txtShowID = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtResID = New System.Windows.Forms.TextBox()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnEdit = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnBack = New System.Windows.Forms.Button()
-        Me.btnCustSearch = New System.Windows.Forms.Button()
-        Me.txtStaffSearch = New System.Windows.Forms.TextBox()
         Me.lstResSeats = New System.Windows.Forms.ListBox()
-        Me.btnShowAdd = New System.Windows.Forms.Button()
         Me.txtBlock = New System.Windows.Forms.TextBox()
         Me.txtSeats = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -74,30 +69,6 @@ Partial Class ViewReservedSeats
         Me.txtResID.Size = New System.Drawing.Size(200, 20)
         Me.txtResID.TabIndex = 80
         '
-        'btnDelete
-        '
-        Me.btnDelete.BackColor = System.Drawing.Color.SaddleBrown
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnDelete.ForeColor = System.Drawing.Color.Khaki
-        Me.btnDelete.Location = New System.Drawing.Point(415, 186)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(200, 23)
-        Me.btnDelete.TabIndex = 79
-        Me.btnDelete.Text = "Delete Record"
-        Me.btnDelete.UseVisualStyleBackColor = False
-        '
-        'btnEdit
-        '
-        Me.btnEdit.BackColor = System.Drawing.Color.SaddleBrown
-        Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEdit.ForeColor = System.Drawing.Color.Khaki
-        Me.btnEdit.Location = New System.Drawing.Point(415, 157)
-        Me.btnEdit.Name = "btnEdit"
-        Me.btnEdit.Size = New System.Drawing.Size(200, 23)
-        Me.btnEdit.TabIndex = 78
-        Me.btnEdit.Text = "Edit Record"
-        Me.btnEdit.UseVisualStyleBackColor = False
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -119,26 +90,6 @@ Partial Class ViewReservedSeats
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = False
         '
-        'btnCustSearch
-        '
-        Me.btnCustSearch.BackColor = System.Drawing.Color.SaddleBrown
-        Me.btnCustSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnCustSearch.ForeColor = System.Drawing.Color.Khaki
-        Me.btnCustSearch.Location = New System.Drawing.Point(199, 386)
-        Me.btnCustSearch.Name = "btnCustSearch"
-        Me.btnCustSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnCustSearch.TabIndex = 75
-        Me.btnCustSearch.Text = "Search"
-        Me.btnCustSearch.UseVisualStyleBackColor = False
-        '
-        'txtStaffSearch
-        '
-        Me.txtStaffSearch.Location = New System.Drawing.Point(12, 386)
-        Me.txtStaffSearch.Name = "txtStaffSearch"
-        Me.txtStaffSearch.Size = New System.Drawing.Size(181, 20)
-        Me.txtStaffSearch.TabIndex = 74
-        Me.txtStaffSearch.Text = "Please enter a record to search"
-        '
         'lstResSeats
         '
         Me.lstResSeats.FormattingEnabled = True
@@ -146,18 +97,6 @@ Partial Class ViewReservedSeats
         Me.lstResSeats.Name = "lstResSeats"
         Me.lstResSeats.Size = New System.Drawing.Size(315, 368)
         Me.lstResSeats.TabIndex = 73
-        '
-        'btnShowAdd
-        '
-        Me.btnShowAdd.BackColor = System.Drawing.Color.SaddleBrown
-        Me.btnShowAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnShowAdd.ForeColor = System.Drawing.Color.Khaki
-        Me.btnShowAdd.Location = New System.Drawing.Point(12, 415)
-        Me.btnShowAdd.Name = "btnShowAdd"
-        Me.btnShowAdd.Size = New System.Drawing.Size(133, 23)
-        Me.btnShowAdd.TabIndex = 72
-        Me.btnShowAdd.Text = "Add Record"
-        Me.btnShowAdd.UseVisualStyleBackColor = False
         '
         'txtBlock
         '
@@ -196,7 +135,7 @@ Partial Class ViewReservedSeats
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(647, 450)
+        Me.ClientSize = New System.Drawing.Size(647, 391)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtSeats)
@@ -205,14 +144,9 @@ Partial Class ViewReservedSeats
         Me.Controls.Add(Me.txtShowID)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.txtResID)
-        Me.Controls.Add(Me.btnDelete)
-        Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.btnCustSearch)
-        Me.Controls.Add(Me.txtStaffSearch)
         Me.Controls.Add(Me.lstResSeats)
-        Me.Controls.Add(Me.btnShowAdd)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewReservedSeats"
         Me.Text = "Cursed Child Booking"
@@ -225,14 +159,9 @@ Partial Class ViewReservedSeats
     Friend WithEvents txtShowID As TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents txtResID As TextBox
-    Friend WithEvents btnDelete As Button
-    Friend WithEvents btnEdit As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents btnBack As Button
-    Friend WithEvents btnCustSearch As Button
-    Friend WithEvents txtStaffSearch As TextBox
     Friend WithEvents lstResSeats As ListBox
-    Friend WithEvents btnShowAdd As Button
     Friend WithEvents txtBlock As TextBox
     Friend WithEvents txtSeats As TextBox
     Friend WithEvents Label3 As Label

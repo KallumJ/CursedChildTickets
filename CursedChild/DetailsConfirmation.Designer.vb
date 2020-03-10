@@ -21,7 +21,7 @@ Partial Class DetailsConfirmation
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
-    Private Sub InitializeComponent()
+    Public Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DetailsConfirmation))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -32,6 +32,7 @@ Partial Class DetailsConfirmation
         Me.btnBack = New System.Windows.Forms.Button()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.lblTimer = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -114,12 +115,22 @@ Partial Class DetailsConfirmation
         Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
         Me.PrintPreviewDialog1.Visible = False
         '
+        'lblTimer
+        '
+        Me.lblTimer.AutoSize = True
+        Me.lblTimer.Location = New System.Drawing.Point(310, 212)
+        Me.lblTimer.Name = "lblTimer"
+        Me.lblTimer.Size = New System.Drawing.Size(36, 13)
+        Me.lblTimer.TabIndex = 20
+        Me.lblTimer.Text = "Timer:"
+        '
         'DetailsConfirmation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(673, 238)
+        Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnReserve)
         Me.Controls.Add(Me.lblTotal)
@@ -144,4 +155,5 @@ Partial Class DetailsConfirmation
     Friend WithEvents btnBack As Button
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents lblTimer As Label
 End Class

@@ -21,12 +21,13 @@ Partial Class BasketOverview
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
-    Private Sub InitializeComponent()
+    Public Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BasketOverview))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtBasket = New System.Windows.Forms.TextBox()
         Me.btnEditBasket = New System.Windows.Forms.Button()
         Me.btnContinue = New System.Windows.Forms.Button()
+        Me.lblTimer = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -70,12 +71,22 @@ Partial Class BasketOverview
         Me.btnContinue.Text = "Continue"
         Me.btnContinue.UseVisualStyleBackColor = False
         '
+        'lblTimer
+        '
+        Me.lblTimer.AutoSize = True
+        Me.lblTimer.Location = New System.Drawing.Point(295, 9)
+        Me.lblTimer.Name = "lblTimer"
+        Me.lblTimer.Size = New System.Drawing.Size(36, 13)
+        Me.lblTimer.TabIndex = 20
+        Me.lblTimer.Text = "Timer:"
+        '
         'BasketOverview
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(390, 236)
+        Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.btnEditBasket)
         Me.Controls.Add(Me.txtBasket)
@@ -92,4 +103,5 @@ Partial Class BasketOverview
     Friend WithEvents txtBasket As TextBox
     Friend WithEvents btnEditBasket As Button
     Friend WithEvents btnContinue As Button
+    Friend WithEvents lblTimer As Label
 End Class

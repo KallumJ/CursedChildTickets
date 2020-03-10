@@ -21,6 +21,9 @@
         area = cmbArea.Text
         price = Str(priceTotal)
 
+        'Reset timer
+        SelectShowTime.reset = 300
+
         'Open the basket overview form
         BasketOverview.Show()
         Me.Hide()
@@ -252,6 +255,127 @@
             'Change count of selected seats
             count = count - 1
         End If
+
+    End Sub
+
+    'Choosing best available seat
+    Private Sub btnBest_Click(sender As Object, e As EventArgs) Handles btnBest.Click
+        Dim seatCtl As Control
+        Dim seats As New ArrayList
+        Dim priceband As Integer
+        Dim bestprice As Integer
+        Dim bestseat As String
+        Dim numOfRecords As Integer
+
+        'Initalise variables
+        seats.Clear()
+        priceband = 0
+        bestprice = 0
+        bestseat = 0
+        numOfRecords = 0
+
+        'Error handling
+        If cmbArea.Text = "" Then
+            MsgBox("Please select an area of the auditorium", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+
+        'Create list of booked or selected seats
+        For Each seatCtl In panSeats.Controls
+            If TypeOf seatCtl Is Label Then
+                If seatCtl.BackColor = Color.Red Or seatCtl.BackColor = Color.LimeGreen Then
+                    seats.Add(Trim(seatCtl.Name))
+                End If
+            End If
+        Next
+
+        Dim seatsNumOfRecords As Integer
+        FileOpen(1, seatsFile, OpenMode.Random,,, Len(seatsRecord))
+        seatsNumOfRecords = LOF(1) / Len(seatsRecord)
+
+        For seatsRecordPos = 1 To seatsNumOfRecords
+            FileGet(1, seatsRecord, seatsRecordPos)
+
+            'Parse priceband to a number
+            With seatsRecord
+                If .priceBand = "A" Then
+                    priceband = 6
+                ElseIf .priceBand = "B" Then
+                    priceband = 5
+                ElseIf .priceBand = "C" Then
+                    priceband = 4
+                ElseIf .priceBand = "D" Then
+                    priceband = 3
+                ElseIf .priceBand = "E" Then
+                    priceband = 2
+                ElseIf .priceBand = "F" Then
+                    priceband = 1
+                End If
+
+                'Record best seat, if price is bigger than previously record, and in the right block, and is not booked
+                If bestprice < priceband And Trim(cmbArea.Text) = Trim(.block) And seats.Contains(Trim(.seat)) <> True Then
+                    bestseat = .seat
+                    bestprice = priceband
+                End If
+            End With
+
+        Next
+
+        FileClose(1)
+
+        'Select seat
+        For Each ctl In panSeats.Controls
+            If TypeOf ctl Is Label Then
+                'If label being checked is the seat that was found
+                If Trim(ctl.Name) = Trim(bestseat) Then
+                    ctl.BackColor = Color.LimeGreen
+                    'Adds selected seat to array list if seat is not already selected
+                    If seat.Contains(ctl.Name) <> True Then
+                        seat.Add(ctl.Name)
+                    End If
+
+                    'Open the file
+                    FileOpen(1, seatsFile, OpenMode.Random,,, Len(seatsRecord))
+
+                    'Determine number of records
+                    numOfRecords = LOF(1) / Len(seatsRecord)
+
+                    'read in the seats records
+                    For recordPos = 1 To numOfRecords
+                        FileGet(1, seatsRecord, recordPos)
+
+                        With seatsRecord
+                            'If seat record matches selected seat
+                            If Trim(.block) = Trim(cmbArea.Text) And Trim(.seat) = Trim(ctl.Name) Then
+                                'Determine price
+                                If .priceBand = "A" Then
+                                    priceTotal = priceTotal + 80
+                                ElseIf .priceBand = "B" Then
+                                    priceTotal = priceTotal + 67.5
+                                ElseIf .priceBand = "C" Then
+                                    priceTotal = priceTotal + 57.5
+                                ElseIf .priceBand = "D" Then
+                                    priceTotal = priceTotal + 42.5
+                                ElseIf .priceBand = "E" Then
+                                    priceTotal = priceTotal + 20
+                                ElseIf .priceBand = "F" Then
+                                    priceTotal = priceTotal + 15
+                                End If
+                                'Exit for, as seat was found
+                                Exit For
+                            End If
+                        End With
+
+                    Next
+
+                    'Close the file
+                    FileClose(1)
+
+                    'Set count to include new seats
+                    count = count + 1
+                End If
+            End If
+        Next
 
     End Sub
 
