@@ -7,7 +7,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub BasketOverview_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub BasketOverview_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim ticketTxtString As String
         Dim str As String
         Dim seats As String
@@ -30,7 +30,10 @@
     Private Sub btnEditBasket_Click(sender As Object, e As EventArgs) Handles btnEditBasket.Click
         'Return to beginning of booking process
         SelectShowTime.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
+    Private Sub BasketOverview_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

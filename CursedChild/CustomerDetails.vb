@@ -49,6 +49,7 @@ Public Class CustomerDetails
         SelectShowTime.reset = 300
 
         'Proceed to next form
+        Call DetailsConfirmation.DetailsConfirmation_Load(Me, e)
         DetailsConfirmation.Show()
         Me.Hide()
 
@@ -60,4 +61,7 @@ Public Class CustomerDetails
         Me.Close()
     End Sub
 
+    Private Sub CustomerDetails_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

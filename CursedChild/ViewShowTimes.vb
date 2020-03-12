@@ -7,12 +7,12 @@
 
     Private Sub btnShowAdd_Click(sender As Object, e As EventArgs) Handles btnShowAdd.Click
         AddShowTimes.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         StaffArea.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub ViewShowTimes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -263,4 +263,7 @@
         End If
     End Sub
 
+    Private Sub ViewShowTimes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

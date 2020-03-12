@@ -9,7 +9,7 @@
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Show the staff area
         StaffArea.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub ViewStaff_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -52,7 +52,7 @@
     Private Sub btnShowAdd_Click(sender As Object, e As EventArgs) Handles btnShowAdd.Click
         'Open the add staff form
         AddStaff.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub lstStaff_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstStaff.SelectedIndexChanged
@@ -242,4 +242,7 @@
 
     End Sub
 
+    Private Sub ViewStaff_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

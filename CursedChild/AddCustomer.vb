@@ -81,7 +81,7 @@ Public Class AddCustomer
         End Try
     End Sub
 
-    Private Sub AddCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub AddCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         updateCustID()
     End Sub
 
@@ -106,6 +106,10 @@ Public Class AddCustomer
             FileGet(1, customerRecord, numOfRecords)
             recordPos = customerRecord.customerID + 1
 
+            If recordPos < 0 Then
+                recordPos = Math.Abs(recordPos) + 1
+            End If
+
             'Display customer ID
             txtCustID.Text = recordPos
 
@@ -119,4 +123,7 @@ Public Class AddCustomer
 
     End Sub
 
+    Private Sub AddCustomer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

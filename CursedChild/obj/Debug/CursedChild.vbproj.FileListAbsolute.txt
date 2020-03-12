@@ -22,7 +22,6 @@ D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChi
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.MainMenu.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.Resources.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.OrderConfirmed.resources
-D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SeatPlan.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SelectSeat.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.SelectShowTime.resources
 D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\obj\Debug\CursedChild.ShowInfo.resources

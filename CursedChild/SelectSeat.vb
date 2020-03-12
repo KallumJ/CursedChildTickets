@@ -7,6 +7,7 @@
     Dim priceTotal As Decimal
     Dim reserved As New ArrayList
     Dim count As Integer
+    Public finalSeat As Boolean
 
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
 
@@ -25,6 +26,8 @@
         SelectShowTime.reset = 300
 
         'Open the basket overview form
+        Call BasketOverview.BasketOverview_Load(Me, e)
+
         BasketOverview.Show()
         Me.Hide()
     End Sub
@@ -379,4 +382,11 @@
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+    End Sub
+
+    Private Sub SelectSeat_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

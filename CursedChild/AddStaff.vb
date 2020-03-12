@@ -89,6 +89,10 @@ Public Class AddStaff
         FileGet(1, userRecord, numOfrecords)
         recordPos = userRecord.staffID + 1
 
+        If recordPos < 0 Then
+            recordPos = Math.Abs(recordPos) + 1
+        End If
+
         'Display staff ID
         txtStaffID.Text = recordPos
 
@@ -104,7 +108,7 @@ Public Class AddStaff
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Return to View Staff form
         ViewStaff.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     'Check password strength
@@ -158,4 +162,7 @@ Public Class AddStaff
         End If
     End Sub
 
+    Private Sub AddStaff_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

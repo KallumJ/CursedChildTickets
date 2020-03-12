@@ -69,8 +69,10 @@ Harry Potter and the Cursed Child is produced by Sonia Friedman Productions, Col
     Private Sub btnMainMenu_Click(sender As Object, e As EventArgs) Handles btnMainMenu.Click
         'Return to the main menu
         MainMenu.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
-
+    Private Sub ShowInfo_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

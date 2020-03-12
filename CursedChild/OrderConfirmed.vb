@@ -30,4 +30,7 @@
         timTimer.Enabled = True
     End Sub
 
+    Private Sub OrderConfirmed_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

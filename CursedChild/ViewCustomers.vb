@@ -8,7 +8,7 @@
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Return to staff area
         StaffArea.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub ViewCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -115,8 +115,9 @@
 
     Private Sub btnCustAdd_Click(sender As Object, e As EventArgs) Handles btnCustAdd.Click
         'Open the add customer form
+        Call AddCustomer.AddCustomer_Load(Me, e)
         AddCustomer.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
@@ -277,4 +278,7 @@
         End If
     End Sub
 
+    Private Sub ViewCustomers_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

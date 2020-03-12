@@ -263,7 +263,10 @@
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Open the staff area
         StaffArea.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
+    Private Sub ViewStaffSeatPlan_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

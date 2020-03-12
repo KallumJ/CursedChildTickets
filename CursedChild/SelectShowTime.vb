@@ -5,15 +5,85 @@
     Public showtimeID As Integer
     Public showtimeDate As String
     Dim showtimeFile As String = Application.StartupPath & "/showtimes.dat"
+    Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
 
     Public timer As New Timer
     Public reset As Double
     Public active As Boolean = False
     Public timeLeft As String
 
-    Private Sub SelectShowTime_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    'Function to check whether the string has letters or numbers
+    Private Function IsAlphaNum(ByVal strInputText As String) As Boolean
+        Dim IsAlpha As Boolean = False
+        If System.Text.RegularExpressions.Regex.IsMatch(strInputText, "^[a-zA-Z0-9]+$") Then
+            IsAlpha = True
+        Else
+            IsAlpha = False
+        End If
+        Return IsAlpha
+    End Function
+
+    Public Sub SelectShowTime_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Sets the minimum date to the current date
         calCalendar.MinDate = System.DateTime.Today()
+
+        'Set sold out shows to unavailable
+        Dim totalCapacity As Integer = 1728
+        Dim seatList As New ArrayList
+        Dim reservedSeatsNumOfRecords As Integer
+        Dim showtimeNumOfRecords As Integer
+
+        'Open the file
+        FileOpen(1, showtimeFile, OpenMode.Random,,, Len(showtimeRecord))
+
+        'Determine number of records
+        showtimeNumOfRecords = LOF(1) / Len(showtimeRecord)
+
+        'Read in the records
+        For showtimeRecordPos = 1 To showtimeNumOfRecords
+            FileGet(1, showtimeRecord, showtimeRecordPos)
+
+            'Open the reserved seats file
+            FileOpen(2, reservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
+
+            'Determine number of records
+            reservedSeatsNumOfRecords = LOF(2) / Len(reservedSeatsRecord)
+
+            'Read in a reserved seats file record
+            For reservedSeatsRecordPos = 1 To reservedSeatsNumOfRecords
+                FileGet(2, reservedSeatsRecord, reservedSeatsRecordPos)
+
+                'If reserved seats match showtime currently being checked then
+                If showtimeRecord.showtimeID = reservedSeatsRecord.showtimeID Then
+                    'Split reserved seat record
+                    Dim record As String
+                    Dim splitrecord() As String
+
+                    record = reservedSeatsRecord.seats
+                    splitrecord = Split(record, "*")
+
+                    'Convert array to array list
+                    For i = 0 To splitrecord.Length - 1
+                        If IsAlphaNum(splitrecord(i)) = True Then
+                            seatList.Add(splitrecord(i))
+                        End If
+                    Next
+
+                    'If the seat count exceeds total capacity, then set it to unavaiable
+                    If seatList.Count >= totalCapacity Then
+                        showtimeRecord.avaliable = False
+                        FilePut(1, showtimeRecord, showtimeRecordPos)
+                    End If
+
+                End If
+
+            Next
+            FileClose(2)
+            'Clear the seat list
+            seatList.Clear()
+        Next
+        FileClose(1)
+
         'Add avaliability for current day
         UpdateList()
 
@@ -125,6 +195,8 @@
         End If
 
         'Open the seat selection form
+        SelectSeat.cmbArea.Text = ""
+        SelectSeat.panSeats.Controls.Clear()
         reset = 300
         SelectSeat.Show()
         Me.Hide()
@@ -155,7 +227,7 @@
             FileGet(1, showtimeRecord, recordPos)
 
             'If the date is deleted, or before today then
-            If Date.Compare(Convert.ToDateTime(showtimeRecord.showtimeDate), Today) < 0 Or showtimeRecord.showtimeID < 0 Then
+            If Date.Compare(Convert.ToDateTime(showtimeRecord.showtimeDate), Today) < 0 Or showtimeRecord.showtimeID < 0 Or showtimeRecord.avaliable = False Then
                 Continue For
             End If
 
@@ -216,6 +288,10 @@
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         'Return to main menu
         MainMenu.Show()
-        Me.Close()
+        Me.Hide()
+    End Sub
+
+    Private Sub SelectShowTime_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
     End Sub
 End Class

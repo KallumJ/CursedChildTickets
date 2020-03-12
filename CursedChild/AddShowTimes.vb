@@ -74,6 +74,10 @@
         FileGet(1, showtimeRecord, numOfRecords)
         recordPos = showtimeRecord.showtimeID + 1
 
+        If recordPos < 0 Then
+            recordPos = Math.Abs(recordPos) + 1
+        End If
+
         'Display ID
         txtShowID.Text = recordPos
 
@@ -91,7 +95,10 @@
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         ViewShowTimes.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
+    Private Sub AddShowTimes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

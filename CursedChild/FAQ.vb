@@ -21,7 +21,10 @@
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Return to the Main Menu
         MainMenu.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
+    Private Sub FAQ_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

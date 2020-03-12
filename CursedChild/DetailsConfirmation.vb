@@ -199,10 +199,10 @@ Public Class DetailsConfirmation
 
         'Open order confirmation
         OrderConfirmed.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
-    Private Sub DetailsConfirmation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub DetailsConfirmation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Declare variables
         Dim custTxtString As String
         Dim ticketTxtString As String
@@ -245,7 +245,7 @@ Public Class DetailsConfirmation
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Return to selecting showtime
         SelectShowTime.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
@@ -330,4 +330,7 @@ Public Class DetailsConfirmation
 
     End Sub
 
+    Private Sub DetailsConfirmation_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

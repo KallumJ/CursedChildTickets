@@ -410,4 +410,8 @@
         'Reload the form
         Call ViewReservations_Load(Me, e)
     End Sub
+
+    Private Sub ViewReservations_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

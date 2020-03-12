@@ -76,7 +76,7 @@ Public Class StaffLogin
             txtPassword.Text = ""
         Else
             StaffArea.Show()
-            Me.Close()
+            Me.Hide()
         End If
 
 
@@ -85,7 +85,7 @@ Public Class StaffLogin
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Return to main menu
         MainMenu.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     'Login on enter key
@@ -95,4 +95,7 @@ Public Class StaffLogin
         End If
     End Sub
 
+    Private Sub StaffLogin_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class

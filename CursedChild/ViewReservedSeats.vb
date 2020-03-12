@@ -44,7 +44,7 @@
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Return to staff area
         StaffArea.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub lstResSeats_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstResSeats.SelectedIndexChanged
@@ -91,4 +91,7 @@
         FileClose(1)
     End Sub
 
+    Private Sub ViewReservedSeats_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        MainMenu.Close()
+    End Sub
 End Class
