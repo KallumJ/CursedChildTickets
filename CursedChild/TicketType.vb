@@ -1,10 +1,22 @@
 ﻿Public Class TicketType
+    Public consecutive As Boolean
+    Public nonConsecutive As Boolean
+
+
     Private Sub btnConsecutive_Click(sender As Object, e As EventArgs) Handles btnConsecutive.Click
-        MsgBox("NOT YET IMPLEMENTED, THIS IS A PROTOTYPE")
+        'Open show time selection
+        consecutive = True
+        Call SelectShowTime.SelectShowTime_Load(Me, e)
+        SelectShowTime.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnNonConsecutive_Click(sender As Object, e As EventArgs) Handles btnNonConsecutive.Click
-        MsgBox("NOT YET IMPLEMENTED, THIS IS A PROTOTYPE")
+        'Open show time selection
+        nonConsecutive = True
+        Call SelectShowTime.SelectShowTime_Load(Me, e)
+        SelectShowTime.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnSinglePart_Click(sender As Object, e As EventArgs) Handles btnSinglePart.Click
@@ -21,6 +33,11 @@
     End Sub
 
     Private Sub TicketType_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        MainMenu.Close()
+        Application.Exit()
+    End Sub
+
+    Private Sub TicketType_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        consecutive = False
+        nonConsecutive = False
     End Sub
 End Class

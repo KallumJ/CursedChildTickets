@@ -150,10 +150,13 @@
                     FileGet(3, showtimeRecord, showtimeRecordPos)
 
                     If reservationRecord.showtimeID = showtimeRecord.showtimeID Then
-                        time = showtimeRecord.showTimeTimeHH & ":" & showtimeRecord.showTimeTimeMM
+                        Dim mm As String
+
+                        If showtimeRecord.showTimeTimeMM = 0 Then mm = "00" Else mm = showtimeRecord.showTimeTimeMM
+                        time = showtimeRecord.showTimeTimeHH & ":" & mm
                         txtTime.Text = time
-                        Exit For
-                    End If
+                            Exit For
+                        End If
 
                 Next
 
@@ -279,7 +282,7 @@
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         StaffArea.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub btnResSearch_Click(sender As Object, e As EventArgs) Handles btnResSearch.Click
@@ -412,6 +415,6 @@
     End Sub
 
     Private Sub ViewReservations_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        MainMenu.Close()
+        Application.Exit()
     End Sub
 End Class

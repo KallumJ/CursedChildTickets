@@ -23,35 +23,11 @@ Partial Class TicketType
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TicketType))
-        Me.btnConsecutive = New System.Windows.Forms.Button()
-        Me.btnNonConsecutive = New System.Windows.Forms.Button()
         Me.btnSinglePart = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnConsecutive = New System.Windows.Forms.Button()
+        Me.btnNonConsecutive = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'btnConsecutive
-        '
-        Me.btnConsecutive.BackColor = System.Drawing.Color.SaddleBrown
-        Me.btnConsecutive.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnConsecutive.ForeColor = System.Drawing.Color.Khaki
-        Me.btnConsecutive.Location = New System.Drawing.Point(12, 12)
-        Me.btnConsecutive.Name = "btnConsecutive"
-        Me.btnConsecutive.Size = New System.Drawing.Size(194, 56)
-        Me.btnConsecutive.TabIndex = 0
-        Me.btnConsecutive.Text = "Consecutive"
-        Me.btnConsecutive.UseVisualStyleBackColor = False
-        '
-        'btnNonConsecutive
-        '
-        Me.btnNonConsecutive.BackColor = System.Drawing.Color.SaddleBrown
-        Me.btnNonConsecutive.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnNonConsecutive.ForeColor = System.Drawing.Color.Khaki
-        Me.btnNonConsecutive.Location = New System.Drawing.Point(12, 74)
-        Me.btnNonConsecutive.Name = "btnNonConsecutive"
-        Me.btnNonConsecutive.Size = New System.Drawing.Size(194, 56)
-        Me.btnNonConsecutive.TabIndex = 1
-        Me.btnNonConsecutive.Text = "Non-consecutive"
-        Me.btnNonConsecutive.UseVisualStyleBackColor = False
         '
         'btnSinglePart
         '
@@ -77,6 +53,30 @@ Partial Class TicketType
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
+        'btnConsecutive
+        '
+        Me.btnConsecutive.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnConsecutive.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnConsecutive.ForeColor = System.Drawing.Color.Khaki
+        Me.btnConsecutive.Location = New System.Drawing.Point(12, 12)
+        Me.btnConsecutive.Name = "btnConsecutive"
+        Me.btnConsecutive.Size = New System.Drawing.Size(194, 56)
+        Me.btnConsecutive.TabIndex = 0
+        Me.btnConsecutive.Text = "Consecutive"
+        Me.btnConsecutive.UseVisualStyleBackColor = False
+        '
+        'btnNonConsecutive
+        '
+        Me.btnNonConsecutive.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnNonConsecutive.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnNonConsecutive.ForeColor = System.Drawing.Color.Khaki
+        Me.btnNonConsecutive.Location = New System.Drawing.Point(12, 74)
+        Me.btnNonConsecutive.Name = "btnNonConsecutive"
+        Me.btnNonConsecutive.Size = New System.Drawing.Size(194, 56)
+        Me.btnNonConsecutive.TabIndex = 1
+        Me.btnNonConsecutive.Text = "Non-consecutive"
+        Me.btnNonConsecutive.UseVisualStyleBackColor = False
+        '
         'TicketType
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -93,9 +93,8 @@ Partial Class TicketType
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents btnConsecutive As Button
-    Friend WithEvents btnNonConsecutive As Button
     Friend WithEvents btnSinglePart As Button
     Friend WithEvents btnCancel As Button
+    Friend WithEvents btnConsecutive As Button
+    Friend WithEvents btnNonConsecutive As Button
 End Class

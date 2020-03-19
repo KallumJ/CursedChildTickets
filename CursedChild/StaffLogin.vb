@@ -28,6 +28,16 @@ Public Class StaffLogin
         Return Convert.ToBase64String(results)
     End Function
 
+    Public Function Truncate(value As String, length As Integer) As String
+        ' If argument is too big, return the original string.
+        ' ... Otherwise take a substring from the string's start index.
+        If length > value.Length Then
+            Return value
+        Else
+            Return value.Substring(0, length)
+        End If
+    End Function
+
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
 
         'Declare variables
@@ -60,7 +70,7 @@ Public Class StaffLogin
             Loop
 
             'Check entered username and password match the record
-            If txtUsername.Text = username And EncryptData(txtPassword.Text) = password And userRecord.staffID > 0 Then
+            If txtUsername.Text = username And EncryptData(Truncate(txtPassword.Text, 8)) = password And userRecord.staffID > 0 Then
                 userFound = True
             End If
         Next
@@ -96,6 +106,6 @@ Public Class StaffLogin
     End Sub
 
     Private Sub StaffLogin_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        MainMenu.Close()
+        Application.Exit()
     End Sub
 End Class

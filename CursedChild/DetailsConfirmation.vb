@@ -17,6 +17,9 @@ Public Class DetailsConfirmation
         Dim resSeatsNumOfRecords As Integer
         Dim custid As Integer
         Dim resid As Integer
+        Dim showtimeFile As String = Application.StartupPath & "/showtimes.dat"
+        Dim showNumOfRecords As Integer
+        Dim part2Date As Date
 
         'Save entered customer details to file
         Try
@@ -39,6 +42,7 @@ Public Class DetailsConfirmation
                 'If customer is already recorded, exit try
                 If Trim(customerRecord.firstName) = Trim(CustomerDetails.firstName) And Trim(customerRecord.Surname) = Trim(CustomerDetails.surname) Then
                     custRecordPos = customerRecord.customerID
+                    custid = customerRecord.customerID
                     'Close the file
                     FileClose(1)
                     Exit Try
@@ -98,6 +102,7 @@ Public Class DetailsConfirmation
 
             'Close the file
             FileClose(1)
+
         Catch ex As Exception
             Dim x As String
 
@@ -141,6 +146,7 @@ Public Class DetailsConfirmation
 
             'Close the file
             FileClose(1)
+
         Catch ex As Exception
             Dim x As String
 
@@ -149,6 +155,98 @@ Public Class DetailsConfirmation
             MsgBox("An error occured: " & x & ". Please contact a system administrator.")
 
         End Try
+
+        'If ticket type is consecutive
+        Try
+
+            'If reservation is consecutive
+            If TicketType.consecutive = True Then
+                resid = resid + 1
+
+                'Open the file
+                FileOpen(1, reservationsFile, OpenMode.Random,,, Len(reservationRecord))
+
+                'Determine record position
+                resNumOfRecords = LOF(1) / Len(reservationRecord)
+                resRecordPos = resNumOfRecords + 1
+
+                'Determine ID
+                FileGet(1, reservationRecord, resNumOfRecords)
+                resid = reservationRecord.reservationID + 1
+
+                FileOpen(2, showtimeFile, OpenMode.Random,,, Len(showtimeRecord))
+
+                showNumOfRecords = LOF(2) / Len(showtimeRecord)
+
+                For showRecordPos = 1 To showNumOfRecords
+                    FileGet(2, showtimeRecord, showRecordPos)
+
+                    If showtimeRecord.showtimeID = Trim(SelectShowTime.part2ID) Then
+                        part2Date = showtimeRecord.showtimeDate
+                        FileClose(2)
+                        Exit For
+                    End If
+
+                Next
+                FileClose(2)
+
+                'Read in reservation data
+                With reservationRecord
+                    .reservationID = resid
+                    .customerID = custid
+                    .showtimeID = Trim(SelectShowTime.part2ID)
+                    .reservationDate = part2Date
+                    .totalPrice = SelectSeat.price
+                End With
+
+                'Write the record to file
+                FilePut(1, reservationRecord, resRecordPos)
+
+                'Close the file
+                FileClose(1)
+
+                TicketType.consecutive = False
+
+                'Open the file
+                FileOpen(1, reservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
+
+                'Create seats string
+                Dim seats As String
+                Dim str As String
+                For Each str In SelectSeat.seat
+                    If seats = "" Then
+                        seats = Trim(str)
+                    Else
+                        seats = seats & "*" & Trim(str)
+                    End If
+                Next
+                seats = seats & "*"
+
+                'Read in the details
+                With reservedSeatsRecord
+                    .reservationID = resid
+                    .showtimeID = Trim(SelectShowTime.part2ID)
+                    .seats = seats
+                    .block = SelectSeat.area
+
+                    'Write the record to file
+                    FilePut(1, reservedSeatsRecord, resSeatsRecordPos + 1)
+
+                    'Close the file
+                    FileClose(1)
+                End With
+            End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        'If ticket is non consecutive, redirect user to remake another reservation
+        If TicketType.nonConsecutive = True Then
+            TicketType.nonConsecutive = False
+            SelectShowTime.Show()
+            Me.Hide()
+            Exit Sub
+        End If
 
         Try
 
@@ -209,6 +307,13 @@ Public Class DetailsConfirmation
         Dim str As String
         Dim seats As String
 
+        If TicketType.nonConsecutive = True Then
+            lblNotice.Text = "Notice: As you are booking non consecutive tickets, click reserve in order to be redirected to make your additional booking"
+        Else
+            lblNotice.Text = ""
+        End If
+
+
         'Create seats string
         For Each str In SelectSeat.seat
             seats = seats & ", " & str
@@ -232,6 +337,7 @@ Public Class DetailsConfirmation
         'Create the tickets text box
         ticketTxtString = "Date: " & SelectShowTime.showtimeDateString & vbNewLine
         ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
+        If TicketType.consecutive = True Then ticketTxtString = ticketTxtString & "& 2"
         ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
         ticketTxtString = ticketTxtString & "Seat(s): " & seats & vbNewLine
         lblTotal.Text = "Total: " & FormatCurrency(SelectSeat.price) & vbNewLine
@@ -331,6 +437,6 @@ Public Class DetailsConfirmation
     End Sub
 
     Private Sub DetailsConfirmation_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        MainMenu.Close()
+        Application.Exit()
     End Sub
 End Class

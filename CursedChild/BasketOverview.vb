@@ -19,6 +19,7 @@
         'Clear the tickets text box
         ticketTxtString = "Date: " & SelectShowTime.showtimeDateString & vbNewLine
         ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
+        If TicketType.consecutive = True Then ticketTxtString = ticketTxtString & "& 2"
         ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
         ticketTxtString = ticketTxtString & "Seat(s): " & seats & vbNewLine
         ticketTxtString = ticketTxtString & "Price: " & FormatCurrency(SelectSeat.price) & vbNewLine
@@ -34,6 +35,6 @@
     End Sub
 
     Private Sub BasketOverview_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        MainMenu.Close()
+        Application.Exit()
     End Sub
 End Class

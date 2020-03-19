@@ -16,6 +16,9 @@
         If count = 0 Then
             MsgBox("Please select at least one seat")
             Exit Sub
+        ElseIf count > 5 Then
+            MsgBox("There may only be 5 seats in a reservation")
+            Exit Sub
         End If
 
         'Read in the entered seat details
@@ -382,11 +385,7 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-    End Sub
-
     Private Sub SelectSeat_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        MainMenu.Close()
+        Application.Exit()
     End Sub
 End Class

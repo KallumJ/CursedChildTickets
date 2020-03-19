@@ -31,6 +31,16 @@ Public Class AddStaff
         Return Convert.ToBase64String(results)
     End Function
 
+    Public Function Truncate(value As String, length As Integer) As String
+        ' If argument is too big, return the original string.
+        ' ... Otherwise take a substring from the string's start index.
+        If length > value.Length Then
+            Return value
+        Else
+            Return value.Substring(0, length)
+        End If
+    End Function
+
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
         'Declare variable
         Dim numOfRecords As Integer
@@ -55,7 +65,7 @@ Public Class AddStaff
         With userRecord
             .staffID = txtStaffID.Text
             .username = txtUsername.Text
-            .password = EncryptData(txtPassword.Text)
+            .password = EncryptData(Truncate(txtPassword.Text, 8))
         End With
 
         'Write the record to file
@@ -163,6 +173,6 @@ Public Class AddStaff
     End Sub
 
     Private Sub AddStaff_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        MainMenu.Close()
+        Application.Exit()
     End Sub
 End Class

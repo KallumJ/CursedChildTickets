@@ -33,6 +33,7 @@ Partial Class DetailsConfirmation
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.lblTimer = New System.Windows.Forms.Label()
+        Me.lblNotice = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -124,12 +125,21 @@ Partial Class DetailsConfirmation
         Me.lblTimer.TabIndex = 20
         Me.lblTimer.Text = "Timer:"
         '
+        'lblNotice
+        '
+        Me.lblNotice.AutoSize = True
+        Me.lblNotice.Location = New System.Drawing.Point(12, 251)
+        Me.lblNotice.Name = "lblNotice"
+        Me.lblNotice.Size = New System.Drawing.Size(0, 13)
+        Me.lblNotice.TabIndex = 21
+        '
         'DetailsConfirmation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(673, 238)
+        Me.ClientSize = New System.Drawing.Size(673, 273)
+        Me.Controls.Add(Me.lblNotice)
         Me.Controls.Add(Me.lblTimer)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnReserve)
@@ -156,4 +166,5 @@ Partial Class DetailsConfirmation
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
     Friend WithEvents lblTimer As Label
+    Friend WithEvents lblNotice As Label
 End Class

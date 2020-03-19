@@ -87,6 +87,6 @@
     End Sub
 
     Private Sub StaffArea_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        MainMenu.Close()
+        Application.Exit()
     End Sub
 End Class

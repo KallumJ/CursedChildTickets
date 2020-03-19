@@ -25,8 +25,9 @@
         Dim avaliable As Boolean
     End Structure
 
-    'Declare Show Time Record
+    'Declare Show Time Records
     Public showtimeRecord As ShowTimeType
+    Public searchShowtimeRecord As ShowTimeType
 
     'Define Reservations structure
     Public Structure ReservationsType

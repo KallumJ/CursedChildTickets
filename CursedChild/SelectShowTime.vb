@@ -4,6 +4,7 @@
     Public showtimePart As String
     Public showtimeID As Integer
     Public showtimeDate As String
+    Public part2ID As Integer
     Dim showtimeFile As String = Application.StartupPath & "/showtimes.dat"
     Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
 
@@ -136,7 +137,6 @@
         Dim part As Integer
         Dim listString As String
 
-
         'Clear the list box
         lstAvaliable.Items.Clear()
 
@@ -155,26 +155,89 @@
 
             'If showtime is avaliable and matches the selected date
             If showtimeRecord.avaliable = True And showtimeRecord.showtimeDate = selectedDate And showtimeRecord.showtimeID > 0 Then
-                'Save the showtime details
-                With showtimeRecord
-                    showtimeDate = .showtimeDate
-                    timeHH = .showTimeTimeHH
-                    timeMM = .showTimeTimeMM
-                    part = .part
-                    showtimeID = .showtimeID
-                End With
 
-                If timeMM = "0" Then
-                    timeMM = "00"
+                'If the user is searching for consecutive showtimes and showtime is for part 1
+                If TicketType.consecutive = True And showtimeRecord.part = 1 Then
+
+                    'Check the file for a showtime on the same day for part 2
+                    For nestedRecordPos = 1 To numOfRecords
+                        FileGet(1, searchShowtimeRecord, nestedRecordPos)
+
+                        'If showtimes are on the same date and the showtime being read is for part 2
+                        If showtimeRecord.showtimeDate = searchShowtimeRecord.showtimeDate And searchShowtimeRecord.part = 2 Then
+                            'Save the showtime details
+                            With showtimeRecord
+                                showtimeDate = .showtimeDate
+                                timeHH = .showTimeTimeHH
+                                timeMM = .showTimeTimeMM
+                                part = .part
+                                showtimeID = .showtimeID
+                            End With
+
+                            If timeMM = "0" Then
+                                timeMM = "00"
+                            End If
+
+                            'Construct time string
+                            time = timeHH & ":" & timeMM
+
+                            'Add details to the list box
+                            listString = showtimeID
+                            listString = listString & ": " & time
+                            listString = listString & "     Part: " & part
+                            lstAvaliable.Items.Add(listString)
+
+                            'Save the showtime details
+                            With searchShowtimeRecord
+                                showtimeDate = .showtimeDate
+                                timeHH = .showTimeTimeHH
+                                timeMM = .showTimeTimeMM
+                                part = .part
+                                showtimeID = .showtimeID
+                            End With
+
+                            If timeMM = "0" Then
+                                timeMM = "00"
+                            End If
+
+                            'Construct time string
+                            time = timeHH & ":" & timeMM
+
+                            'Add details to the list box
+                            listString = showtimeID
+                            listString = listString & ": " & time
+                            listString = listString & "     Part: " & part
+                            lstAvaliable.Items.Add(listString)
+                            Exit For
+                        End If
+                    Next
+                    Exit For
+                    'If ticket type is not consecutive then
+                Else
+
+                    'Save the showtime details
+                    With showtimeRecord
+                        showtimeDate = .showtimeDate
+                        timeHH = .showTimeTimeHH
+                        timeMM = .showTimeTimeMM
+                        part = .part
+                        showtimeID = .showtimeID
+                    End With
+
+                    If timeMM = "0" Then
+                        timeMM = "00"
+                    End If
+
+                    'Construct time string
+                    time = timeHH & ":" & timeMM
+
+                    'Add details to the list box
+                    listString = showtimeID
+                    listString = listString & ": " & time
+                    listString = listString & "     Part: " & part
+                    lstAvaliable.Items.Add(listString)
+
                 End If
-
-                'Construct time string
-                time = timeHH & ":" & timeMM
-
-                'Add details to the list box
-                listString = time
-                listString = listString & "     Part: " & part
-                lstAvaliable.Items.Add(listString)
             End If
 
             'Check next record in the file
@@ -212,6 +275,11 @@
         Dim part As Integer
         Dim answer As Integer
         Dim time As String
+
+        If TicketType.consecutive = True Then
+            MsgBox("Automatically finding the next available showtime is not supported for consecutive tickets")
+            Exit Sub
+        End If
 
         'Open the file
         FileOpen(1, showtimeFile, OpenMode.Random,,, Len(showtimeRecord))
@@ -287,11 +355,65 @@
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         'Return to main menu
+        TicketType.consecutive = False
+        TicketType.nonConsecutive = False
         MainMenu.Show()
         Me.Hide()
     End Sub
 
     Private Sub SelectShowTime_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        MainMenu.Close()
+        Application.Exit()
+    End Sub
+
+    Private Sub lstAvaliable_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstAvaliable.SelectedIndexChanged
+        'Find the ID of the selected showtime
+        Dim listArray() As String
+        Dim searchID As Integer
+        Dim numOfRecords As Integer
+
+        If lstAvaliable.SelectedItem = "" Then
+            Exit Sub
+        End If
+
+        'Find the selected Showtime ID
+        ReDim listArray(lstAvaliable.Items.Count - 1)
+        lstAvaliable.Items.CopyTo(listArray, 0)
+        If TicketType.consecutive <> True Then
+            searchID = Val(Microsoft.VisualBasic.Left(listArray(lstAvaliable.SelectedIndex), 10))
+        Else
+            searchID = Val(Microsoft.VisualBasic.Left(listArray(0), 10))
+        End If
+
+
+        FileOpen(1, showtimeFile, OpenMode.Random,,, Len(showtimeRecord))
+
+        numOfRecords = LOF(1) / Len(showtimeRecord)
+
+        For recordPos = 1 To numOfRecords
+            FileGet(1, showtimeRecord, recordPos)
+
+            'Read in the details of the showtime
+            If showtimeRecord.showtimeID = searchID Then
+                With showtimeRecord
+                    showtimeDate = .showtimeDate
+                    showtimeID = .showtimeID
+                    showtimePart = .part
+                    showtimeDateString = .showtimeDate & " " & .showTimeTimeHH & ":"
+                    If .showTimeTimeMM = "0" Then
+                        showtimeDateString = showtimeDateString & "00"
+                    Else
+                        showtimeDateString = showtimeDateString & .showTimeTimeMM
+                    End If
+                End With
+                Exit For
+            End If
+        Next
+        FileClose(1)
+
+        If TicketType.consecutive = True Then
+            part2ID = Val(Microsoft.VisualBasic.Left(listArray(1), 10))
+        End If
+
+
     End Sub
 End Class
