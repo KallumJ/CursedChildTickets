@@ -55,7 +55,7 @@ Partial Class BasketOverview
         Me.btnEditBasket.Location = New System.Drawing.Point(12, 193)
         Me.btnEditBasket.Name = "btnEditBasket"
         Me.btnEditBasket.Size = New System.Drawing.Size(75, 23)
-        Me.btnEditBasket.TabIndex = 2
+        Me.btnEditBasket.TabIndex = 0
         Me.btnEditBasket.Text = "Edit"
         Me.btnEditBasket.UseVisualStyleBackColor = False
         '
@@ -67,7 +67,7 @@ Partial Class BasketOverview
         Me.btnContinue.Location = New System.Drawing.Point(298, 193)
         Me.btnContinue.Name = "btnContinue"
         Me.btnContinue.Size = New System.Drawing.Size(75, 23)
-        Me.btnContinue.TabIndex = 3
+        Me.btnContinue.TabIndex = 1
         Me.btnContinue.Text = "Continue"
         Me.btnContinue.UseVisualStyleBackColor = False
         '

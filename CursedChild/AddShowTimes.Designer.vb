@@ -35,6 +35,7 @@ Partial Class AddShowTimes
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnAdd = New System.Windows.Forms.Button()
         Me.btnBack = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -61,14 +62,14 @@ Partial Class AddShowTimes
         Me.txtShowID.Name = "txtShowID"
         Me.txtShowID.ReadOnly = True
         Me.txtShowID.Size = New System.Drawing.Size(200, 20)
-        Me.txtShowID.TabIndex = 2
+        Me.txtShowID.TabIndex = 0
         '
         'datDate
         '
         Me.datDate.Location = New System.Drawing.Point(85, 32)
         Me.datDate.Name = "datDate"
         Me.datDate.Size = New System.Drawing.Size(200, 20)
-        Me.datDate.TabIndex = 3
+        Me.datDate.TabIndex = 1
         '
         'cmbTimeHH
         '
@@ -77,7 +78,7 @@ Partial Class AddShowTimes
         Me.cmbTimeHH.Location = New System.Drawing.Point(85, 59)
         Me.cmbTimeHH.Name = "cmbTimeHH"
         Me.cmbTimeHH.Size = New System.Drawing.Size(200, 21)
-        Me.cmbTimeHH.TabIndex = 4
+        Me.cmbTimeHH.TabIndex = 2
         '
         'cmbTimeMM
         '
@@ -86,7 +87,7 @@ Partial Class AddShowTimes
         Me.cmbTimeMM.Location = New System.Drawing.Point(85, 87)
         Me.cmbTimeMM.Name = "cmbTimeMM"
         Me.cmbTimeMM.Size = New System.Drawing.Size(200, 21)
-        Me.cmbTimeMM.TabIndex = 5
+        Me.cmbTimeMM.TabIndex = 3
         '
         'Label3
         '
@@ -113,7 +114,7 @@ Partial Class AddShowTimes
         Me.cmbPart.Location = New System.Drawing.Point(85, 115)
         Me.cmbPart.Name = "cmbPart"
         Me.cmbPart.Size = New System.Drawing.Size(200, 21)
-        Me.cmbPart.TabIndex = 8
+        Me.cmbPart.TabIndex = 4
         '
         'Label5
         '
@@ -132,7 +133,7 @@ Partial Class AddShowTimes
         Me.btnAdd.Location = New System.Drawing.Point(15, 142)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(270, 23)
-        Me.btnAdd.TabIndex = 10
+        Me.btnAdd.TabIndex = 5
         Me.btnAdd.Text = "Add Showtime"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
@@ -144,16 +145,27 @@ Partial Class AddShowTimes
         Me.btnBack.Location = New System.Drawing.Point(15, 171)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(270, 23)
-        Me.btnBack.TabIndex = 11
+        Me.btnBack.TabIndex = 6
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 197)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(284, 26)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Notice: The latter showtime in a pair of consecutive " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "show times should be added" &
+    " straight after the previous one"
         '
         'AddShowTimes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(303, 202)
+        Me.ClientSize = New System.Drawing.Size(303, 238)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.Label5)
@@ -186,4 +198,5 @@ Partial Class AddShowTimes
     Friend WithEvents Label5 As Label
     Friend WithEvents btnAdd As Button
     Friend WithEvents btnBack As Button
+    Friend WithEvents Label6 As Label
 End Class

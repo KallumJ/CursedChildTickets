@@ -2,7 +2,6 @@
 
     'Declare variables
     Dim customerFile As String = Application.StartupPath & "/customers.dat"
-
     Dim recordPos As Integer
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
@@ -11,7 +10,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub ViewCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub ViewCustomers_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Declare variables
         Dim numOfRecords As Integer
         Dim listString As String
@@ -98,6 +97,7 @@
             FileClose(1)
         End If
 
+        'If the user did not select a record, then clear the fields of the previously selected details
         If searchID = 0 Then
             txtCustID.Text = ""
             cmbTitle.Text = ""
@@ -133,6 +133,7 @@
             .Postcode = txtPostcode.Text
         End With
 
+        'Open the file
         FileOpen(1, customerFile, OpenMode.Random,,, Len(customerRecord))
 
         'Write the record to file
@@ -279,6 +280,7 @@
     End Sub
 
     Private Sub ViewCustomers_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

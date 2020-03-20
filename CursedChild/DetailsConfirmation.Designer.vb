@@ -87,7 +87,7 @@ Partial Class DetailsConfirmation
         Me.btnReserve.Location = New System.Drawing.Point(7, 206)
         Me.btnReserve.Name = "btnReserve"
         Me.btnReserve.Size = New System.Drawing.Size(75, 23)
-        Me.btnReserve.TabIndex = 5
+        Me.btnReserve.TabIndex = 0
         Me.btnReserve.Text = "Reserve"
         Me.btnReserve.UseVisualStyleBackColor = False
         '
@@ -99,7 +99,7 @@ Partial Class DetailsConfirmation
         Me.btnBack.Location = New System.Drawing.Point(94, 207)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
-        Me.btnBack.TabIndex = 6
+        Me.btnBack.TabIndex = 1
         Me.btnBack.Text = "Edit"
         Me.btnBack.UseVisualStyleBackColor = False
         '

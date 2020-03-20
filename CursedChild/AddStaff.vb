@@ -7,6 +7,7 @@ Public Class AddStaff
     Dim score As Integer
 
     Public Shared Function EncryptData(ByVal Message As String) As String
+        'Declare variables
         Dim passphrase As String = "password"
         Dim results() As Byte
         Dim UTF8 As System.Text.UTF8Encoding = New System.Text.UTF8Encoding()
@@ -14,12 +15,13 @@ Public Class AddStaff
         Dim TDESKey As Byte() = hashProvider.ComputeHash(UTF8.GetBytes(passphrase))
         Dim TDESAlgorithm As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider()
 
+        'Set encryption algorithms properites
         TDESAlgorithm.Key = TDESKey
         TDESAlgorithm.Mode = CipherMode.ECB
         TDESAlgorithm.Padding = PaddingMode.PKCS7
 
+        'Encrypt data
         Dim DataToEncrypt As Byte() = UTF8.GetBytes(Message)
-
         Try
             Dim Encryptor As ICryptoTransform = TDESAlgorithm.CreateEncryptor
             results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length)
@@ -112,11 +114,13 @@ Public Class AddStaff
     End Sub
 
     Private Sub AddStaff_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Update ID
         updateStaffID()
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Return to View Staff form
+        Call ViewStaff.ViewStaff_Load(Me, e)
         ViewStaff.Show()
         Me.Hide()
     End Sub
@@ -173,6 +177,7 @@ Public Class AddStaff
     End Sub
 
     Private Sub AddStaff_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

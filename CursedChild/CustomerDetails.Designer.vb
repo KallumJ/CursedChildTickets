@@ -50,7 +50,7 @@ Partial Class CustomerDetails
         Me.btnContinue.Location = New System.Drawing.Point(72, 195)
         Me.btnContinue.Name = "btnContinue"
         Me.btnContinue.Size = New System.Drawing.Size(121, 23)
-        Me.btnContinue.TabIndex = 41
+        Me.btnContinue.TabIndex = 7
         Me.btnContinue.Text = "Continue"
         Me.btnContinue.UseVisualStyleBackColor = False
         '
@@ -124,49 +124,49 @@ Partial Class CustomerDetails
         Me.cmbTitle.Location = New System.Drawing.Point(72, 12)
         Me.cmbTitle.Name = "cmbTitle"
         Me.cmbTitle.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTitle.TabIndex = 32
+        Me.cmbTitle.TabIndex = 0
         '
         'txtPostcode
         '
         Me.txtPostcode.Location = New System.Drawing.Point(72, 169)
         Me.txtPostcode.Name = "txtPostcode"
         Me.txtPostcode.Size = New System.Drawing.Size(121, 20)
-        Me.txtPostcode.TabIndex = 31
+        Me.txtPostcode.TabIndex = 6
         '
         'txtAddress
         '
         Me.txtAddress.Location = New System.Drawing.Point(72, 143)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(121, 20)
-        Me.txtAddress.TabIndex = 30
+        Me.txtAddress.TabIndex = 5
         '
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(72, 117)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(121, 20)
-        Me.txtEmail.TabIndex = 29
+        Me.txtEmail.TabIndex = 4
         '
         'txtPhone
         '
         Me.txtPhone.Location = New System.Drawing.Point(72, 91)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(121, 20)
-        Me.txtPhone.TabIndex = 28
+        Me.txtPhone.TabIndex = 3
         '
         'txtSurname
         '
         Me.txtSurname.Location = New System.Drawing.Point(72, 65)
         Me.txtSurname.Name = "txtSurname"
         Me.txtSurname.Size = New System.Drawing.Size(121, 20)
-        Me.txtSurname.TabIndex = 27
+        Me.txtSurname.TabIndex = 2
         '
         'txtFirstName
         '
         Me.txtFirstName.Location = New System.Drawing.Point(72, 39)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(121, 20)
-        Me.txtFirstName.TabIndex = 26
+        Me.txtFirstName.TabIndex = 1
         '
         'btnCancel
         '
@@ -176,7 +176,7 @@ Partial Class CustomerDetails
         Me.btnCancel.Location = New System.Drawing.Point(72, 225)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(121, 23)
-        Me.btnCancel.TabIndex = 42
+        Me.btnCancel.TabIndex = 8
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '

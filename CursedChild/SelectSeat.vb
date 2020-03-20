@@ -1,4 +1,5 @@
 ﻿Public Class SelectSeat
+    'Declare variables
     Dim seatsFile As String = Application.StartupPath & "/seats.dat"
     Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
     Public area As String
@@ -31,6 +32,7 @@
         'Open the basket overview form
         Call BasketOverview.BasketOverview_Load(Me, e)
 
+        'Show basket overview form
         BasketOverview.Show()
         Me.Hide()
     End Sub
@@ -38,7 +40,7 @@
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Return to select showtime
         SelectShowTime.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub cmbArea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbArea.SelectedIndexChanged
@@ -157,6 +159,7 @@
     End Sub
 
     Public Sub ctl_MouseDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.MouseEventArgs)
+        'Declare variables
         Dim ctl As Control = sender
         Dim numOfRecords As Integer
 
@@ -295,10 +298,12 @@
             End If
         Next
 
+        'Open the file and determine number of records
         Dim seatsNumOfRecords As Integer
         FileOpen(1, seatsFile, OpenMode.Random,,, Len(seatsRecord))
         seatsNumOfRecords = LOF(1) / Len(seatsRecord)
 
+        'Read in the records
         For seatsRecordPos = 1 To seatsNumOfRecords
             FileGet(1, seatsRecord, seatsRecordPos)
 
@@ -346,7 +351,7 @@
                     'Determine number of records
                     numOfRecords = LOF(1) / Len(seatsRecord)
 
-                    'read in the seats records
+                    'Read in the seats records
                     For recordPos = 1 To numOfRecords
                         FileGet(1, seatsRecord, recordPos)
 
@@ -386,6 +391,8 @@
     End Sub
 
     Private Sub SelectSeat_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
+
 End Class

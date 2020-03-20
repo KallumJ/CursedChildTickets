@@ -41,7 +41,7 @@ Partial Class SelectSeat
         Me.btnBack.Location = New System.Drawing.Point(778, 12)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(76, 23)
-        Me.btnBack.TabIndex = 9
+        Me.btnBack.TabIndex = 3
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = False
         '
@@ -52,7 +52,7 @@ Partial Class SelectSeat
         Me.cmbArea.Location = New System.Drawing.Point(211, 12)
         Me.cmbArea.Name = "cmbArea"
         Me.cmbArea.Size = New System.Drawing.Size(121, 21)
-        Me.cmbArea.TabIndex = 10
+        Me.cmbArea.TabIndex = 0
         '
         'panSeats
         '
@@ -78,7 +78,7 @@ Partial Class SelectSeat
         Me.btnContinue.Location = New System.Drawing.Point(697, 12)
         Me.btnContinue.Name = "btnContinue"
         Me.btnContinue.Size = New System.Drawing.Size(75, 23)
-        Me.btnContinue.TabIndex = 16
+        Me.btnContinue.TabIndex = 2
         Me.btnContinue.Text = "Continue"
         Me.btnContinue.UseVisualStyleBackColor = False
         '
@@ -99,7 +99,7 @@ Partial Class SelectSeat
         Me.btnBest.Location = New System.Drawing.Point(569, 12)
         Me.btnBest.Name = "btnBest"
         Me.btnBest.Size = New System.Drawing.Size(122, 23)
-        Me.btnBest.TabIndex = 18
+        Me.btnBest.TabIndex = 1
         Me.btnBest.Text = "Best Available Seat"
         Me.btnBest.UseVisualStyleBackColor = False
         '

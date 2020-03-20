@@ -10,7 +10,7 @@
     Dim surname As String
     Dim time As String
 
-    Private Sub ViewReservations_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub ViewReservations_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Declare variables
         Dim numofRecords As Integer
         Dim listString As String
@@ -213,6 +213,7 @@
         'Close the file
         FileClose(1)
 
+        'If the user did not select a record, clear the textboxes of the previously selected customers details
         If searchID = 0 Then
             txtResID.Text = ""
             txtShowID.Text = ""
@@ -281,6 +282,7 @@
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        'Return to staff area
         StaffArea.Show()
         Me.Hide()
     End Sub
@@ -395,12 +397,16 @@
             .totalPrice = txtPrice.Text
         End With
 
+        'Open the file
         FileOpen(1, reservationsFile, OpenMode.Random,,, Len(reservationRecord))
 
+        'Write the ammended record to file
         FilePut(1, reservationRecord, recordPos)
 
+        'Close the file
         FileClose(1)
 
+        'Clear the textboxes
         txtResID.Text = ""
         txtCustID.Text = ""
         txtShowID.Text = ""
@@ -415,6 +421,7 @@
     End Sub
 
     Private Sub ViewReservations_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

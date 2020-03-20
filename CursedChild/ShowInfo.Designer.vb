@@ -89,7 +89,7 @@ Partial Class ShowInfo
         Me.btnMainMenu.Location = New System.Drawing.Point(713, 444)
         Me.btnMainMenu.Name = "btnMainMenu"
         Me.btnMainMenu.Size = New System.Drawing.Size(75, 23)
-        Me.btnMainMenu.TabIndex = 5
+        Me.btnMainMenu.TabIndex = 0
         Me.btnMainMenu.Text = "Back"
         Me.btnMainMenu.UseVisualStyleBackColor = False
         '

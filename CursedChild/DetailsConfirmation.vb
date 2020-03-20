@@ -3,6 +3,7 @@ Imports QRCoder
 
 Public Class DetailsConfirmation
 
+    'Declare variable
     Dim resRecordPos As Integer
 
     Private Sub btnReserve_Click(sender As Object, e As EventArgs) Handles btnReserve.Click
@@ -307,12 +308,12 @@ Public Class DetailsConfirmation
         Dim str As String
         Dim seats As String
 
+        'If ticket type is non consecutive, display notice that user will be redirected
         If TicketType.nonConsecutive = True Then
             lblNotice.Text = "Notice: As you are booking non consecutive tickets, click reserve in order to be redirected to make your additional booking"
         Else
             lblNotice.Text = ""
         End If
-
 
         'Create seats string
         For Each str In SelectSeat.seat
@@ -336,8 +337,7 @@ Public Class DetailsConfirmation
 
         'Create the tickets text box
         ticketTxtString = "Date: " & SelectShowTime.showtimeDateString & vbNewLine
-        ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
-        If TicketType.consecutive = True Then ticketTxtString = ticketTxtString & "& 2"
+        If TicketType.consecutive <> True Then ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine Else ticketTxtString = ticketTxtString & "Part: 1 & 2 " & vbNewLine
         ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
         ticketTxtString = ticketTxtString & "Seat(s): " & seats & vbNewLine
         lblTotal.Text = "Total: " & FormatCurrency(SelectSeat.price) & vbNewLine
@@ -437,6 +437,7 @@ Public Class DetailsConfirmation
     End Sub
 
     Private Sub DetailsConfirmation_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

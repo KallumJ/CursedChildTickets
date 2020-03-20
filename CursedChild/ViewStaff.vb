@@ -2,7 +2,6 @@
 
     'Declare variables
     Dim userFile As String = Application.StartupPath & "/users.dat"
-
     Dim recordPos As Integer
     Dim editPass As String
 
@@ -12,7 +11,7 @@
         Me.Hide()
     End Sub
 
-    Private Sub ViewStaff_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub ViewStaff_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Declare variabeles
         Dim numOfRecords As Integer
         Dim listString As String
@@ -101,6 +100,7 @@
         'Close the file
         FileClose(1)
 
+        'If user did not select a record, claer the textbox of the previously selected records details
         If searchID = 0 Then
             txtStaffID.Text = ""
             txtUsername.Text = ""
@@ -243,6 +243,7 @@
     End Sub
 
     Private Sub ViewStaff_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

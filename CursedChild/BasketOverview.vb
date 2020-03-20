@@ -8,18 +8,19 @@
     End Sub
 
     Public Sub BasketOverview_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Declare variables
         Dim ticketTxtString As String
         Dim str As String
         Dim seats As String
 
+        'Create seats string
         For Each str In SelectSeat.seat
             seats = seats & ", " & str
         Next
 
-        'Clear the tickets text box
+        'Create ticket textboxes string
         ticketTxtString = "Date: " & SelectShowTime.showtimeDateString & vbNewLine
-        ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine
-        If TicketType.consecutive = True Then ticketTxtString = ticketTxtString & "& 2"
+        If TicketType.consecutive <> True Then ticketTxtString = ticketTxtString & "Part: " & SelectShowTime.showtimePart & vbNewLine Else ticketTxtString = ticketTxtString & "Part: 1 & 2" & vbNewLine
         ticketTxtString = ticketTxtString & "Area: " & SelectSeat.area & vbNewLine
         ticketTxtString = ticketTxtString & "Seat(s): " & seats & vbNewLine
         ticketTxtString = ticketTxtString & "Price: " & FormatCurrency(SelectSeat.price) & vbNewLine
@@ -35,6 +36,7 @@
     End Sub
 
     Private Sub BasketOverview_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

@@ -1,5 +1,6 @@
 ﻿Public Class SelectShowTime
 
+    'Declare variables
     Public showtimeDateString As String
     Public showtimePart As String
     Public showtimeID As Integer
@@ -276,11 +277,6 @@
         Dim answer As Integer
         Dim time As String
 
-        If TicketType.consecutive = True Then
-            MsgBox("Automatically finding the next available showtime is not supported for consecutive tickets")
-            Exit Sub
-        End If
-
         'Open the file
         FileOpen(1, showtimeFile, OpenMode.Random,,, Len(showtimeRecord))
 
@@ -289,60 +285,137 @@
 
         'Set difference to 0
         difference = 0
+        If TicketType.consecutive <> True Then
 
-        For recordPos = 1 To numOfrecords
-            'Read in a record
-            FileGet(1, showtimeRecord, recordPos)
+            For recordPos = 1 To numOfrecords
+                'Read in a record
+                FileGet(1, showtimeRecord, recordPos)
 
-            'If the date is deleted, or before today then
-            If Date.Compare(Convert.ToDateTime(showtimeRecord.showtimeDate), Today) < 0 Or showtimeRecord.showtimeID < 0 Or showtimeRecord.avaliable = False Then
-                Continue For
+                'If the date is deleted, or before today then
+                If Date.Compare(Convert.ToDateTime(showtimeRecord.showtimeDate), Today) < 0 Or showtimeRecord.showtimeID < 0 Or showtimeRecord.avaliable = False Then
+                    Continue For
+                End If
+
+                'If this is the first date being checked then, gather the difference
+                If difference = 0 Then
+
+                    difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
+
+                    With showtimeRecord
+                        showtimeDate = .showtimeDate
+                        timeHH = .showTimeTimeHH
+                        timeMM = .showTimeTimeMM
+                        part = .part
+                        showtimeID = .showtimeID
+                    End With
+
+                    'If the difference is bigger than current difference then
+                ElseIf difference > DateDiff("s", Now, showtimeRecord.showtimeDate) Then
+
+                    difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
+
+                    With showtimeRecord
+                        showtimeDate = .showtimeDate
+                        timeHH = .showTimeTimeHH
+                        timeMM = .showTimeTimeMM
+                        part = .part
+                        showtimeID = .showtimeID
+                    End With
+
+                End If
+            Next recordPos
+
+            'Close the file
+            FileClose(1)
+
+            'Construct strings
+            If timeMM = "0" Then
+                timeMM = "00"
             End If
 
-            'If this is the first date being checked then, gather the difference
-            If difference = 0 Then
+            time = timeHH & ":" & timeMM
 
-                difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
+            showtimePart = part
+            showtimeDateString = showtimeDate & " " & time
+        Else
+            'If ticket type is consecutive then
+            For recordPos = 1 To numOfrecords
+                'Read in a record
+                FileGet(1, showtimeRecord, recordPos)
 
-                With showtimeRecord
-                    showtimeDate = .showtimeDate
-                    timeHH = .showTimeTimeHH
-                    timeMM = .showTimeTimeMM
-                    part = .part
-                    showtimeID = .showtimeID
-                End With
+                'If showtime is part 1 then
+                If showtimeRecord.part = 1 Then
 
-                'If the difference is bigger than current difference then
-            ElseIf difference > DateDiff("s", Now, showtimeRecord.showtimeDate) Then
+                    'Read in the records again
+                    For nestedRecordPos = 1 To numOfrecords
+                        FileGet(1, searchShowtimeRecord, nestedRecordPos)
 
-                difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
+                        'If record being read is the same date, and for part 2
+                        If searchShowtimeRecord.showtimeDate = showtimeRecord.showtimeDate And searchShowtimeRecord.part = 2 Then
 
-                With showtimeRecord
-                    showtimeDate = .showtimeDate
-                    timeHH = .showTimeTimeHH
-                    timeMM = .showTimeTimeMM
-                    part = .part
-                    showtimeID = .showtimeID
-                End With
+                            'If the date is deleted, or before today then move on
+                            If Date.Compare(Convert.ToDateTime(showtimeRecord.showtimeDate), Today) < 0 Or showtimeRecord.showtimeID < 0 Or showtimeRecord.avaliable = False Then
+                                Continue For
+                            End If
 
+                            'If this is the first date being checked then, gather the difference
+                            If difference = 0 Then
+
+                                difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
+
+                                With showtimeRecord
+                                    showtimeDate = .showtimeDate
+                                    timeHH = .showTimeTimeHH
+                                    timeMM = .showTimeTimeMM
+                                    part = .part
+                                    showtimeID = .showtimeID
+                                    part2ID = .showtimeID + 1
+                                End With
+
+                                'If the difference is bigger than current difference then
+                            ElseIf difference > DateDiff("s", Now, showtimeRecord.showtimeDate) Then
+
+                                difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
+
+                                With showtimeRecord
+                                    showtimeDate = .showtimeDate
+                                    timeHH = .showTimeTimeHH
+                                    timeMM = .showTimeTimeMM
+                                    part = .part
+                                    showtimeID = .showtimeID
+                                    part2ID = .showtimeID + 1
+                                End With
+
+                            End If
+
+                        End If
+
+                    Next
+
+                End If
+            Next
+
+            'Close the file
+            FileClose(1)
+
+            'Construct strings
+            If timeMM = "0" Then
+                timeMM = "00"
             End If
-        Next recordPos
 
-        'Close the file
-        FileClose(1)
+            time = timeHH & ":" & timeMM
 
-        'Construct strings
-        If timeMM = "0" Then
-            timeMM = "00"
+            showtimePart = part
+            showtimeDateString = showtimeDate & " " & time
         End If
 
-        time = timeHH & ":" & timeMM
-
-        showtimePart = part
-        showtimeDateString = showtimeDate & " " & time
-
         'Confirmation from user
-        answer = MsgBox("The nearest showtime is: " & showtimeDate & " Time: " & time & " Part: " & part, vbYesNo, "Next available showtime")
+        If TicketType.consecutive <> True Then
+            answer = MsgBox("The nearest showtime is: " & showtimeDate & " Time: " & time & " Part: " & part, vbYesNo, "Next available showtime")
+        Else
+            answer = MsgBox("The nearest showtime is: " & showtimeDate & " Time: 14:00 and 19:30" & " Part: 1 & 2 ", vbYesNo, "Next available showtime")
+        End If
+
 
         If answer = vbYes Then
             'Open the seat selection form
@@ -371,6 +444,7 @@
         Dim searchID As Integer
         Dim numOfRecords As Integer
 
+        'If the user doesnt click a showtime
         If lstAvaliable.SelectedItem = "" Then
             Exit Sub
         End If
@@ -384,11 +458,11 @@
             searchID = Val(Microsoft.VisualBasic.Left(listArray(0), 10))
         End If
 
-
+        'Open the file and determine number of records
         FileOpen(1, showtimeFile, OpenMode.Random,,, Len(showtimeRecord))
-
         numOfRecords = LOF(1) / Len(showtimeRecord)
 
+        'Read in the records
         For recordPos = 1 To numOfRecords
             FileGet(1, showtimeRecord, recordPos)
 
@@ -410,6 +484,7 @@
         Next
         FileClose(1)
 
+        'if ticket type is consecutive, get the showtime id for the next performance
         If TicketType.consecutive = True Then
             part2ID = Val(Microsoft.VisualBasic.Left(listArray(1), 10))
         End If

@@ -27,6 +27,7 @@ Public Class AddCustomer
         Dim post As String = txtPostcode.Text.ToUpper
         Dim match As Match = regex.Match(post)
 
+        'If postcode is entered incorrectly then
         If match.Success Then
         Else
             MsgBox("Please enter a valid postcode")
@@ -40,8 +41,6 @@ Public Class AddCustomer
             'Determine position of next record
             numOfRecords = LOF(1) / Len(customerRecord)
             recordPos = numOfRecords + 1
-
-
 
             'Read in the entered data
             With customerRecord
@@ -76,17 +75,20 @@ Public Class AddCustomer
             txtAddress.Text = ""
             txtPostcode.Text = ""
         Catch ex As Exception
+            'Display exception
             Dim x As String = ex.ToString
             MsgBox("An error occurred: " & x)
         End Try
     End Sub
 
     Public Sub AddCustomer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Update customer ID
         updateCustID()
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         'Open the view customers form
+        Call ViewCustomers.ViewCustomers_Load(Me, e)
         ViewCustomers.Show()
         Me.Hide()
     End Sub
@@ -116,6 +118,7 @@ Public Class AddCustomer
             'Close the file
             FileClose(1)
         Catch ex As Exception
+            'Display exception to the user
             Dim x As String = ex.ToString
 
             MsgBox("An error occurred: " & x)
@@ -124,6 +127,7 @@ Public Class AddCustomer
     End Sub
 
     Private Sub AddCustomer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

@@ -2,6 +2,7 @@
 
 Public Class CustomerDetails
 
+    'Declare variables
     Public title As String
     Public firstName As String
     Public surname As String
@@ -30,6 +31,7 @@ Public Class CustomerDetails
         Dim post As String = txtPostcode.Text.ToUpper
         Dim match As Match = regex.Match(post)
 
+        'If match fails, then output error message and exit routine
         If match.Success Then
         Else
             MsgBox("Please enter a valid postcode")
@@ -58,10 +60,11 @@ Public Class CustomerDetails
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         'Return to Main Menu
         MainMenu.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub CustomerDetails_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

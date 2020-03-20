@@ -44,7 +44,7 @@ Partial Class ViewStaffSeatPlan
         Me.cmbArea.Location = New System.Drawing.Point(12, 11)
         Me.cmbArea.Name = "cmbArea"
         Me.cmbArea.Size = New System.Drawing.Size(121, 21)
-        Me.cmbArea.TabIndex = 1
+        Me.cmbArea.TabIndex = 0
         '
         'btnSave
         '
@@ -54,7 +54,7 @@ Partial Class ViewStaffSeatPlan
         Me.btnSave.Location = New System.Drawing.Point(139, 9)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
-        Me.btnSave.TabIndex = 0
+        Me.btnSave.TabIndex = 1
         Me.btnSave.Text = "Save"
         Me.btnSave.UseVisualStyleBackColor = False
         '

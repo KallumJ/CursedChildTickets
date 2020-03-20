@@ -34,6 +34,8 @@ Partial Class ViewReservedSeats
         Me.txtSeats = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -50,7 +52,7 @@ Partial Class ViewReservedSeats
         Me.txtShowID.Location = New System.Drawing.Point(415, 79)
         Me.txtShowID.Name = "txtShowID"
         Me.txtShowID.Size = New System.Drawing.Size(200, 20)
-        Me.txtShowID.TabIndex = 82
+        Me.txtShowID.TabIndex = 1
         '
         'Label15
         '
@@ -67,7 +69,7 @@ Partial Class ViewReservedSeats
         Me.txtResID.Name = "txtResID"
         Me.txtResID.ReadOnly = True
         Me.txtResID.Size = New System.Drawing.Size(200, 20)
-        Me.txtResID.TabIndex = 80
+        Me.txtResID.TabIndex = 0
         '
         'Label2
         '
@@ -86,7 +88,7 @@ Partial Class ViewReservedSeats
         Me.btnBack.Location = New System.Drawing.Point(553, 12)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(75, 23)
-        Me.btnBack.TabIndex = 76
+        Me.btnBack.TabIndex = 4
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = False
         '
@@ -103,14 +105,14 @@ Partial Class ViewReservedSeats
         Me.txtBlock.Location = New System.Drawing.Point(415, 131)
         Me.txtBlock.Name = "txtBlock"
         Me.txtBlock.Size = New System.Drawing.Size(200, 20)
-        Me.txtBlock.TabIndex = 84
+        Me.txtBlock.TabIndex = 3
         '
         'txtSeats
         '
         Me.txtSeats.Location = New System.Drawing.Point(415, 105)
         Me.txtSeats.Name = "txtSeats"
         Me.txtSeats.Size = New System.Drawing.Size(200, 20)
-        Me.txtSeats.TabIndex = 85
+        Me.txtSeats.TabIndex = 2
         '
         'Label3
         '
@@ -130,12 +132,23 @@ Partial Class ViewReservedSeats
         Me.Label4.TabIndex = 87
         Me.Label4.Text = "Seats"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.CursedChild.My.Resources.Resources.Icon
+        Me.PictureBox1.Location = New System.Drawing.Point(348, 157)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(267, 222)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 88
+        Me.PictureBox1.TabStop = False
+        '
         'ViewReservedSeats
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
         Me.ClientSize = New System.Drawing.Size(647, 391)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.txtSeats)
@@ -150,6 +163,7 @@ Partial Class ViewReservedSeats
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ViewReservedSeats"
         Me.Text = "Cursed Child Booking"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -166,4 +180,5 @@ Partial Class ViewReservedSeats
     Friend WithEvents txtSeats As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

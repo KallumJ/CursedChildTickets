@@ -1,4 +1,5 @@
 ﻿Public Class TicketType
+    'Declare variables
     Public consecutive As Boolean
     Public nonConsecutive As Boolean
 
@@ -33,10 +34,12 @@
     End Sub
 
     Private Sub TicketType_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the form
         Application.Exit()
     End Sub
 
     Private Sub TicketType_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Set the system to normal mode
         consecutive = False
         nonConsecutive = False
     End Sub

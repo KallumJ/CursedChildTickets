@@ -40,7 +40,7 @@ Partial Class StaffArea
         Me.btnViewCustomers.Location = New System.Drawing.Point(13, 64)
         Me.btnViewCustomers.Name = "btnViewCustomers"
         Me.btnViewCustomers.Size = New System.Drawing.Size(122, 46)
-        Me.btnViewCustomers.TabIndex = 0
+        Me.btnViewCustomers.TabIndex = 1
         Me.btnViewCustomers.Text = "View Customers"
         Me.btnViewCustomers.UseVisualStyleBackColor = False
         '
@@ -52,7 +52,7 @@ Partial Class StaffArea
         Me.btnViewReservations.Location = New System.Drawing.Point(141, 64)
         Me.btnViewReservations.Name = "btnViewReservations"
         Me.btnViewReservations.Size = New System.Drawing.Size(122, 46)
-        Me.btnViewReservations.TabIndex = 1
+        Me.btnViewReservations.TabIndex = 2
         Me.btnViewReservations.Text = "View Reservations"
         Me.btnViewReservations.UseVisualStyleBackColor = False
         '
@@ -64,7 +64,7 @@ Partial Class StaffArea
         Me.btnViewShowtimes.Location = New System.Drawing.Point(269, 64)
         Me.btnViewShowtimes.Name = "btnViewShowtimes"
         Me.btnViewShowtimes.Size = New System.Drawing.Size(122, 46)
-        Me.btnViewShowtimes.TabIndex = 2
+        Me.btnViewShowtimes.TabIndex = 3
         Me.btnViewShowtimes.Text = "View Showtimes"
         Me.btnViewShowtimes.UseVisualStyleBackColor = False
         '
@@ -76,7 +76,7 @@ Partial Class StaffArea
         Me.btnViewStaff.Location = New System.Drawing.Point(13, 116)
         Me.btnViewStaff.Name = "btnViewStaff"
         Me.btnViewStaff.Size = New System.Drawing.Size(122, 46)
-        Me.btnViewStaff.TabIndex = 3
+        Me.btnViewStaff.TabIndex = 4
         Me.btnViewStaff.Text = "View Staff"
         Me.btnViewStaff.UseVisualStyleBackColor = False
         '
@@ -88,7 +88,7 @@ Partial Class StaffArea
         Me.btnViewReseervedSeats.Location = New System.Drawing.Point(141, 12)
         Me.btnViewReseervedSeats.Name = "btnViewReseervedSeats"
         Me.btnViewReseervedSeats.Size = New System.Drawing.Size(122, 46)
-        Me.btnViewReseervedSeats.TabIndex = 4
+        Me.btnViewReseervedSeats.TabIndex = 0
         Me.btnViewReseervedSeats.Text = "View Seat Control Records"
         Me.btnViewReseervedSeats.UseVisualStyleBackColor = False
         '
@@ -100,7 +100,7 @@ Partial Class StaffArea
         Me.btnLogOut.Location = New System.Drawing.Point(323, 12)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(68, 21)
-        Me.btnLogOut.TabIndex = 5
+        Me.btnLogOut.TabIndex = 6
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = False
         '
@@ -112,7 +112,7 @@ Partial Class StaffArea
         Me.btnViewSeatPlan.Location = New System.Drawing.Point(269, 116)
         Me.btnViewSeatPlan.Name = "btnViewSeatPlan"
         Me.btnViewSeatPlan.Size = New System.Drawing.Size(122, 46)
-        Me.btnViewSeatPlan.TabIndex = 6
+        Me.btnViewSeatPlan.TabIndex = 5
         Me.btnViewSeatPlan.Text = "Create Seating Plan"
         Me.btnViewSeatPlan.UseVisualStyleBackColor = False
         '

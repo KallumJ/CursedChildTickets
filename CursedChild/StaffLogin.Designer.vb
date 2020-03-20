@@ -61,7 +61,7 @@ Partial Class StaffLogin
         Me.txtPassword.Location = New System.Drawing.Point(76, 39)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(100, 20)
-        Me.txtPassword.TabIndex = 2
+        Me.txtPassword.TabIndex = 1
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'btnLogin
@@ -72,7 +72,7 @@ Partial Class StaffLogin
         Me.btnLogin.Location = New System.Drawing.Point(34, 65)
         Me.btnLogin.Name = "btnLogin"
         Me.btnLogin.Size = New System.Drawing.Size(142, 23)
-        Me.btnLogin.TabIndex = 4
+        Me.btnLogin.TabIndex = 2
         Me.btnLogin.Text = "Login"
         Me.btnLogin.UseVisualStyleBackColor = False
         '
@@ -84,7 +84,7 @@ Partial Class StaffLogin
         Me.btnBack.Location = New System.Drawing.Point(34, 94)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(142, 23)
-        Me.btnBack.TabIndex = 5
+        Me.btnBack.TabIndex = 3
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = False
         '

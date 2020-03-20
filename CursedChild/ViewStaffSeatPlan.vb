@@ -1,4 +1,5 @@
 ﻿Public Class ViewStaffSeatPlan
+    'Declare variables
     Dim seatsFile As String = Application.StartupPath & "/seats.dat"
 
     Private Sub cmbArea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbArea.SelectedIndexChanged
@@ -243,12 +244,10 @@
                 'Write the record to the file
                 FilePut(1, seatsRecord, recPos)
 
+                'Increment record position
                 recPos = recPos + 1
             End If
         Next
-
-        MsgBox(seatsRecord.xCoOrd)
-        MsgBox(seatsRecord.yCoOrd)
 
         'Close the file
         FileClose(1)
@@ -267,6 +266,8 @@
     End Sub
 
     Private Sub ViewStaffSeatPlan_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
+
 End Class

@@ -76,7 +76,7 @@ Partial Class SelectShowTime
         Me.btnNext.Location = New System.Drawing.Point(16, 189)
         Me.btnNext.Name = "btnNext"
         Me.btnNext.Size = New System.Drawing.Size(123, 23)
-        Me.btnNext.TabIndex = 4
+        Me.btnNext.TabIndex = 0
         Me.btnNext.Text = "Next Available Time"
         Me.btnNext.UseVisualStyleBackColor = False
         '
@@ -88,7 +88,7 @@ Partial Class SelectShowTime
         Me.btnCancel.Location = New System.Drawing.Point(145, 189)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(98, 23)
-        Me.btnCancel.TabIndex = 5
+        Me.btnCancel.TabIndex = 1
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
         '

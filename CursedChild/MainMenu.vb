@@ -2,25 +2,21 @@
 
     Private Sub btnStaffLogin_Click(sender As Object, e As EventArgs) Handles btnStaffLogin.Click
         'Open staff login form
+        Call StaffLogin.StaffLogin_Load(Me, e)
         StaffLogin.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub btnFAQ_Click(sender As Object, e As EventArgs) Handles btnFAQ.Click
-
         'Open FAQ Form
         FAQ.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub btnShowInfo_Click(sender As Object, e As EventArgs) Handles btnShowInfo.Click
-
         'Open Show Info Form
         ShowInfo.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
@@ -37,6 +33,7 @@
         AxWindowsMediaPlayer1.settings.mute = True
 
         'Housekeeping routines
+        'Declare variables
         Dim custNumOfRecords As Integer
         Dim newCustRecordPos As Integer
         Dim showNumOfRecords As Integer
@@ -49,33 +46,40 @@
         Dim newUserRecordPos As Integer
 
         'File paths
+        'Customer
         Dim customersFile As String = Application.StartupPath & "/customers.dat"
         Dim oldCustomersFile As String = Application.StartupPath & "/oldcustomers.dat"
         Dim newCustomersFile As String = Application.StartupPath & "/newcustomers.dat"
 
+        'Showtimes
         Dim showtimesFile As String = Application.StartupPath & "/showtimes.dat"
         Dim oldShowtimesFile As String = Application.StartupPath & "/oldshowtimes.dat"
         Dim newShowtimesFile As String = Application.StartupPath & "/newshowtimes.dat"
 
+        'Reservations
         Dim reservationsFile As String = Application.StartupPath & "/reservations.dat"
         Dim oldReservationsFile As String = Application.StartupPath & "/oldreservations.dat"
         Dim newReservationsFile As String = Application.StartupPath & "/newreservations.dat"
 
+        'Reserved Seats
         Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
         Dim oldReservedSeatsFile As String = Application.StartupPath & "/oldreservedseats.dat"
         Dim newReservedSeatsFile As String = Application.StartupPath & "/newreservedseats.dat"
 
+        'Users
         Dim userFile As String = Application.StartupPath & "/users.dat"
         Dim oldUserFile As String = Application.StartupPath & "/oldusers.dat"
         Dim newUserFile As String = Application.StartupPath & "/newusers.dat"
 
         'Customer routine
         Try
+            'If directory exists then
             If Dir(customersFile) <> "" Then
+                'Open the file and determine number of records
                 FileOpen(1, customersFile, OpenMode.Random,,, Len(customerRecord))
-
                 custNumOfRecords = LOF(1) / Len(customerRecord)
 
+                'Read in the records
                 For custRecordPos = 1 To custNumOfRecords
                     FileGet(1, customerRecord, custRecordPos)
 
@@ -109,20 +113,24 @@
             End If
 
         Catch ex As Exception
+            'Display exception to the user
             MsgBox(ex.ToString & " Please contact a system administrator.")
         End Try
 
         'Showtime routine
         Try
+            'If directory exists then
             If Dir(showtimesFile) <> "" Then
+                'Open the file and determine number of records
                 FileOpen(1, showtimesFile, OpenMode.Random,,, Len(showtimeRecord))
-
                 showNumOfRecords = LOF(1) / Len(showtimeRecord)
 
+                'Read in the records
                 For showRecordPos = 1 To showNumOfRecords
                     FileGet(1, showtimeRecord, showRecordPos)
 
                     With showtimeRecord
+                        'If showtime is not deleted, then write it to the new file
                         If Val(.showtimeID) > 0 Then
                             FileOpen(2, newShowtimesFile, OpenMode.Random,,, Len(showtimeRecord))
 
@@ -150,20 +158,24 @@
 
             End If
         Catch ex As Exception
+            'Display exception to user
             MsgBox(ex.ToString & " Please contact a system administrator.")
         End Try
 
         'Reservations Routine
         Try
+            'If directory exists then
             If Dir(reservationsFile) <> "" Then
+                'Open the file and determine number of records
                 FileOpen(1, reservationsFile, OpenMode.Random,,, Len(reservationRecord))
-
                 resNumOfRecords = LOF(1) / Len(reservationRecord)
 
+                'Read in the records
                 For resRecordPos = 1 To resNumOfRecords
                     FileGet(1, reservationRecord, resRecordPos)
 
                     With reservationRecord
+                        'If record is not deleted, then write to new file
                         If Val(.reservationID) > 0 Then
                             FileOpen(2, newReservationsFile, OpenMode.Random,,, Len(reservationRecord))
 
@@ -191,20 +203,24 @@
             End If
 
         Catch ex As Exception
+            'Display exception to the user
             MsgBox(ex.ToString & " Please contact a system administrator.")
         End Try
 
         'Reserved seats file routine
         Try
+            'If the directory exists then
             If Dir(reservedSeatsFile) <> "" Then
+                'Open the file and determine number of records
                 FileOpen(1, reservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
-
                 seatsNumOfRecords = LOF(1) / Len(reservedSeatsRecord)
 
+                'Read in the records
                 For seatsRecordPos = 1 To seatsNumOfRecords
                     FileGet(1, reservedSeatsRecord, seatsRecordPos)
 
                     With reservedSeatsRecord
+                        'If record is not deleted then write to the new file
                         If Val(.reservationID) > 0 Then
                             FileOpen(2, newReservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
 
@@ -231,20 +247,24 @@
                 Rename(newReservedSeatsFile, reservedSeatsFile)
             End If
         Catch ex As Exception
+            'Display exception to the user
             MsgBox(ex.ToString & " Please contact a system administrator.")
         End Try
 
         'Users routine
         Try
+            'If the directory exists then
             If Dir(userFile) <> "" Then
+                'Open the file and determine number of records
                 FileOpen(1, userFile, OpenMode.Random,,, Len(userRecord))
-
                 usersNumOfRecords = LOF(1) / Len(userRecord)
 
+                'Read in the records
                 For userRecordPos = 1 To usersNumOfRecords
                     FileGet(1, userRecord, userRecordPos)
 
                     With userRecord
+                        'If the record is not deleted then write to the new file
                         If Val(.staffID) > 0 Then
                             FileOpen(2, newUserFile, OpenMode.Random,,, Len(userRecord))
 
@@ -272,6 +292,7 @@
             End If
 
         Catch ex As Exception
+            'Display exception to the user
             MsgBox(ex.ToString & " Please contact a system administrator.")
         End Try
     End Sub

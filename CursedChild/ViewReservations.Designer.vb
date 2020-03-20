@@ -58,7 +58,7 @@ Partial Class ViewReservations
         Me.btnDelete.Location = New System.Drawing.Point(421, 400)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(121, 23)
-        Me.btnDelete.TabIndex = 48
+        Me.btnDelete.TabIndex = 10
         Me.btnDelete.Text = "Delete Record"
         Me.btnDelete.UseVisualStyleBackColor = False
         '
@@ -139,7 +139,7 @@ Partial Class ViewReservations
         Me.txtPrice.Location = New System.Drawing.Point(421, 244)
         Me.txtPrice.Name = "txtPrice"
         Me.txtPrice.Size = New System.Drawing.Size(121, 20)
-        Me.txtPrice.TabIndex = 37
+        Me.txtPrice.TabIndex = 7
         '
         'txtTime
         '
@@ -147,7 +147,7 @@ Partial Class ViewReservations
         Me.txtTime.Name = "txtTime"
         Me.txtTime.ReadOnly = True
         Me.txtTime.Size = New System.Drawing.Size(121, 20)
-        Me.txtTime.TabIndex = 36
+        Me.txtTime.TabIndex = 6
         '
         'txtSurname
         '
@@ -155,7 +155,7 @@ Partial Class ViewReservations
         Me.txtSurname.Name = "txtSurname"
         Me.txtSurname.ReadOnly = True
         Me.txtSurname.Size = New System.Drawing.Size(121, 20)
-        Me.txtSurname.TabIndex = 34
+        Me.txtSurname.TabIndex = 4
         '
         'txtFirstName
         '
@@ -163,7 +163,7 @@ Partial Class ViewReservations
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.ReadOnly = True
         Me.txtFirstName.Size = New System.Drawing.Size(121, 20)
-        Me.txtFirstName.TabIndex = 33
+        Me.txtFirstName.TabIndex = 3
         '
         'txtShowID
         '
@@ -171,7 +171,7 @@ Partial Class ViewReservations
         Me.txtShowID.Name = "txtShowID"
         Me.txtShowID.ReadOnly = True
         Me.txtShowID.Size = New System.Drawing.Size(121, 20)
-        Me.txtShowID.TabIndex = 32
+        Me.txtShowID.TabIndex = 2
         '
         'txtResID
         '
@@ -179,7 +179,7 @@ Partial Class ViewReservations
         Me.txtResID.Name = "txtResID"
         Me.txtResID.ReadOnly = True
         Me.txtResID.Size = New System.Drawing.Size(121, 20)
-        Me.txtResID.TabIndex = 31
+        Me.txtResID.TabIndex = 0
         '
         'Label2
         '
@@ -210,7 +210,7 @@ Partial Class ViewReservations
         Me.btnResSearch.Location = New System.Drawing.Point(187, 386)
         Me.btnResSearch.Name = "btnResSearch"
         Me.btnResSearch.Size = New System.Drawing.Size(75, 23)
-        Me.btnResSearch.TabIndex = 27
+        Me.btnResSearch.TabIndex = 12
         Me.btnResSearch.Text = "Search"
         Me.btnResSearch.UseVisualStyleBackColor = False
         '
@@ -219,7 +219,7 @@ Partial Class ViewReservations
         Me.txtResSearch.Location = New System.Drawing.Point(12, 386)
         Me.txtResSearch.Name = "txtResSearch"
         Me.txtResSearch.Size = New System.Drawing.Size(169, 20)
-        Me.txtResSearch.TabIndex = 26
+        Me.txtResSearch.TabIndex = 11
         Me.txtResSearch.Text = "Please enter an ID to search"
         '
         'lstReservations
@@ -235,7 +235,7 @@ Partial Class ViewReservations
         Me.datDate.Location = New System.Drawing.Point(419, 192)
         Me.datDate.Name = "datDate"
         Me.datDate.Size = New System.Drawing.Size(123, 20)
-        Me.datDate.TabIndex = 49
+        Me.datDate.TabIndex = 5
         '
         'lstSeats
         '
@@ -243,7 +243,7 @@ Partial Class ViewReservations
         Me.lstSeats.Location = New System.Drawing.Point(422, 270)
         Me.lstSeats.Name = "lstSeats"
         Me.lstSeats.Size = New System.Drawing.Size(120, 95)
-        Me.lstSeats.TabIndex = 50
+        Me.lstSeats.TabIndex = 8
         '
         'Label10
         '
@@ -260,7 +260,7 @@ Partial Class ViewReservations
         Me.txtCustID.Name = "txtCustID"
         Me.txtCustID.ReadOnly = True
         Me.txtCustID.Size = New System.Drawing.Size(121, 20)
-        Me.txtCustID.TabIndex = 52
+        Me.txtCustID.TabIndex = 1
         '
         'btnEdit
         '
@@ -270,7 +270,7 @@ Partial Class ViewReservations
         Me.btnEdit.Location = New System.Drawing.Point(421, 371)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(121, 23)
-        Me.btnEdit.TabIndex = 53
+        Me.btnEdit.TabIndex = 9
         Me.btnEdit.Text = "Edit Record"
         Me.btnEdit.UseVisualStyleBackColor = False
         '

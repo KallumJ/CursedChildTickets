@@ -4,7 +4,7 @@
     Dim reservedSeatsFile As String = Application.StartupPath & "/reservedseats.dat"
     Dim recordPos As Integer
 
-    Private Sub ViewReservedSeats_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub ViewReservedSeats_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Declare variables
         Dim numOfRecords As Integer
@@ -57,6 +57,7 @@
         resSeatsString = lstResSeats.Text
         searchID = Val(Microsoft.VisualBasic.Left(resSeatsString, 10))
 
+        'Open the file
         FileOpen(1, reservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
 
         recordPos = 1
@@ -92,6 +93,7 @@
     End Sub
 
     Private Sub ViewReservedSeats_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

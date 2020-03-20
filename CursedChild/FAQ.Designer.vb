@@ -60,7 +60,7 @@ Partial Class FAQ
         Me.cmbQuestion.Location = New System.Drawing.Point(13, 41)
         Me.cmbQuestion.Name = "cmbQuestion"
         Me.cmbQuestion.Size = New System.Drawing.Size(775, 21)
-        Me.cmbQuestion.TabIndex = 2
+        Me.cmbQuestion.TabIndex = 0
         '
         'Label1
         '

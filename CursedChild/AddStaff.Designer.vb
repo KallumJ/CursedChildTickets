@@ -45,7 +45,7 @@ Partial Class AddStaff
         Me.btnBack.Location = New System.Drawing.Point(106, 145)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(121, 23)
-        Me.btnBack.TabIndex = 58
+        Me.btnBack.TabIndex = 5
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = False
         '
@@ -57,7 +57,7 @@ Partial Class AddStaff
         Me.btnAdd.Location = New System.Drawing.Point(106, 116)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(121, 23)
-        Me.btnAdd.TabIndex = 57
+        Me.btnAdd.TabIndex = 4
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
@@ -93,7 +93,7 @@ Partial Class AddStaff
         Me.txtPassword.Location = New System.Drawing.Point(106, 64)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(121, 20)
-        Me.txtPassword.TabIndex = 43
+        Me.txtPassword.TabIndex = 2
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'txtUsername
@@ -101,7 +101,7 @@ Partial Class AddStaff
         Me.txtUsername.Location = New System.Drawing.Point(106, 38)
         Me.txtUsername.Name = "txtUsername"
         Me.txtUsername.Size = New System.Drawing.Size(121, 20)
-        Me.txtUsername.TabIndex = 42
+        Me.txtUsername.TabIndex = 1
         '
         'txtStaffID
         '
@@ -109,14 +109,14 @@ Partial Class AddStaff
         Me.txtStaffID.Name = "txtStaffID"
         Me.txtStaffID.ReadOnly = True
         Me.txtStaffID.Size = New System.Drawing.Size(121, 20)
-        Me.txtStaffID.TabIndex = 41
+        Me.txtStaffID.TabIndex = 0
         '
         'txtConfirmPassword
         '
         Me.txtConfirmPassword.Location = New System.Drawing.Point(106, 90)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.Size = New System.Drawing.Size(121, 20)
-        Me.txtConfirmPassword.TabIndex = 59
+        Me.txtConfirmPassword.TabIndex = 3
         Me.txtConfirmPassword.UseSystemPasswordChar = True
         '
         'Label2

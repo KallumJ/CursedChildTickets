@@ -101,18 +101,6 @@
     <Compile Include="AddCustomer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddReservations.Designer.vb">
-      <DependentUpon>AddReservations.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AddReservations.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddReservedSeats.Designer.vb">
-      <DependentUpon>AddReservedSeats.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AddReservedSeats.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="AddShowTimes.Designer.vb">
       <DependentUpon>AddShowTimes.vb</DependentUpon>
     </Compile>
@@ -255,12 +243,6 @@
     <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddReservations.resx">
-      <DependentUpon>AddReservations.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddReservedSeats.resx">
-      <DependentUpon>AddReservedSeats.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddShowTimes.resx">
       <DependentUpon>AddShowTimes.vb</DependentUpon>
     </EmbeddedResource>
@@ -339,7 +321,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -122,49 +122,49 @@ Partial Class AddCustomer
         Me.cmbTitle.Location = New System.Drawing.Point(75, 38)
         Me.cmbTitle.Name = "cmbTitle"
         Me.cmbTitle.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTitle.TabIndex = 30
+        Me.cmbTitle.TabIndex = 1
         '
         'txtPostcode
         '
         Me.txtPostcode.Location = New System.Drawing.Point(75, 195)
         Me.txtPostcode.Name = "txtPostcode"
         Me.txtPostcode.Size = New System.Drawing.Size(121, 20)
-        Me.txtPostcode.TabIndex = 29
+        Me.txtPostcode.TabIndex = 7
         '
         'txtAddress
         '
         Me.txtAddress.Location = New System.Drawing.Point(75, 169)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(121, 20)
-        Me.txtAddress.TabIndex = 28
+        Me.txtAddress.TabIndex = 6
         '
         'txtEmail
         '
         Me.txtEmail.Location = New System.Drawing.Point(75, 143)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(121, 20)
-        Me.txtEmail.TabIndex = 27
+        Me.txtEmail.TabIndex = 5
         '
         'txtPhone
         '
         Me.txtPhone.Location = New System.Drawing.Point(75, 117)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(121, 20)
-        Me.txtPhone.TabIndex = 26
+        Me.txtPhone.TabIndex = 4
         '
         'txtSurname
         '
         Me.txtSurname.Location = New System.Drawing.Point(75, 91)
         Me.txtSurname.Name = "txtSurname"
         Me.txtSurname.Size = New System.Drawing.Size(121, 20)
-        Me.txtSurname.TabIndex = 25
+        Me.txtSurname.TabIndex = 3
         '
         'txtFirstName
         '
         Me.txtFirstName.Location = New System.Drawing.Point(75, 65)
         Me.txtFirstName.Name = "txtFirstName"
         Me.txtFirstName.Size = New System.Drawing.Size(121, 20)
-        Me.txtFirstName.TabIndex = 24
+        Me.txtFirstName.TabIndex = 2
         '
         'txtCustID
         '
@@ -172,7 +172,7 @@ Partial Class AddCustomer
         Me.txtCustID.Name = "txtCustID"
         Me.txtCustID.ReadOnly = True
         Me.txtCustID.Size = New System.Drawing.Size(121, 20)
-        Me.txtCustID.TabIndex = 23
+        Me.txtCustID.TabIndex = 0
         '
         'btnAdd
         '
@@ -182,7 +182,7 @@ Partial Class AddCustomer
         Me.btnAdd.Location = New System.Drawing.Point(75, 221)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(121, 23)
-        Me.btnAdd.TabIndex = 39
+        Me.btnAdd.TabIndex = 8
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
@@ -194,7 +194,7 @@ Partial Class AddCustomer
         Me.btnBack.Location = New System.Drawing.Point(75, 250)
         Me.btnBack.Name = "btnBack"
         Me.btnBack.Size = New System.Drawing.Size(121, 23)
-        Me.btnBack.TabIndex = 40
+        Me.btnBack.TabIndex = 9
         Me.btnBack.Text = "Back"
         Me.btnBack.UseVisualStyleBackColor = False
         '

@@ -4,6 +4,7 @@ Imports System.Security.Cryptography
 Public Class StaffLogin
     'Function used to encrypt data
     Public Shared Function EncryptData(ByVal Message As String) As String
+        'Declare variables
         Dim passphrase As String = "password"
         Dim results() As Byte
         Dim UTF8 As System.Text.UTF8Encoding = New System.Text.UTF8Encoding()
@@ -11,10 +12,12 @@ Public Class StaffLogin
         Dim TDESKey As Byte() = hashProvider.ComputeHash(UTF8.GetBytes(passphrase))
         Dim TDESAlgorithm As TripleDESCryptoServiceProvider = New TripleDESCryptoServiceProvider()
 
+        'Set algorithm properties
         TDESAlgorithm.Key = TDESKey
         TDESAlgorithm.Mode = CipherMode.ECB
         TDESAlgorithm.Padding = PaddingMode.PKCS7
 
+        'Encrypt Data
         Dim DataToEncrypt As Byte() = UTF8.GetBytes(Message)
 
         Try
@@ -85,10 +88,10 @@ Public Class StaffLogin
             'Clear the password entry
             txtPassword.Text = ""
         Else
+            'Show the staff area
             StaffArea.Show()
             Me.Hide()
         End If
-
 
     End Sub
 
@@ -106,6 +109,13 @@ Public Class StaffLogin
     End Sub
 
     Private Sub StaffLogin_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
+    End Sub
+
+    Public Sub StaffLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Clear the textboxes
+        txtPassword.Text = ""
+        txtUsername.Text = ""
     End Sub
 End Class

@@ -1,4 +1,5 @@
 ﻿Public Class AddShowTimes
+    'Declare variables
     Dim showtimesFile As String = Application.StartupPath & "/showtimes.dat"
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
@@ -63,6 +64,7 @@
     End Sub
 
     Private Sub updateShowID()
+        'Declare variables
         Dim recordPos As Integer
         Dim numOfRecords As Integer
 
@@ -74,6 +76,7 @@
         FileGet(1, showtimeRecord, numOfRecords)
         recordPos = showtimeRecord.showtimeID + 1
 
+        'If previous reocrd is deleted, find the positive value of the negative value being stored
         If recordPos < 0 Then
             recordPos = Math.Abs(recordPos) + 1
         End If
@@ -94,11 +97,14 @@
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        'Return to ViewShowtimes form
+        Call ViewShowTimes.ViewShowTimes_Load(Me, e)
         ViewShowTimes.Show()
         Me.Hide()
     End Sub
 
     Private Sub AddShowTimes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

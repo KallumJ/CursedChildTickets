@@ -2,20 +2,21 @@
 
     'Declare variables
     Dim showtimesFile As String = Application.StartupPath & "/showtimes.dat"
-
     Dim recordPos As Integer
 
     Private Sub btnShowAdd_Click(sender As Object, e As EventArgs) Handles btnShowAdd.Click
+        'Open showtimes form
         AddShowTimes.Show()
         Me.Hide()
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        'Return to staff area
         StaffArea.Show()
         Me.Hide()
     End Sub
 
-    Private Sub ViewShowTimes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub ViewShowTimes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Declare variables
         Dim numOfRecords As Integer
         Dim listString As String
@@ -107,6 +108,7 @@
         'Close the file
         FileClose(1)
 
+        'If user did not select a record, clear the textboxes of the previously selected details
         If searchID = 0 Then
             txtShowtimeID.Text = ""
             datDate.Value = Today
@@ -182,14 +184,12 @@
         Call ViewShowTimes_Load(Me, e)
     End Sub
 
-    Private Sub btnCustSearch_Click(sender As Object, e As EventArgs) Handles btnCustSearch.Click
+    Private Sub btnShowSearch_Click(sender As Object, e As EventArgs) Handles btnCustSearch.Click
         'Declare variables
         Dim searchString As String
         Dim listString As String
         Dim numOfRecords As Integer
         Dim numOfRecordsFound As Integer
-        Dim showtimeDate As String
-        Dim time As String
         Dim recordPosition As Integer
         Dim mm As String
 
@@ -264,6 +264,7 @@
     End Sub
 
     Private Sub ViewShowTimes_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 End Class

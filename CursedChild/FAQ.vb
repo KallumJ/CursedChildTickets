@@ -25,6 +25,8 @@
     End Sub
 
     Private Sub FAQ_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
+
 End Class
