@@ -28,8 +28,14 @@
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Autoplay video on form load
         AxWindowsMediaPlayer1.uiMode = "none"
+
+        'Set UI mode
         AxWindowsMediaPlayer1.URL = "D:\Subjects\Computer Science\A2 Computer Science\Unit 5\Implementation\CursedChildTickets\CursedChild\Resources\Trailer.mp4"
+
+        'Set the video to loop
         AxWindowsMediaPlayer1.settings.setMode("loop", True)
+
+        'Set the video to mute
         AxWindowsMediaPlayer1.settings.mute = True
 
         'Housekeeping routines
@@ -86,16 +92,21 @@
                     With customerRecord
                         'If customer is not deleted, write to new file
                         If Val(.customerID) > 0 Then
+                            'Open the file
                             FileOpen(2, newCustomersFile, OpenMode.Random,,, Len(customerRecord))
 
+                            'Determine record position
                             newCustRecordPos = LOF(2) / Len(customerRecord) + 1
 
+                            'Write the record to file
                             FilePut(2, customerRecord, newCustRecordPos)
 
+                            'Close the file
                             FileClose(2)
                         End If
                     End With
                 Next
+                'Close the file
                 FileClose(1)
 
                 'Archive old file
@@ -132,16 +143,21 @@
                     With showtimeRecord
                         'If showtime is not deleted, then write it to the new file
                         If Val(.showtimeID) > 0 Then
+                            'Open the file
                             FileOpen(2, newShowtimesFile, OpenMode.Random,,, Len(showtimeRecord))
 
+                            'Determine record position
                             newShowRecordPos = LOF(2) / Len(showtimeRecord) + 1
 
+                            'Write the record to file
                             FilePut(2, showtimeRecord, newShowRecordPos)
 
+                            'Close the file
                             FileClose(2)
                         End If
                     End With
                 Next
+                'Close the file
                 FileClose(1)
 
                 'Archive old file
@@ -177,16 +193,21 @@
                     With reservationRecord
                         'If record is not deleted, then write to new file
                         If Val(.reservationID) > 0 Then
+                            'Open the file
                             FileOpen(2, newReservationsFile, OpenMode.Random,,, Len(reservationRecord))
 
+                            'Determine record position
                             newResRecordPos = LOF(2) / Len(reservationRecord) + 1
 
+                            'Write the record to file
                             FilePut(2, reservationRecord, newResRecordPos)
 
+                            'Close the file
                             FileClose(2)
                         End If
                     End With
                 Next
+                'Close the file
                 FileClose(1)
 
                 'Archive the old file
@@ -222,16 +243,21 @@
                     With reservedSeatsRecord
                         'If record is not deleted then write to the new file
                         If Val(.reservationID) > 0 Then
+                            'Open the file
                             FileOpen(2, newReservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
 
+                            'Determine record position
                             newSeatsRecordPos = LOF(2) / Len(reservedSeatsRecord) + 1
 
+                            'Write the record to file
                             FilePut(2, reservedSeatsRecord, newSeatsRecordPos)
 
+                            'Close the file
                             FileClose(2)
                         End If
                     End With
                 Next
+                'Close the file
                 FileClose(1)
 
                 'Archive the old file
@@ -266,16 +292,21 @@
                     With userRecord
                         'If the record is not deleted then write to the new file
                         If Val(.staffID) > 0 Then
+                            'Open the file
                             FileOpen(2, newUserFile, OpenMode.Random,,, Len(userRecord))
 
+                            'Determine record position
                             newUserRecordPos = LOF(2) / Len(userRecord) + 1
 
+                            'Write the record to file
                             FilePut(2, userRecord, newUserRecordPos)
 
+                            'Close the file
                             FileClose(2)
                         End If
                     End With
                 Next
+                'Close the file
                 FileClose(1)
 
                 'Archive old file

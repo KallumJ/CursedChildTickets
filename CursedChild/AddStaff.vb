@@ -26,6 +26,7 @@ Public Class AddStaff
             Dim Encryptor As ICryptoTransform = TDESAlgorithm.CreateEncryptor
             results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length)
         Finally
+            'Reset algorithm
             TDESAlgorithm.Clear()
             hashProvider.Clear()
         End Try
@@ -52,6 +53,7 @@ Public Class AddStaff
 
         'Double keying on password
         If txtPassword.Text <> txtConfirmPassword.Text Then
+            'Output error message
             MsgBox("The two passwords entered must match")
             Exit Sub
         End If
@@ -61,6 +63,8 @@ Public Class AddStaff
 
         'Determine poisition of the next record
         numOfRecords = LOF(1) / Len(userRecord)
+        
+        'Set record position to next position in file
         recordPos = numOfRecords + 1
 
         'Read in the entered data
@@ -98,9 +102,14 @@ Public Class AddStaff
 
         'Determine record position
         numOfrecords = LOF(1) / Len(userRecord)
+        
+        'Get the record from file
         FileGet(1, userRecord, numOfrecords)
+        
+        'Set record position
         recordPos = userRecord.staffID + 1
 
+        'If the record position is negative, make it positive
         If recordPos < 0 Then
             recordPos = Math.Abs(recordPos) + 1
         End If
@@ -136,17 +145,26 @@ Public Class AddStaff
         Dim other As Integer = 0
 
         'Gather information about the password
+
+        'For the length of the password
         For i = 0 To password.Length - 1
+            'If the character is a letter
             If Char.IsLetter(password(i)) Then
+                'If the character is uppercase
                 If Char.IsUpper(password(i)) Then
+                    'Add 1 to the upper count
                     upper = upper + 1
                 Else
+                    'Add 1 to the lower count
                     lower = lower + 1
                 End If
+            'If the character is a number
             ElseIf Char.IsNumber(password(i)) Then
+                'Add one to the number count
                 numbers = numbers + 1
             Else
-                other = numbers + 1
+                'Add one to the special count
+                other = other + 1
             End If
         Next
 

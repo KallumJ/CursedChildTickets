@@ -31,11 +31,13 @@
         'Read in the records
         For recordPos = 1 To numOfRecords
 
+            'Get the record from the file
             FileGet(1, userRecord, recordPos)
 
             With userRecord
                 'If user is not deleted then
                 If .staffID > 0 Then
+                    'Add details to string and add the string to the list box
                     listString = .staffID
                     listString = listString & "               " & .username
                     lstStaff.Items.Add(listString)
@@ -70,13 +72,17 @@
         'Read in the record
         recordPos = 1
 
+        'While there are records to read in still
         Do While Not EOF(1)
+            'Get the record from file
             FileGet(1, userRecord, recordPos)
 
             'If the record matches selected user
             If userRecord.staffID = searchID Then
+                'Log record found
                 numOfRecordsFound = numOfRecordsFound + 1
 
+                'Read in the data
                 With userRecord
                     txtStaffID.Text = userRecord.staffID
                     txtUsername.Text = userRecord.username
@@ -100,7 +106,7 @@
         'Close the file
         FileClose(1)
 
-        'If user did not select a record, claer the textbox of the previously selected records details
+        'If user did not select a record, clear the textbox of the previously selected records details
         If searchID = 0 Then
             txtStaffID.Text = ""
             txtUsername.Text = ""
@@ -159,7 +165,7 @@
         Call ViewStaff_Load(Me, e)
     End Sub
 
-    Private Sub btnCustSearch_Click(sender As Object, e As EventArgs) Handles btnCustSearch.Click
+    Private Sub btnStaffSearch_Click(sender As Object, e As EventArgs) Handles btnCustSearch.Click
         'Declare variables
         Dim searchString As String
         Dim listString As String
@@ -185,6 +191,8 @@
 
         'Calculate number of records in the file
         numofRecords = LOF(1) / Len(userRecord)
+        
+        'Set recordPos to 1
         recordPos = 1
 
         'Clear the listbox
@@ -195,6 +203,7 @@
 
         'Read in the records
         Do While Not EOF(1)
+            'Get the record from the file
             FileGet(1, userRecord, recordPosition)
 
             'If the username matches the search query then
@@ -206,6 +215,7 @@
                 With userRecord
                     'If user is not deleted
                     If .staffID > 0 Then
+                        'Add user details to string and add the string to list
                         listString = .staffID
                         listString = listString & "               " & .username
                         lstStaff.Items.Add(listString)
@@ -229,6 +239,7 @@
 
     'Default search text
     Private Sub txtStaffSearch_GotFocus(sender As Object, e As EventArgs) Handles txtStaffSearch.GotFocus
+        'If text box gains focus, then empty text bos
         If txtStaffSearch.Text = "Please enter a Username to search" Then
             txtStaffSearch.Text = ""
         End If
@@ -236,6 +247,7 @@
     End Sub
 
     Private Sub txtStaffSearch_LostFocus(sender As Object, e As EventArgs) Handles txtStaffSearch.LostFocus
+        'If the text box loses focus, then repopulate text box
         If txtStaffSearch.Text = "" Then
             txtStaffSearch.Text = "Please enter a Username to search"
         End If

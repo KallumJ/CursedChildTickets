@@ -35,6 +35,7 @@
             With customerRecord
                 'If customer is not deleted then
                 If .customerID > 0 Then
+                    'Add details to a string, and add it to a listbox
                     listString = .customerID
                     listString = listString & "                      " & .firstName
                     listString = listString & .Surname
@@ -70,8 +71,10 @@
 
             'IF the record matches selected customer
             If customerRecord.customerID = searchID Then
+                'Log record found
                 numOfRecordsFound = numOfRecordsFound + 1
 
+                'Populate text box with details
                 With customerRecord
                     txtCustID.Text = .customerID
                     cmbTitle.Text = .title
@@ -218,7 +221,6 @@
         lstCustomers.Items.Clear()
 
         'Add list box title
-        'Listbox title
         lstCustomers.Items.Add("CustomerID      First Name         Surname")
 
         'Read in records
@@ -231,6 +233,7 @@
                 'Log record found
                 numOfRecordsFound = numOfRecords + 1
 
+                'Shorten the fields
                 firstName = customerRecord.firstName
                 Do While Microsoft.VisualBasic.Right(firstName, 1) = " "
                     firstName = Mid(firstName, 1, Len(firstName) - 1)
@@ -244,6 +247,7 @@
                 With customerRecord
                     'If customer is not deleted then
                     If .customerID > 0 Then
+                        'Add the details to a string and add it to the list box
                         listString = .customerID
                         listString = listString & "                      " & .firstName
                         listString = listString & .Surname
@@ -268,12 +272,14 @@
 
     'Default search text
     Private Sub txtCustSearch_GotFocus(sender As Object, e As EventArgs) Handles txtCustSearch.GotFocus
+        'If textbox gains focus, clear the textbox
         If txtCustSearch.Text = "Please enter a surname to search" Then
             txtCustSearch.Text = ""
         End If
     End Sub
 
     Private Sub txtCustSearch_LostFocus(sender As Object, e As EventArgs) Handles txtCustSearch.LostFocus
+        'If the textbox loses focus, repopulate the textbox
         If txtCustSearch.Text = "" Then
             txtCustSearch.Text = "Please enter a surname to search"
         End If
@@ -283,4 +289,5 @@
         'Close the application
         Application.Exit()
     End Sub
+
 End Class

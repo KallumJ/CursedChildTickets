@@ -108,6 +108,7 @@ Public Class AddCustomer
             FileGet(1, customerRecord, numOfRecords)
             recordPos = customerRecord.customerID + 1
 
+            'Set record position to positive if previous record is deleted
             If recordPos < 0 Then
                 recordPos = Math.Abs(recordPos) + 1
             End If

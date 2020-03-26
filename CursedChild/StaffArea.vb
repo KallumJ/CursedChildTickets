@@ -65,16 +65,19 @@
 
             'If reservation is before today, and not deleted then
             If Date.Compare(Convert.ToDateTime(reservationRecord.reservationDate), Today) < 0 And Not reservationRecord.reservationID < 0 Then
+                'Add the overdue reservation to the list
                 overdue.Add(reservationRecord.reservationID)
             End If
         Next
 
+        'Close the file
         FileClose(1)
 
         'Create string
         Dim str As String
         Dim idString As String
 
+        'Construct the id string
         For Each str In overdue
             If idString = "" Then
                 idString = str

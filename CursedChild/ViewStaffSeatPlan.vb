@@ -5,6 +5,8 @@
     Private Sub cmbArea_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbArea.SelectedIndexChanged
         'Clear the panel
         panSeats.Controls.Clear()
+        
+        'Declare variables
         Dim seat As String
         Dim seatNum As Integer
 

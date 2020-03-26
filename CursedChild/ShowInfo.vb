@@ -46,9 +46,11 @@ Harry Potter and the Cursed Child is produced by Sonia Friedman Productions, Col
         'Cycle forwards through the slideshow
         pos = pos + 1
 
+        'If the position is greater than the length of the images array then
         If pos < images.Length - 1 Then
             picSlideshow.BackgroundImage = images(pos)
         Else
+            'Stop changing the position
             pos = images.Length - 2
         End If
 
@@ -58,9 +60,12 @@ Harry Potter and the Cursed Child is produced by Sonia Friedman Productions, Col
         'Cycle backwards through the slideshow
         pos = pos - 1
 
+        'If the position is greater than or equal to 0 then
         If pos >= 0 Then
+            'Display image in that position
             picSlideshow.BackgroundImage = images(pos)
         Else
+            'Stop changing the position
             pos = 0
         End If
 

@@ -43,6 +43,7 @@
 
         'Read in the records
         For showtimeRecordPos = 1 To showtimeNumOfRecords
+            'Get the record from file
             FileGet(1, showtimeRecord, showtimeRecordPos)
 
             'Open the reserved seats file
@@ -53,6 +54,7 @@
 
             'Read in a reserved seats file record
             For reservedSeatsRecordPos = 1 To reservedSeatsNumOfRecords
+                'Get the record from file
                 FileGet(2, reservedSeatsRecord, reservedSeatsRecordPos)
 
                 'If reserved seats match showtime currently being checked then
@@ -61,19 +63,26 @@
                     Dim record As String
                     Dim splitrecord() As String
 
+                    'Read in record
                     record = reservedSeatsRecord.seats
+                    
+                    'Split seat string and split to elements of an array
                     splitrecord = Split(record, "*")
 
                     'Convert array to array list
                     For i = 0 To splitrecord.Length - 1
+                        'If the record is not blank
                         If IsAlphaNum(splitrecord(i)) = True Then
+                            'Add seat to list
                             seatList.Add(splitrecord(i))
                         End If
                     Next
 
-                    'If the seat count exceeds total capacity, then set it to unavaiable
+                    'If the seat count exceeds total capacity
                     If seatList.Count >= totalCapacity Then
+                        'Set record to unavailable
                         showtimeRecord.avaliable = False
+                        'Write record to file
                         FilePut(1, showtimeRecord, showtimeRecordPos)
                     End If
 
@@ -83,7 +92,8 @@
             FileClose(2)
             'Clear the seat list
             seatList.Clear()
-        Next
+        Next    
+        'Close the file
         FileClose(1)
 
         'Add avaliability for current day
@@ -104,19 +114,20 @@
         'Decrease timer
         reset = reset - 1
 
+        'Declare variables
         Dim span As TimeSpan = TimeSpan.FromSeconds(reset)
 
         'Create strinng
         timeLeft = "Timer: " & span.Minutes.ToString.PadLeft(2, "0"c) & ":" & span.Seconds.ToString.PadLeft(2, "0"c)
 
-        'Update labels
+        'Update labels on other forms
         lblTimer.Text = timeLeft
         SelectSeat.lblTimer.Text = timeLeft
         BasketOverview.lblTimer.Text = timeLeft
         CustomerDetails.lblTimer.Text = timeLeft
         DetailsConfirmation.lblTimer.Text = timeLeft
 
-        'If timer reaches 0, reset form
+        'If timer reaches 0, reset system
         If reset = 0 Then
             Application.Restart()
         End If
@@ -162,6 +173,7 @@
 
                     'Check the file for a showtime on the same day for part 2
                     For nestedRecordPos = 1 To numOfRecords
+                        'Get the record from file
                         FileGet(1, searchShowtimeRecord, nestedRecordPos)
 
                         'If showtimes are on the same date and the showtime being read is for part 2
@@ -175,6 +187,7 @@
                                 showtimeID = .showtimeID
                             End With
 
+                            'Construct minute string
                             If timeMM = "0" Then
                                 timeMM = "00"
                             End If
@@ -197,6 +210,7 @@
                                 showtimeID = .showtimeID
                             End With
 
+                            'Construct minute string
                             If timeMM = "0" Then
                                 timeMM = "00"
                             End If
@@ -225,6 +239,7 @@
                         showtimeID = .showtimeID
                     End With
 
+                    'Construct minute string
                     If timeMM = "0" Then
                         timeMM = "00"
                     End If
@@ -247,21 +262,31 @@
         'Close the file
         FileClose(1)
 
+        'Read in the part
         showtimePart = part
+
+        'Construct time string'Open the seat selection form
         showtimeDateString = selectedDate & " " & time
     End Sub
 
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
         'Validation
+        'Check the user selected a showtime
         If lstAvaliable.SelectedItem = "" Then
+            'Output error message
             MsgBox("Please select a showtime")
             Exit Sub
         End If
 
-        'Open the seat selection form
+        
+        'Reset seat selection form
         SelectSeat.cmbArea.Text = ""
         SelectSeat.panSeats.Controls.Clear()
+        
+        'Reset reset timer
         reset = 300
+        
+        'Open the seat selection form
         SelectSeat.Show()
         Me.Hide()
     End Sub
@@ -285,6 +310,8 @@
 
         'Set difference to 0
         difference = 0
+
+        'If the ticket type is not consecutive
         If TicketType.consecutive <> True Then
 
             For recordPos = 1 To numOfrecords
@@ -299,8 +326,10 @@
                 'If this is the first date being checked then, gather the difference
                 If difference = 0 Then
 
+                    'Save the difference
                     difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
 
+                    'Read in the data
                     With showtimeRecord
                         showtimeDate = .showtimeDate
                         timeHH = .showTimeTimeHH
@@ -312,8 +341,10 @@
                     'If the difference is bigger than current difference then
                 ElseIf difference > DateDiff("s", Now, showtimeRecord.showtimeDate) Then
 
+                    'Save the difference
                     difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
 
+                    'Read in the data
                     With showtimeRecord
                         showtimeDate = .showtimeDate
                         timeHH = .showTimeTimeHH
@@ -328,14 +359,18 @@
             'Close the file
             FileClose(1)
 
-            'Construct strings
+            'Construct minute strings
             If timeMM = "0" Then
                 timeMM = "00"
             End If
 
+            'Construct time string
             time = timeHH & ":" & timeMM
 
+            'Read in the part
             showtimePart = part
+
+            'Construct date string
             showtimeDateString = showtimeDate & " " & time
         Else
             'If ticket type is consecutive then
@@ -348,6 +383,7 @@
 
                     'Read in the records again
                     For nestedRecordPos = 1 To numOfrecords
+                        'Get the file from record
                         FileGet(1, searchShowtimeRecord, nestedRecordPos)
 
                         'If record being read is the same date, and for part 2
@@ -361,8 +397,10 @@
                             'If this is the first date being checked then, gather the difference
                             If difference = 0 Then
 
+                                'Save the difference
                                 difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
 
+                                'Read in the data
                                 With showtimeRecord
                                     showtimeDate = .showtimeDate
                                     timeHH = .showTimeTimeHH
@@ -375,8 +413,10 @@
                                 'If the difference is bigger than current difference then
                             ElseIf difference > DateDiff("s", Now, showtimeRecord.showtimeDate) Then
 
+                                'Save the difference
                                 difference = DateDiff("s", Now, showtimeRecord.showtimeDate)
 
+                                'Read in the data
                                 With showtimeRecord
                                     showtimeDate = .showtimeDate
                                     timeHH = .showTimeTimeHH
@@ -403,13 +443,17 @@
                 timeMM = "00"
             End If
 
+            'Read in time
             time = timeHH & ":" & timeMM
 
+            'Read in part
             showtimePart = part
+            
+            'Construct date string
             showtimeDateString = showtimeDate & " " & time
         End If
 
-        'Confirmation from user
+        'Get confirmation from user
         If TicketType.consecutive <> True Then
             answer = MsgBox("The nearest showtime is: " & showtimeDate & " Time: " & time & " Part: " & part, vbYesNo, "Next available showtime")
         Else
@@ -417,9 +461,12 @@
         End If
 
 
+        'If user answers yes
         If answer = vbYes Then
-            'Open the seat selection form
+            'Reset the time left on the timer
             reset = 300
+
+            'Open the seat selection form
             SelectSeat.Show()
             Me.Hide()
         End If
@@ -427,7 +474,7 @@
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        'Return to main menu
+        'Return to main menu and reset the ticket mode
         TicketType.consecutive = False
         TicketType.nonConsecutive = False
         MainMenu.Show()
@@ -435,6 +482,7 @@
     End Sub
 
     Private Sub SelectShowTime_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        'Close the application
         Application.Exit()
     End Sub
 
@@ -452,6 +500,7 @@
         'Find the selected Showtime ID
         ReDim listArray(lstAvaliable.Items.Count - 1)
         lstAvaliable.Items.CopyTo(listArray, 0)
+        'Determine searchID
         If TicketType.consecutive <> True Then
             searchID = Val(Microsoft.VisualBasic.Left(listArray(lstAvaliable.SelectedIndex), 10))
         Else
@@ -464,6 +513,8 @@
 
         'Read in the records
         For recordPos = 1 To numOfRecords
+            
+            'Get the record from the file
             FileGet(1, showtimeRecord, recordPos)
 
             'Read in the details of the showtime
@@ -479,9 +530,11 @@
                         showtimeDateString = showtimeDateString & .showTimeTimeMM
                     End If
                 End With
+                'Exit the loop, showtime found
                 Exit For
             End If
         Next
+        'Close the file
         FileClose(1)
 
         'if ticket type is consecutive, get the showtime id for the next performance

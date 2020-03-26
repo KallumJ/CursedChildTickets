@@ -5,16 +5,21 @@
 
 
     Private Sub btnConsecutive_Click(sender As Object, e As EventArgs) Handles btnConsecutive.Click
-        'Open show time selection
+
+        'Set type to consecutive
         consecutive = True
+
+        'Open the show time selection
         Call SelectShowTime.SelectShowTime_Load(Me, e)
         SelectShowTime.Show()
         Me.Hide()
     End Sub
 
     Private Sub btnNonConsecutive_Click(sender As Object, e As EventArgs) Handles btnNonConsecutive.Click
-        'Open show time selection
+        'Set the mode to non consecutive
         nonConsecutive = True
+
+        'Open show time selection   
         Call SelectShowTime.SelectShowTime_Load(Me, e)
         SelectShowTime.Show()
         Me.Hide()

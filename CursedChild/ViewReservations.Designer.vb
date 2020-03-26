@@ -48,6 +48,9 @@ Partial Class ViewReservations
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txtCustID = New System.Windows.Forms.TextBox()
         Me.btnEdit = New System.Windows.Forms.Button()
+        Me.btnCollect = New System.Windows.Forms.Button()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.SuspendLayout()
         '
         'btnDelete
@@ -55,7 +58,7 @@ Partial Class ViewReservations
         Me.btnDelete.BackColor = System.Drawing.Color.SaddleBrown
         Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnDelete.ForeColor = System.Drawing.Color.Khaki
-        Me.btnDelete.Location = New System.Drawing.Point(421, 400)
+        Me.btnDelete.Location = New System.Drawing.Point(421, 429)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(121, 23)
         Me.btnDelete.TabIndex = 10
@@ -267,19 +270,45 @@ Partial Class ViewReservations
         Me.btnEdit.BackColor = System.Drawing.Color.SaddleBrown
         Me.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEdit.ForeColor = System.Drawing.Color.Khaki
-        Me.btnEdit.Location = New System.Drawing.Point(421, 371)
+        Me.btnEdit.Location = New System.Drawing.Point(421, 400)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(121, 23)
         Me.btnEdit.TabIndex = 9
         Me.btnEdit.Text = "Edit Record"
         Me.btnEdit.UseVisualStyleBackColor = False
         '
+        'btnCollect
+        '
+        Me.btnCollect.BackColor = System.Drawing.Color.SaddleBrown
+        Me.btnCollect.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnCollect.ForeColor = System.Drawing.Color.Khaki
+        Me.btnCollect.Location = New System.Drawing.Point(421, 371)
+        Me.btnCollect.Name = "btnCollect"
+        Me.btnCollect.Size = New System.Drawing.Size(121, 23)
+        Me.btnCollect.TabIndex = 52
+        Me.btnCollect.Text = "Collect Ticket"
+        Me.btnCollect.UseVisualStyleBackColor = False
+        '
+        'PrintDocument1
+        '
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
+        '
         'ViewReservations
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Khaki
-        Me.ClientSize = New System.Drawing.Size(659, 428)
+        Me.ClientSize = New System.Drawing.Size(659, 537)
+        Me.Controls.Add(Me.btnCollect)
         Me.Controls.Add(Me.btnEdit)
         Me.Controls.Add(Me.txtCustID)
         Me.Controls.Add(Me.Label10)
@@ -338,4 +367,7 @@ Partial Class ViewReservations
     Friend WithEvents Label10 As Label
     Friend WithEvents txtCustID As TextBox
     Friend WithEvents btnEdit As Button
+    Friend WithEvents btnCollect As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
 End Class

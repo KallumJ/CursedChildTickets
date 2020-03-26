@@ -13,11 +13,15 @@
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
 
         'Validation
-        'Presence Check
+        'Number of seats check
+        'If no seat is selected
         If count = 0 Then
+            'Output error message
             MsgBox("Please select at least one seat")
             Exit Sub
+        'If the number of seats selected exceeds 5
         ElseIf count > 5 Then
+            'Output error message
             MsgBox("There may only be 5 seats in a reservation")
             Exit Sub
         End If
@@ -57,9 +61,13 @@
 
         'Display the key
         Dim key As New PictureBox
+
+        'Set key properties
         key.Image = My.Resources.Key
         key.SizeMode = PictureBoxSizeMode.AutoSize
         key.Location = New System.Drawing.Point(1652, 3)
+        
+        'Display the key
         panSeats.Controls.Add(key)
 
         'Open the file
@@ -132,7 +140,10 @@
                     Dim record As String
                     Dim splitrecord() As String
 
+                    'Read in the record
                     record = reservedSeatsRecord.seats
+                    
+                    'Split seats to elements of an array
                     splitrecord = Split(record, "*")
 
                     'Convert array to array list
@@ -163,6 +174,7 @@
         Dim ctl As Control = sender
         Dim numOfRecords As Integer
 
+        'Set numOfRecords to 0
         numOfRecords = 0
 
         'Exit if seat is unavailable
@@ -186,6 +198,7 @@
 
             'read in the seats records
             For recordPos = 1 To numOfRecords
+                'Get record from file
                 FileGet(1, seatsRecord, recordPos)
 
                 With seatsRecord
@@ -224,7 +237,9 @@
             'Determine number of records
             numOfRecords = LOF(1) / Len(seatsRecord)
 
+            'Read in all the records in the file
             For recordPos = 1 To numOfRecords
+                'Get the record from file
                 FileGet(1, seatsRecord, recordPos)
                 With seatsRecord
                     'If seat record matches selected seat
@@ -269,6 +284,7 @@
 
     'Choosing best available seat
     Private Sub btnBest_Click(sender As Object, e As EventArgs) Handles btnBest.Click
+        'Declare variables
         Dim seatCtl As Control
         Dim seats As New ArrayList
         Dim priceband As Integer
@@ -283,8 +299,9 @@
         bestseat = 0
         numOfRecords = 0
 
-        'Error handling
+        'Presence check if no area is selected
         If cmbArea.Text = "" Then
+            'Output error message
             MsgBox("Please select an area of the auditorium", MsgBoxStyle.Critical)
             Exit Sub
         End If
@@ -305,6 +322,7 @@
 
         'Read in the records
         For seatsRecordPos = 1 To seatsNumOfRecords
+            'Get the record from file
             FileGet(1, seatsRecord, seatsRecordPos)
 
             'Parse priceband to a number
@@ -332,6 +350,7 @@
 
         Next
 
+        'Close the file
         FileClose(1)
 
         'Select seat

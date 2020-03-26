@@ -24,10 +24,12 @@ Public Class StaffLogin
             Dim Encryptor As ICryptoTransform = TDESAlgorithm.CreateEncryptor
             results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length)
         Finally
+            'Reset algorithm
             TDESAlgorithm.Clear()
             hashProvider.Clear()
         End Try
 
+        'Return the encrypted data
         Return Convert.ToBase64String(results)
     End Function
 
@@ -103,7 +105,9 @@ Public Class StaffLogin
 
     'Login on enter key
     Private Sub txtPassword_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPassword.KeyDown
+        'If key pressed is enter
         If e.KeyCode = Keys.Enter Then
+            'Call the login routine
             btnLogin_Click(Me, e)
         End If
     End Sub

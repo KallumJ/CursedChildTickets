@@ -37,9 +37,11 @@
         'Read in the records
         For recordPos = 1 To numOfRecords
 
+            'Get the record from file
             FileGet(1, showtimeRecord, recordPos)
 
             With showtimeRecord
+                'Construct minute format
                 If .showTimeTimeMM = "0" Then
                     MM = .showTimeTimeMM & "0"
                 Else
@@ -48,6 +50,7 @@
 
                 'If showtime is not deleted then
                 If .showtimeID > 0 Then
+                    'Add the details to a string and add it to the list box
                     listString = .showtimeID
                     listString = listString & "                       " & .showtimeDate
                     listString = listString & "      " & .showTimeTimeHH & ":" & MM
@@ -81,8 +84,10 @@
 
             'If the record matches the selected customer
             If showtimeRecord.showtimeID = searchID Then
+                'Log the number of records found
                 NumOfRecordsFound = NumOfRecordsFound + 1
 
+                'Read in the details
                 With showtimeRecord
                     txtShowtimeID.Text = .showtimeID
                     datDate.Value = .showtimeDate
@@ -211,16 +216,19 @@
         'Listbox title
         lstShowtimes.Items.Add("ShowtimeID      Date                  Time")
 
-        'Read in the records
-
+        'While there are still records to be searched
         Do While Not EOF(1)
+            'Get the record from file
             FileGet(1, showtimeRecord, recordPosition)
 
+            'If record matches record being searched
             If showtimeRecord.showtimeID = searchString Then
+                'Log record found
                 numOfRecordsFound = numOfRecordsFound + 1
 
                 With showtimeRecord
 
+                    'Construct minute format
                     If .showTimeTimeMM = "0" Then
                         mm = .showTimeTimeMM & "0"
                     Else
@@ -229,6 +237,7 @@
 
                     'If showtime is not deleted then
                     If .showtimeID > 0 Then
+                        'Add details to a string and add it to the list
                         listString = .showtimeID
                         listString = listString & "                       " & .showtimeDate
                         listString = listString & "      " & .showTimeTimeHH & ":" & mm
@@ -238,6 +247,7 @@
 
             End If
 
+            'Increment record position
             recordPosition = recordPosition + 1
         Loop
 
@@ -252,12 +262,14 @@
 
     'Default search text
     Private Sub txtShowSearch_GotFocus(sender As Object, e As EventArgs) Handles txtShowSearch.GotFocus
+        'If the textbox gains focus, clear it
         If txtShowSearch.Text = "Please enter an ID to search" Then
             txtShowSearch.Text = ""
         End If
     End Sub
 
     Private Sub txtShowSearch_LostFocus(sender As Object, e As EventArgs) Handles txtShowSearch.LostFocus
+        'If the textbox loses focus, repopulate it
         If txtShowSearch.Text = "" Then
             txtShowSearch.Text = "Please enter an ID to search"
         End If

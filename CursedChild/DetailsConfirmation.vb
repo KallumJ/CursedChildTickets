@@ -38,6 +38,7 @@ Public Class DetailsConfirmation
 
             'Prevent duplication of data
             For checkPos = 1 To custNumOfRecords
+                'Get the record from file
                 FileGet(1, customerRecord, checkPos)
 
                 'If customer is already recorded, exit try
@@ -68,7 +69,7 @@ Public Class DetailsConfirmation
             'Close the file
             FileClose(1)
         Catch ex As Exception
-            'Make the exce
+            'Output exception as error
             Dim x As String
 
             x = ex.ToString()
@@ -105,6 +106,7 @@ Public Class DetailsConfirmation
             FileClose(1)
 
         Catch ex As Exception
+            'Output the error to user
             Dim x As String
 
             x = ex.ToString
@@ -149,6 +151,7 @@ Public Class DetailsConfirmation
             FileClose(1)
 
         Catch ex As Exception
+            'Output the error to user
             Dim x As String
 
             x = ex.ToString
@@ -175,16 +178,23 @@ Public Class DetailsConfirmation
                 FileGet(1, reservationRecord, resNumOfRecords)
                 resid = reservationRecord.reservationID + 1
 
+                'Open the file
                 FileOpen(2, showtimeFile, OpenMode.Random,,, Len(showtimeRecord))
 
+                'Determine the number of records
                 showNumOfRecords = LOF(2) / Len(showtimeRecord)
 
                 For showRecordPos = 1 To showNumOfRecords
+                    'Get the record from file
                     FileGet(2, showtimeRecord, showRecordPos)
 
+                    'If the showtime matches the required showtime
                     If showtimeRecord.showtimeID = Trim(SelectShowTime.part2ID) Then
+                        'Read in the data
                         part2Date = showtimeRecord.showtimeDate
+                        'Close the file
                         FileClose(2)
+                        'Exit loop
                         Exit For
                     End If
 
@@ -206,6 +216,7 @@ Public Class DetailsConfirmation
                 'Close the file
                 FileClose(1)
 
+                'Reset ticket type
                 TicketType.consecutive = False
 
                 'Open the file
@@ -238,19 +249,26 @@ Public Class DetailsConfirmation
                 End With
             End If
         Catch ex As Exception
+            'Display error to the user
             MsgBox(ex.ToString)
         End Try
 
         'If ticket is non consecutive, redirect user to remake another reservation
         If TicketType.nonConsecutive = True Then
+            'Reset ticket mode
             TicketType.nonConsecutive = False
+            
+            'Open the showtime form
             SelectShowTime.Show()
             Me.Hide()
+            
+            'Exit routine
             Exit Sub
         End If
 
         Try
 
+            'Declare variables
             Dim oMail As New SmtpMail("TryIt")
 
             'Set sender email address
@@ -279,9 +297,13 @@ Public Class DetailsConfirmation
             oServer.Port = 587
             oServer.ConnectType = SmtpConnectType.ConnectTryTLS
 
+            'Declare client
             Dim oSmtp As New SmtpClient()
+            
+            'Send the email
             oSmtp.SendMail(oServer, oMail)
         Catch ex As Exception
+            'Display the error message to the user
             MsgBox(ex.ToString)
         End Try
 
@@ -408,7 +430,6 @@ Public Class DetailsConfirmation
         y = y + fontHeight
 
         'Print the seats
-        'Create seats string
         Dim str As String
         Dim seats As String
 
@@ -417,6 +438,7 @@ Public Class DetailsConfirmation
             seats = seats & " " & str
         Next
 
+        'Write seat string to the ticket
         e.Graphics.DrawString("     Seats: " & seats, BodyFont, Brushes.Black, x, y)
         y = y + fontHeight
 

@@ -25,10 +25,13 @@
         'read in the records
         For recordPos = 1 To numOfRecords
 
+            'Get the record from file
             FileGet(1, reservedSeatsRecord, recordPos)
 
+            'If the reservation is not deleted
             With reservedSeatsRecord
                 If .reservationID > 0 Then
+                    'Add the details to a string, and add it to the listbox
                     listString = .reservationID
                     listString = listString & "                           " & .showtimeID
                     listString = listString & "                   " & .seats
@@ -60,6 +63,7 @@
         'Open the file
         FileOpen(1, reservedSeatsFile, OpenMode.Random,,, Len(reservedSeatsRecord))
 
+        'Set record pos to first record
         recordPos = 1
 
         Do While Not EOF(1)
@@ -67,8 +71,10 @@
 
             'If the record matches the selected record
             If reservedSeatsRecord.reservationID = searchID Then
+                'Incremenet number of records found
                 NumOfRecordsFound = NumOfRecordsFound + 1
 
+                'Read in the data
                 With reservedSeatsRecord
                     txtResID.Text = .reservationID
                     txtSeats.Text = .seats
@@ -89,6 +95,7 @@
             MsgBox("Reserved seats record with ID " & searchID & " could not be found, please contact your system adminstrator")
         End If
 
+        'Close the file
         FileClose(1)
     End Sub
 
